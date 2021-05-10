@@ -1,0 +1,52 @@
+// Set mem location given in value to contents of register
+// On completion
+// Increament PC 3
+// Increament r_SM_msg
+task t_set_mem_from_value_reg;
+input [31:0] i_location; 
+    begin
+        if(r_extra_clock==0)
+        begin
+           r_mem_addr<=i_location;
+           r_mem_write_data<={r_register[r_reg_2],96'b0};
+           r_mem_write_DV=1'b1;
+           r_extra_clock<=1'b1;
+        end // if first loop
+        else
+        begin
+            if(w_mem_ready)
+            begin
+                r_SM<=OPCODE_REQUEST;  
+                r_PC<=r_PC+3;  
+                r_mem_write_DV=1'b0;
+            end // if ready asserted, else will loop until ready
+        end  // if sebsequent loop
+    end
+endtask 
+
+// Set contents of register to location given in value
+// On completion
+// Increament PC 3
+// Increament r_SM_msg
+task t_set_reg_from_mem_value;
+input [31:0] i_location; 
+    begin
+        if(r_extra_clock==0)
+        begin
+           r_mem_addr<=i_location;
+          // r_mem_write_data<=r_register[r_reg_2];
+           r_mem_read_DV=1'b1;
+           r_extra_clock<=1'b1;
+        end // if first loop
+        else
+        begin
+            if(w_mem_ready)
+            begin
+                r_register[r_reg_2]<=w_mem_read_data; // the memory location, allows read of code as well as data
+                r_SM<=OPCODE_REQUEST;  
+                r_mem_read_DV=1'b0;
+                r_PC<=r_PC+3;  
+            end // if ready asserted, else will loop until ready
+        end  // if sebsequent loop
+    end
+endtask 
