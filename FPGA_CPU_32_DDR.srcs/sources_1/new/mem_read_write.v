@@ -21,6 +21,7 @@
 
 
 module mem_read_write(
+           input        i_Clk,
            inout  [15:0] ddr2_dq,
            inout  [1:0]  ddr2_dqs_n,
            inout  [1:0]  ddr2_dqs_p,
@@ -37,15 +38,12 @@ module mem_read_write(
            output [0:0] ddr2_cs_n,
            output [1:0] ddr2_dm,
            output [0:0] ddr2_odt,
-
-           input resetn,
-           input sys_clk_i,
-           
+       
            input i_mem_write_DV,
            input i_mem_read_DV,
            input [26:0] i_mem_addr,
-           input [128:0] i_mem_write_data,
-           output [128:0] i_mem_read_data,
+           input [127:0] i_mem_write_data,
+           output [127:0] o_mem_read_data,
            output o_mem_ready
            
 
@@ -54,12 +52,12 @@ module mem_read_write(
     
  // DDR2
  wire sys_clk_i;  
-
+ reg [9:0] por_counter = 1023;
  wire resetn = (por_counter == 0);
 // Power-on-reset generator circuit.
  // Asserts resetn for 1023 cycles, then deasserts
  // `resetn` is Active low reset
- reg [9:0] por_counter = 1023;
+ 
  always @ (posedge i_Clk) begin
    if (por_counter) begin
      por_counter <= por_counter - 1 ;

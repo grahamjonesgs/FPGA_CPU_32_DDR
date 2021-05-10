@@ -161,6 +161,7 @@ wire        w_mem_ready;
 
 
  mem_read_write mem_read_write (
+           .i_Clk(i_Clk),
            .ddr2_dq(ddr2_dq),
            .ddr2_dqs_n(ddr2_dqs_n),
            .ddr2_dqs_p(ddr2_dqs_p),
@@ -177,15 +178,12 @@ wire        w_mem_ready;
            .ddr2_cs_n(ddr2_cs_n),
            .ddr2_dm(ddr2_dm),
            .ddr2_odt(ddr2_odt),
-
-           .resetn(resetn),
-           .sys_clk_i(sys_clk_i),
-           
+               
            .i_mem_write_DV(r_mem_write_DV),
            .i_mem_read_DV(r_mem_read_DV),
            .i_mem_addr(r_mem_addr),
            .i_mem_write_data(r_mem_write_data),
-           .i_mem_read_data(w_mem_read_data),
+           .o_mem_read_data(w_mem_read_data),
            .o_mem_ready(w_mem_ready)
  );
  
@@ -246,7 +244,7 @@ rams_sp_nc rams_sp_nc1 (
                .i_write_value(o_ram_write_value),
                .i_write_en(o_ram_write_DV)
                 );
-           
+         
            
            
 stack main_stack (
@@ -281,19 +279,13 @@ stack main_stack (
  .probe9(r_mem_addr),
  .probe10(w_mem_ready),
  .probe11(r_mem_write_data),
- .probe12(w_mem_read_data)
-
+ .probe12(w_mem_read_data),
+ .probe13(1'b0),
+ .probe14(1'b0),
+ .probe15(1'b0)
  
+
  ); 
-
-
-reg         r_mem_write_DV;
-reg         r_mem_read_DV;
-reg [26:0]  r_mem_addr;
-reg [127:0]  r_mem_write_data;
-wire [127:0] w_mem_read_data;
-wire        w_mem_ready;
-
 
 `include "timing_tasks.vh"
     `include "LCD_tasks.vh"
@@ -314,7 +306,7 @@ begin
     r_SM=OPCODE_REQUEST;
     r_timeout_counter=0;
     o_LCD_reset_n=1'b0;
-    r_PC=12'h0;
+    r_PC=32'h0;
     r_zero_flag=0;
     r_equal_flag=0;
     r_carry_flag=0;
@@ -324,7 +316,7 @@ begin
     r_seven_seg_value1=32'h20_10_00_07;
     r_seven_seg_value2=32'h21_21_21_21;
     rx_count=8'b0;
-    o_ram_write_addr=12'h0;
+    o_ram_write_addr=32'h0;
     r_ram_next_write_addr=12'h0;
     r_stack_reset=1'b0;
     r_msg_send_DV<=1'b0;
@@ -344,14 +336,14 @@ begin
         r_SM<=OPCODE_REQUEST;
         r_timeout_counter<=0;
         o_LCD_reset_n<=1'b0;
-        r_PC<=12'h0;
+        r_PC<=32'h0;
         r_zero_flag<=0;
         r_equal_flag<=0;
         r_carry_flag<=0;
         r_overflow_flag<=0;
         r_error_code<=8'h0;
         rx_count<=8'b0;
-        o_ram_write_addr<=12'h0;
+        o_ram_write_addr<=32'h0;
         r_ram_next_write_addr<=12'h0;
         r_seven_seg_value1=32'h20_10_00_07;
         r_seven_seg_value2=32'h21_21_21_21;
@@ -366,7 +358,7 @@ begin
     begin
         r_SM<=LOADING_BYTE;
         r_load_byte_counter<=0;
-        o_ram_write_addr<=12'h0;
+        o_ram_write_addr<=32'h0;
         r_ram_next_write_addr<=12'h0;
         r_checksum<=16'h0;
         r_old_checksum<=16'h0;
