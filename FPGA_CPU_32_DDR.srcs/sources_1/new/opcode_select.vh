@@ -99,8 +99,11 @@ casez(w_opcode[15:0])
                     16'h60??: t_set_interupt_regs;                      // INTSETRR Set interupt from registers
  
 // Memory actions 7xxx
-                    16'h700?: t_set_mem_from_value_reg(w_var1);         // MEMSETR Set interupt from registers
-                    16'h701?: t_set_reg_from_mem_value(w_var1);         // MEMREADR Set interupt from registers
+                    16'h70??: t_set_mem_from_reg_reg;                   // MEMSETRR Set mem location given in register to contents of register (first in order is value, second is location)
+                    16'h71??: t_set_reg_from_mem_reg;                   // MEMREADRR Set contents of register to location given in register (first in order is reg to be set, second is location)
+                    
+                    16'h720?: t_set_mem_from_value_reg(w_var1);         // MEMSETR Set mem location given in value to contents of register
+                    16'h721?: t_set_reg_from_mem_value(w_var1);         // MEMREADR Set contents of register to location given in value
                     
 // Other Fxxx
                     16'hF00?: t_delay_reg;                              // DELAYR Delay with register

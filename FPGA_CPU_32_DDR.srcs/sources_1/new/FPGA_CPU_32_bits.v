@@ -456,8 +456,8 @@ begin
                                 o_ram_write_DV<=1'b1;
                                 
                                 // XXXXXXXXXXXXXXXXXXXXXX
-                                r_mem_addr<=o_ram_write_addr<<3;
-                                r_mem_write_data<={o_ram_write_value,112'b0};
+                                r_mem_addr<=r_ram_next_write_addr<<3;
+                                r_mem_write_data<={16'b0,o_ram_write_value,96'b0};
                                 r_mem_write_DV=1'b1;
                                 // XXXXXXXXXXXXXXXXXXXXXX
                                 
