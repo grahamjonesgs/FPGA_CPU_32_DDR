@@ -266,7 +266,7 @@ stack main_stack (
                 );
                 
 
- ila_0  myila(.clk(i_Clk),
+/* ila_0  myila(.clk(i_Clk),
  .probe0(w_opcode),
  .probe1(r_mem_read_addr),
  .probe2(r_PC),
@@ -285,7 +285,7 @@ stack main_stack (
  .probe15(1'b0)
  
 
- ); 
+ ); */
 
 `include "timing_tasks.vh"
     `include "LCD_tasks.vh"
@@ -325,6 +325,8 @@ begin
     r_RGB_LED_2=24'h000;
     r_timing_start<=0;
     r_timer_interupt_counter<=0;
+    r_mem_write_DV<=0;
+    r_mem_read_DV<=0;
 end
  
 always @(posedge i_Clk)

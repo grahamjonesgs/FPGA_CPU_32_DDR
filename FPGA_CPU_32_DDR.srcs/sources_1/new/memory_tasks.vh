@@ -10,8 +10,8 @@ input [31:0] i_location;
            r_mem_addr<=i_location;
            r_mem_write_data<={r_register[r_reg_2],96'b0};
            r_mem_write_DV=1'b1;
-           r_extra_clock<=1'b1;
-        end // if first loop
+           r_extra_clock<=1'b1; 
+        end // if first loop 
         else
         begin
             if(w_mem_ready)
@@ -34,7 +34,6 @@ input [31:0] i_location;
         if(r_extra_clock==0)
         begin
            r_mem_addr<=i_location;
-          // r_mem_write_data<=r_register[r_reg_2];
            r_mem_read_DV=1'b1;
            r_extra_clock<=1'b1;
         end // if first loop
@@ -42,7 +41,7 @@ input [31:0] i_location;
         begin
             if(w_mem_ready)
             begin
-                r_register[r_reg_2]<=w_mem_read_data; // the memory location, allows read of code as well as data
+                r_register[r_reg_2]<=w_mem_read_data[127:96]; // the memory location, allows read of code as well as data
                 r_SM<=OPCODE_REQUEST;  
                 r_mem_read_DV=1'b0;
                 r_PC<=r_PC+3;  

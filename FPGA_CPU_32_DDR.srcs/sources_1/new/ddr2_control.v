@@ -21,7 +21,7 @@
 
 
 module ddr2_control(
-
+            input        i_Clk,
            inout  [15:0] ddr2_dq,
            inout  [1:0]  ddr2_dqs_n,
            inout  [1:0]  ddr2_dqs_p,
@@ -79,7 +79,44 @@ module ddr2_control(
  wire ui_clk;
  wire ui_clk_sync_rst;
   
+  
+ localparam IDLE = 8'd0;
+ localparam WAIT = 8'd1;
+ localparam WRITE = 8'd2;
+ localparam WRITE_DONE = 8'd3;
+ localparam READ = 8'd4;
+ localparam READ_DONE = 8'd5;
+ reg [3:0] state = IDLE;
 
+ localparam CMD_WRITE = 3'b000;
+ localparam CMD_READ = 3'b001;
+
+ assign led_calib = calib_done;
+
+  
+ ila_0  myila(.clk(i_Clk),
+ .probe0(state),
+ .probe1(app_rdy),
+ .probe2(app_en),
+ .probe3(app_rd_data_valid),
+ .probe4(app_wdf_wren),
+ .probe5(ui_clk),
+ .probe6(1'b0),
+ .probe7(i_mem_write_DV),
+ .probe8(i_mem_read_DV),
+ .probe9(r_mem_addr),
+ .probe10(o_mem_ready),
+ .probe11(app_rd_data),
+ .probe12(o_mem_read_data),
+ .probe13(1'b0),
+ .probe14(1'b0),
+ .probe15(1'b0)
+ ); 
+
+initial
+begin
+    o_mem_ready<=0;
+end
 
 mig_7series_0 mig_7series_0 (
    // DDR2 Physical interface ports
@@ -130,19 +167,6 @@ mig_7series_0 mig_7series_0 (
    );
 
 
- localparam IDLE = 8'd0;
- localparam WAIT = 8'd1;
- localparam WRITE = 8'd2;
- localparam WRITE_DONE = 8'd3;
- localparam READ = 8'd4;
- localparam READ_DONE = 8'd5;
- reg [3:0] state = IDLE;
-
- localparam CMD_WRITE = 3'b000;
- localparam CMD_READ = 3'b001;
-
- assign led_calib = calib_done;
-
 always @ (posedge ui_clk) begin
 //always @ (posedge i_Clk) begin
   if (ui_clk_sync_rst) begin
@@ -166,7 +190,7 @@ always @ (posedge ui_clk) begin
             end // if (i_mem_write_DV)
             else
             begin
-                if (i_mem_write_DV)
+                if (i_mem_read_DV)
                 begin
                     state <= READ;
                 end // f (i_mem_write_DV)
@@ -195,7 +219,7 @@ always @ (posedge ui_clk) begin
         end
 
         if (~app_en & ~app_wdf_wren) begin
-          o_mem_ready<=1'b0;
+          o_mem_ready<=1'b1;
           state <= IDLE;
         end
       end
@@ -216,8 +240,8 @@ always @ (posedge ui_clk) begin
         end
 
         if (app_rd_data_valid) begin
-          o_mem_read_data <= app_rd_data[31:0];
-          o_mem_ready<=1'b0;
+          o_mem_read_data <= app_rd_data;
+          o_mem_ready<=1'b1;
           state <= IDLE;
         
         end

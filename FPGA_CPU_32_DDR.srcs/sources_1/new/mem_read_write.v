@@ -75,6 +75,7 @@ module mem_read_write(
  
     
 ddr2_control ddr2_control (
+            .i_Clk(i_Clk),
            .ddr2_dq(ddr2_dq),
            .ddr2_dqs_n(ddr2_dqs_n),
            .ddr2_dqs_p(ddr2_dqs_p),
