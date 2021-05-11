@@ -385,6 +385,10 @@ begin
         case(r_SM)
             LOADING_BYTE:
             begin
+            // XXXXXXXXXXXXXXXXXXXXXXXX
+            r_mem_write_DV=1'b0;
+            // XXXXXXXXXXXXXXXXXXXXXXXX
+            
                 o_ram_write_DV<=1'b0;
                 r_stack_reset<=1'b1;
                 
@@ -450,6 +454,15 @@ begin
                                     r_error_code<=ERR_OVERFLOW;
                                 end
                                 o_ram_write_DV<=1'b1;
+                                
+                                // XXXXXXXXXXXXXXXXXXXXXX
+                                r_mem_addr<=o_ram_write_addr<<3;
+                                r_mem_write_data<={o_ram_write_value,112'b0};
+                                r_mem_write_DV=1'b1;
+                                // XXXXXXXXXXXXXXXXXXXXXX
+                                
+                                
+                                
                                 r_old_checksum<=r_checksum;
                                 r_checksum<=r_checksum+o_ram_write_value;
                             end // if (r_load_byte_counter==3)
@@ -491,6 +504,7 @@ begin
                     r_timing_start<=0;
                     r_timer_interupt_counter<=0;
                     r_timer_interupt<=0;
+                    r_interupt_table[0]<=0; // blank timer interupt
                 end
                 else
                 begin

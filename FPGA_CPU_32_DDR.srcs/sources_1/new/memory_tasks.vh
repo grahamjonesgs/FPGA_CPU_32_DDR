@@ -7,7 +7,7 @@ input [31:0] i_location;
     begin
         if(r_extra_clock==0)
         begin
-           r_mem_addr<=i_location;
+           r_mem_addr<=i_location<<3;
            r_mem_write_data<={r_register[r_reg_2],96'b0};
            r_mem_write_DV=1'b1;
            r_extra_clock<=1'b1; 
@@ -33,7 +33,7 @@ input [31:0] i_location;
     begin
         if(r_extra_clock==0)
         begin
-           r_mem_addr<=i_location;
+           r_mem_addr<=i_location<<3;
            r_mem_read_DV=1'b1;
            r_extra_clock<=1'b1;
         end // if first loop

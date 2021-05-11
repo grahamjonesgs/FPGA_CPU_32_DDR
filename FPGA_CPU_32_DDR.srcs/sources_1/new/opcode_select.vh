@@ -29,7 +29,7 @@ casez(w_opcode[15:0])
                     16'h083?: t_compare_reg_value(w_var1);              // CMPRV Compare register to value
                     16'h084?: t_inc_reg;                                // INCR Increament register
                     16'h085?: t_dec_reg;                                // DECR Decreament register
-                    16'h086?: t_and_reg_value(w_var1);                  // ANDV AND register
+                    16'h086?: t_and_reg_value(w_var1);                  // ANDV AND register with value
                     16'h087?: t_or_reg_value(w_var1);                   // ORV OR register with value
                     16'h088?: t_xor_reg_value(w_var1);                  // XORV XOR register with value
                     16'h089?: t_set_reg_flags;                          // SETFR Set register to flags value
@@ -74,14 +74,17 @@ casez(w_opcode[15:0])
 // Board LED and Switch 3xxx
                     16'h300?: t_led_reg;                                // LEDR set with register
                     16'h301?: t_get_switch_reg;                         // SWR Get switch status into register
-                    16'h302?: t_7_seg_reg;                              // 7SEGR Set 7 Seg to register
-                    16'h303?: t_led_rgb1_reg;                           // RGB1R RGB 1 from register
-                    16'h304?: t_led_rgb2_reg;                           // RGB2R RGB 2 from register    
-                    16'h3050: t_led_value(w_var1);                      // LEDV Set LED value
-                    16'h3051: t_7_seg_value(w_var1);                    // 7SEGV Set 7 Seg to value
-                    16'h3052: t_7_seg_blank;                            // 7SEGBLANK Blank 7 Seg
-                    16'h3053: t_led_rgb1_value(w_var1);                 // RGB1V RGB 1 from value
-                    16'h3054: t_led_rgb2_value(w_var1);                 // RGB2V RGB 2 from value
+                    16'h302?: t_7_seg1_reg;                             // 7SEG1R Set 7 Seg 1 to register
+                    16'h303?: t_7_seg2_reg;                             // 7SEG2R Set 7 Seg 2 to register
+                    16'h304?: t_7_seg_reg;                              // 7SEGR Set 7 Seg to register
+                    16'h305?: t_led_rgb1_reg;                           // RGB1R RGB 1 from register
+                    16'h306?: t_led_rgb2_reg;                           // RGB2R RGB 2 from register    
+                    16'h3070: t_led_value(w_var1);                      // LEDV Set LED value
+                    16'h3071: t_7_seg1_value(w_var1);                   // 7SEG1V Set 7 Seg 1 to value
+                    16'h3072: t_7_seg2_value(w_var1);                   // 7SEG2V Set 7 Seg 2 to value    
+                    16'h3073: t_7_seg_blank;                            // 7SEGBLANK Blank 7 Seg
+                    16'h3074: t_led_rgb1_value(w_var1);                 // RGB1V RGB 1 from value
+                    16'h3075: t_led_rgb2_value(w_var1);                 // RGB2V RGB 2 from value
                                
 // Stack control 4xxx                
                     16'h400?: t_stack_push_reg;                         // PUSH Push register onto stack

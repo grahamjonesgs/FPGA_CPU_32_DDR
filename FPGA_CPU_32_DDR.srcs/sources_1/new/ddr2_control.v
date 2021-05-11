@@ -93,25 +93,25 @@ module ddr2_control(
 
  assign led_calib = calib_done;
 
-  
- ila_0  myila(.clk(i_Clk),
+  /*
+ ila_0  myila(.clk(ui_clk),
  .probe0(state),
  .probe1(app_rdy),
  .probe2(app_en),
  .probe3(app_rd_data_valid),
  .probe4(app_wdf_wren),
- .probe5(ui_clk),
+ .probe5(i_Clk),
  .probe6(1'b0),
  .probe7(i_mem_write_DV),
  .probe8(i_mem_read_DV),
- .probe9(r_mem_addr),
+ .probe9(i_mem_addr),
  .probe10(o_mem_ready),
- .probe11(app_rd_data),
+ .probe11(i_mem_write_data),
  .probe12(o_mem_read_data),
  .probe13(1'b0),
  .probe14(1'b0),
  .probe15(1'b0)
- ); 
+ ); */
 
 initial
 begin
