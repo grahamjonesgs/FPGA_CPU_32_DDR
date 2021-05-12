@@ -61,7 +61,7 @@ module FPGA_CPU_32_bits(
        );
  
 parameter STACK_SIZE=1024;
-parameter OPCODE_REQUEST=16'd1, OPCODE_FETCH=16'd2, OPCODE_FETCH2=16'd4, OPCODE_EXECUTE=16'd8, HCF_1=16'd16,HCF_2=16'd32,  HCF_3=16'd64, HCF_4=16'd128;
+parameter OPCODE_REQUEST=16'd1, OPCODE_FETCH=16'd2, OPCODE_FETCH2=16'd3, OPCODE_EXECUTE=16'd4, HCF_1=16'd5,HCF_2=16'd6,  HCF_3=16'd7, HCF_4=16'd8,VAR1_FETCH=16'd9,VAR1_FETCH2=16'd10;
 parameter LOAD_START=16'd128, LOADING_BYTE=16'd256, LOAD_COMPLETE=16'd512, LOAD_WAIT=16'd1024;
 parameter ERR_INV_OPCODE=8'h1, ERR_INV_FSM_STATE=8'h2, ERR_STACK=8'h3, ERR_DATA_LOAD=8'h4, ERR_CHECKSUM_LOAD=8'h5, ERR_OVERFLOW=8'h6, ERR_SEG_WRITE_TO_CODE='h7, ERR_SEG_EXEC_DATA='h8;
 
@@ -156,8 +156,8 @@ reg [26:0]  r_mem_addr;
 reg [127:0]  r_mem_write_data;
 wire [127:0] w_mem_read_data;
 wire        w_mem_ready;
-
-
+reg [15:0]  r_opcode_mem;
+reg [31:0]  r_var1_mem;
 
 
  mem_read_write mem_read_write (
@@ -266,12 +266,12 @@ stack main_stack (
                 );
                 
 
-/* ila_0  myila(.clk(i_Clk),
+ ila_0  myila(.clk(i_Clk),
  .probe0(w_opcode),
  .probe1(r_mem_read_addr),
  .probe2(r_PC),
  .probe3(r_SM),
- .probe4(r_timer_interupt_counter),
+ .probe4(r_opcode_mem),
  .probe5(r_timer_interupt),
  .probe6(r_interupt_table[0]),
  .probe7(r_mem_write_DV),
@@ -285,7 +285,7 @@ stack main_stack (
  .probe15(1'b0)
  
 
- ); */
+ ); 
 
 `include "timing_tasks.vh"
     `include "LCD_tasks.vh"
@@ -385,20 +385,20 @@ begin
         case(r_SM)
             LOADING_BYTE:
             begin
-            // XXXXXXXXXXXXXXXXXXXXXXXX
-            r_mem_write_DV=1'b0;
-            // XXXXXXXXXXXXXXXXXXXXXXXX
+            
             
                 o_ram_write_DV<=1'b0;
                 r_stack_reset<=1'b1;
                 
                 r_seven_seg_value1<={8'h24,4'h0,r_ram_next_write_addr[11:8],4'h0,r_ram_next_write_addr[7:4],4'h0,r_ram_next_write_addr[3:0]};
                 if (w_uart_rx_DV)
-                      
-                
+            
                 begin
                 
-                
+                  // XXXXXXXXXXXXXXXXXXXXXXXX
+            r_mem_write_DV=1'b0;
+            // XXXXXXXXXXXXXXXXXXXXXXXX 
+                       
                     case(w_uart_rx_value)
                         8'h58: // End char X
                         begin
@@ -455,14 +455,12 @@ begin
                                 end
                                 o_ram_write_DV<=1'b1;
                                 
-                                // XXXXXXXXXXXXXXXXXXXXXX
+                                // XXXXXXXXXXXXXXXXXXXXXX Also write data to DDR
                                 r_mem_addr<=r_ram_next_write_addr<<3;
                                 r_mem_write_data<={16'b0,o_ram_write_value,96'b0};
                                 r_mem_write_DV=1'b1;
                                 // XXXXXXXXXXXXXXXXXXXXXX
-                                
-                                
-                                
+                               
                                 r_old_checksum<=r_checksum;
                                 r_checksum<=r_checksum+o_ram_write_value;
                             end // if (r_load_byte_counter==3)
@@ -539,25 +537,68 @@ begin
                     r_timer_interupt<=0;
                     r_PC<=r_interupt_table[0];
                 end
-                
+   
+                r_mem_addr<=r_PC<<3;
+                r_mem_read_DV=1'b1;
+                                             
                 r_SM<=OPCODE_FETCH;
                 
             end
             
             OPCODE_FETCH:
             begin
+                if(w_mem_ready)
+                begin
+                    r_opcode_mem<=w_mem_read_data[111:96]; // the memory location, allows read of code as well as data
+                    r_mem_read_DV<=1'b0;
+                    r_SM<=OPCODE_FETCH2;
+                end // if ready asserted, else will loop until ready  
+            end
+            
+            OPCODE_FETCH2:
+            begin
                 r_reg_2=w_opcode[3:0];
                 r_reg_1=w_opcode[7:4];
                 r_mem_read_addr<=w_var1;  // In case we need to read the memory
                 
-                    //r_SM<=OPCODE_FETCH2;
-                    r_SM<=OPCODE_EXECUTE;
+                r_SM<=VAR1_FETCH; 
+                //r_SM<=OPCODE_EXECUTE;
                 
+                r_mem_addr<=(r_PC+1)<<3;
+                r_mem_read_DV=1'b1;
+                                       
                 
             end
+              
+            VAR1_FETCH:
+            begin
+                if(w_mem_ready)
+                begin
+                    r_var1_mem[31:16]<=w_mem_read_data[111:96]; // the memory location, allows read of code as well as data
+                    r_SM<=VAR1_FETCH2;
+                    r_mem_addr<=(r_PC+2)<<3;
+                    r_mem_read_DV=1'b1;
+                end // if ready asserted, else will loop until ready  
+            end
+            
+            
+            
+            
+            VAR1_FETCH2:
+            begin
+                if(w_mem_ready)
+                begin
+                    r_var1_mem[15:0]<=w_mem_read_data[111:96]; // the memory location, allows read of code as well as data
+                    r_SM<=OPCODE_EXECUTE;
+                    r_mem_read_DV<=1'b0;
+                end // if ready asserted, else will loop until ready  
+            end
+            
+            
                      
             OPCODE_EXECUTE:
             begin
+
                 t_opcode_select;
             end // case OPCODE_EXECUTE
             

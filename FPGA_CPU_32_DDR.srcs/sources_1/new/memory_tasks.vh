@@ -69,7 +69,10 @@ input [31:0] i_location;
                 r_register[r_reg_2]<=w_mem_read_data[127:96]; // the memory location, allows read of code as well as data
                 r_SM<=OPCODE_REQUEST;  
                 r_mem_read_DV<=1'b0;
-                r_PC<=r_PC+3;  
+                if (r_mem_read_DV)
+                begin
+                    r_PC<=r_PC+3;  
+                end 
             end // if ready asserted, else will loop until ready
         end  // if sebsequent loop
     end

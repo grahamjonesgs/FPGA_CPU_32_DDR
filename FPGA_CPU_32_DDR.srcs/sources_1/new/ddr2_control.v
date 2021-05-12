@@ -94,7 +94,7 @@ module ddr2_control(
  assign led_calib = calib_done;
 
   
- ila_0  myila(.clk(ui_clk),
+ /*ila_0  myila(.clk(ui_clk),
  .probe0(state),
  .probe1(app_rdy),
  .probe2(app_en),
@@ -111,7 +111,7 @@ module ddr2_control(
  .probe13(1'b0),
  .probe14(1'b0),
  .probe15(1'b0)
- ); 
+ ); */
 
 initial
 begin

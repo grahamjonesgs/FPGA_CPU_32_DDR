@@ -11,7 +11,7 @@ input [31:0] i_byte;
     end
 endtask 
 
-// Set 7 Seg 2 LED vaue
+// Set 7 Seg 2 LED  lower 16 bits
 // On completion
 // Increament PC 3
  // Increamaent r_SM_msg
@@ -24,16 +24,14 @@ input [31:0] i_byte;
     end
 endtask 
 
-// Set 7 Seg 1 reg
+// Set 7 Seg 1 reg lower 16 bits
 // On completion
 // Increament PC
 // Increamaent r_SM_msg
    
 task t_7_seg1_reg;
-    reg [3:0] reg_1;
     begin
-        reg_1=w_opcode[3:0]; 
-        r_seven_seg_value1<={4'h0,r_register[reg_1][15:12],4'h0,r_register[reg_1][11:8],4'h0,r_register[reg_1][7:4],4'h0,r_register[reg_1][3:0]};       
+        r_seven_seg_value1<={4'h0,r_register[r_reg_2][15:12],4'h0,r_register[r_reg_2][11:8],4'h0,r_register[r_reg_2][7:4],4'h0,r_register[r_reg_2][3:0]};       
         r_SM<=OPCODE_REQUEST;  
         r_PC<=r_PC+1;    
     end
@@ -45,10 +43,8 @@ endtask
 // Increamaent r_SM_msg
    
 task t_7_seg2_reg;
-    reg [3:0] reg_1;
     begin
-        reg_1=w_opcode[3:0]; 
-        r_seven_seg_value2<={4'h0,r_register[reg_1][15:12],4'h0,r_register[reg_1][11:8],4'h0,r_register[reg_1][7:4],4'h0,r_register[reg_1][3:0]};       
+        r_seven_seg_value2<={4'h0,r_register[r_reg_2][15:12],4'h0,r_register[r_reg_2][11:8],4'h0,r_register[r_reg_2][7:4],4'h0,r_register[r_reg_2][3:0]};       
         r_SM<=OPCODE_REQUEST;  
         r_PC<=r_PC+1;    
     end
@@ -59,11 +55,9 @@ endtask
 // Increamaent r_SM_msg
    
 task t_7_seg_reg;
-    reg [3:0] reg_1;
     begin
-        reg_1=w_opcode[3:0]; 
-        r_seven_seg_value1<={4'h0,r_register[reg_1][31:28],4'h0,r_register[reg_1][27:24],4'h0,r_register[reg_1][23:20],4'h0,r_register[reg_1][19:16]};       
-        r_seven_seg_value2<={4'h0,r_register[reg_1][15:12],4'h0,r_register[reg_1][11:8],4'h0,r_register[reg_1][7:4],4'h0,r_register[reg_1][3:0]};       
+        r_seven_seg_value1<={4'h0,r_register[r_reg_2][31:28],4'h0,r_register[r_reg_2][27:24],4'h0,r_register[r_reg_2][23:20],4'h0,r_register[r_reg_2][19:16]};       
+        r_seven_seg_value2<={4'h0,r_register[r_reg_2][15:12],4'h0,r_register[r_reg_2][11:8],4'h0,r_register[r_reg_2][7:4],4'h0,r_register[r_reg_2][3:0]};       
         r_SM<=OPCODE_REQUEST;  
         r_PC<=r_PC+1;    
     end

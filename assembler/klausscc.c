@@ -440,7 +440,10 @@ int main(int argc, char **argv) {
 
         if (error_control.verbose>0) printf("\nRead %i input lines from \"%s\"\nOutput %i codes to \"%s\"\nDebug file \"%s\"\nBitcode file \"%s\"\n", error_control.input_line_number,input_file,code_PC-1,code_file,debug_file,bitcode_file);
 
-        if (strlen(tty_port)!=0) {
+        if ((strlen(tty_port)!=0)&&error_control.error_count>0) {
+          printf("No valid code to write\n");
+        }
+        if ((strlen(tty_port)!=0)&&error_control.error_count==0) {
                 printf("Writing code to port %s\n", tty_port);
                 if(!uart_open(tty_port, B115200, 0)) {
                         return -1;
