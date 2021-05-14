@@ -61,7 +61,7 @@ module FPGA_CPU_32_bits(
        );
  
 parameter STACK_SIZE=1024;
-parameter OPCODE_REQUEST=16'd1, OPCODE_FETCH=16'd2, OPCODE_FETCH2=16'd3, VAR1_FETCH=16'd4,VAR1_FETCH2=16'd5,VAR1_FETCH3=16'd6,START_WAIT=16'd7,OPCODE_EXECUTE=16'd8, HCF_1=16'd9,HCF_2=16'd10,  HCF_3=16'd11, HCF_4=16'd12;
+parameter OPCODE_REQUEST=16'd1, OPCODE_FETCH=16'd2, OPCODE_FETCH2=16'd3, VAR1_FETCH=16'd4,VAR1_FETCH2=16'd5,VAR1_FETCH3=16'd6,START_WAIT=16'd7,OPCODE_EXECUTE=16'd8, HCF_1=16'd9,HCF_2=16'd10,  HCF_3=16'd11, HCF_4=16'd12,NO_PROGRAM=16'd13;
 parameter LOAD_START=16'd128, LOADING_BYTE=16'd256, LOAD_COMPLETE=16'd512, LOAD_WAIT=16'd1024;
 parameter ERR_INV_OPCODE=8'h1, ERR_INV_FSM_STATE=8'h2, ERR_STACK=8'h3, ERR_DATA_LOAD=8'h4, ERR_CHECKSUM_LOAD=8'h5, ERR_OVERFLOW=8'h6, ERR_SEG_WRITE_TO_CODE='h7, ERR_SEG_EXEC_DATA='h8;
 
@@ -148,6 +148,7 @@ reg         r_timing_start;
 reg [31:0]  r_interupt_table[3:0]; 
 reg         r_timer_interupt;
 reg [31:0]  r_timer_interupt_counter;
+reg [63:0]  r_timer_interupt_counter_sec;
 
 // Memory
 reg         r_mem_write_DV;
@@ -231,7 +232,7 @@ SPI_Master_With_Single_CS SPI_Master_With_Single_CS_inst (
                               .i_SPI_MISO(i_SPI_LCD_MISO),
                               .o_SPI_MOSI(o_SPI_LCD_MOSI),
                               .o_SPI_CS_n(o_SPI_LCD_CS_n));
-
+/*
 rams_sp_nc rams_sp_nc1 (
                .i_clk(i_Clk),
                .i_opcode_read_addr(r_PC),
@@ -244,7 +245,7 @@ rams_sp_nc rams_sp_nc1 (
                .i_write_value(o_ram_write_value),
                .i_write_en(o_ram_write_DV)
                 );
-         
+ */        
    assign w_opcode=r_opcode_mem; 
    assign w_var1=r_var1_mem;  
            
@@ -304,7 +305,7 @@ initial
 begin
     o_TX_LCD_Count=4'd1;
     o_TX_LCD_Byte=8'b0;
-    r_SM=OPCODE_REQUEST;
+    r_SM=NO_PROGRAM;
     r_timeout_counter=0;
     o_LCD_reset_n=1'b0;
     r_PC=32'h0;
@@ -326,6 +327,7 @@ begin
     r_RGB_LED_2=24'h000;
     r_timing_start<=0;
     r_timer_interupt_counter<=0;
+    r_timer_interupt_counter_sec<=0;
     r_mem_write_DV<=0;
     r_mem_read_DV<=0;
 end
@@ -385,8 +387,43 @@ begin
         begin
             r_timer_interupt_counter<=r_timer_interupt_counter+1;
         end
-             
+        
+        if(r_timer_interupt_counter_sec>100_000_000) 
+        begin
+            r_timer_interupt_counter_sec<=0;
+        end
+        else
+        begin
+            r_timer_interupt_counter_sec<=r_timer_interupt_counter_sec+1;
+        end
+        
+               
         case(r_SM)
+            NO_PROGRAM:
+            begin
+            r_seven_seg_value1<=32'h22222222;
+            r_seven_seg_value2<=32'h22222222;
+            
+                if (r_timer_interupt_counter_sec==0)
+                begin
+                    case(o_led[0])
+                    0:
+                    begin
+                        r_RGB_LED_1<=12'h050;
+                        r_RGB_LED_2<=12'h500;
+                        o_led[0]<=1;
+                    end
+                    default:
+                    begin
+                        r_RGB_LED_1<=12'h500;
+                        r_RGB_LED_2<=12'h050;
+                        o_led[0]<=0;
+                    end
+                    endcase
+                end
+            end
+           
+        
             LOADING_BYTE:
             begin
             

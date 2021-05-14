@@ -103,7 +103,7 @@ int parse_opcode_file(char* file_name, struct Opcode *opcodes, struct Macro *mac
                         strncpy(macros[macro_count].name,line_words[0],STR_LEN);
 
                         for (int i=0; i<word_number; i++) {
-                                if (strcmp(line_words[i+1],line_words[0])==0) {
+                                if (strcasecmp(line_words[i+1],line_words[0])==0) {
                                         printf("Warning. Recurive Macro, ignored %s\n",line_words[0]);
                                         error_control.warning_count++;
                                 }

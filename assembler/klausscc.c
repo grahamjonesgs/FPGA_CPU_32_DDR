@@ -465,6 +465,12 @@ int main(int argc, char **argv) {
                                 uart_writestr(temp_string);
                         } while(1);
                         printf("Code write complete\n");
+                        char *rec_buf = malloc(256);
+                        int msg_len;
+                         msg_len=uart_read(rec_buf,255);
+                        rec_buf[msg_len-1]=0;
+                        printf("Received message... %s",rec_buf);
+
                 }
         }
 

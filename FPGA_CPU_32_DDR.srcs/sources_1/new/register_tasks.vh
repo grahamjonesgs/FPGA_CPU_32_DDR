@@ -1,4 +1,4 @@
-// Set reg from memory location
+/*// Set reg from memory location
 // On completion
 // Increament PC 3
 // Increament r_SM_msg
@@ -48,7 +48,7 @@ input [31:0] i_location; // Not used here, but needed to show this is a two word
        end
     end
 endtask 
-
+*/
 
 // Copy from second reg to first
 // On completion

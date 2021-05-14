@@ -215,7 +215,7 @@ int parse_data (FILE *input_fp, int code_pc) {
                                 printf("Warning. No type definition for variable %s\n",line_words[0]);
                                 error_control.warning_count++;
                         }
-                        else if (strcmp(line_words[1],"INT")==0) {
+                        else if (strcasecmp(line_words[1],"INT")==0) {
                                 if(strlen(line_words[2])!=0) {
                                         data = malloc(9);
                                         convert_hex(line_words[2],data);
@@ -227,7 +227,7 @@ int parse_data (FILE *input_fp, int code_pc) {
                                         add_data_element(line_words[0],line_words[1],8,data,code_pc);
                                 }
                         }         // if int
-                        else if (strcmp(line_words[1],"STRING")==0) {
+                        else if (strcasecmp(line_words[1],"STRING")==0) {
                                 strcpy(remain_str,"");
                                 for (int i=2; i< MAX_WORDS-2; i++) { // Concat back into one string
                                         if ((strlen(line_words[i])!=0)&&i!=2) {
@@ -255,7 +255,7 @@ int parse_data (FILE *input_fp, int code_pc) {
                                         add_data_element(line_words[0],line_words[1],strlen(remain_str)*8,data,code_pc);
                                 }
                         }
-                        else if(strcmp(line_words[1],"ARRAY")==0) {
+                        else if(strcasecmp(line_words[1],"ARRAY")==0) {
                                 array_count=0;
                                 for (int i=2; i< MAX_WORDS-2; i++) {
                                         if (strlen(line_words[i])!=0) {
@@ -276,7 +276,7 @@ int parse_data (FILE *input_fp, int code_pc) {
                                 data[array_count*8]=0;
                                 add_data_element(line_words[0],line_words[1],array_count*8,data,code_pc);
                         }
-                        else if(strcmp(line_words[1],"ARRAY_SIZE")==0) {
+                        else if(strcasecmp(line_words[1],"ARRAY_SIZE")==0) {
                                 array_count=convert_hex(line_words[2],NULL);
                                 if (array_count==0) {
                                         printf("Warning. Empty array definition for variable %s\n",line_words[0]);
@@ -302,7 +302,7 @@ int parse_data (FILE *input_fp, int code_pc) {
                 } // if variable definition
                 else {
                         if (line_words[0][0]=='.') {
-                                if (strcmp(line_words[0],".STACK")==0) {
+                                if (strcasecmp(line_words[0],".STACK")==0) {
                                         stack_size=convert_hex(line_words[1],NULL);
                                 }
                         }

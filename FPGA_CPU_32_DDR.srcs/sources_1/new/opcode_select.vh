@@ -34,8 +34,8 @@ casez(w_opcode[15:0])
                     16'h088?: t_xor_reg_value(w_var1);                  // XORV XOR register with value
                     16'h089?: t_set_reg_flags;                          // SETFR Set register to flags value
                     16'h08A?: t_negate_reg;                             // NEGR Set register 2's comp
-                    16'h08B?: t_set_reg_from_memory(w_var1);            // SETRM Set register to memory
-                    16'h08C?: t_set_memory_from_reg(w_var1);            // SETMR Set register to memory
+               //     16'h08B?: t_set_reg_from_memory(w_var1);            // SETRM Set register to memory
+               //     16'h08C?: t_set_memory_from_reg(w_var1);            // SETMR Set register to memory
                     16'h08D?: t_left_shift_reg;                         // SHLR Left shift reg
                     16'h08E?: t_right_shift_reg;                        // SHRR Right shift reg
                     16'h08F?: t_left_shift_a_reg;                       // SHLAR Left shift arithmetical reg

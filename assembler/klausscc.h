@@ -59,3 +59,4 @@ struct Data_elements * find_data_element(char * name);
 int is_var(char* word);
 int uart_open(const char* port, int baud, int blocking);
 void uart_writestr(const char* string);
+ssize_t uart_read(void* buffer, size_t charsToRead);

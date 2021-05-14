@@ -10,7 +10,7 @@ extern struct Data_elements * data_elements_head;
 
 // Return index for register number to addf to opcode
 int reg_num(char* reg) {
-        switch(reg[0])
+        switch(toupper(reg[0]))
         {
         case 'A': return 0;
         case 'B': return 1;
@@ -98,7 +98,7 @@ int find_opcode(char* name, struct Opcode *opcodes) {
         }
         for (int i=0; i<NUMBER_OPCODES; i++) {
 
-                if(strcmp(name,opcodes[i].name)==0) {
+                if(strcasecmp(name,opcodes[i].name)==0) {
                         value=i;
                         return value;
                 }
@@ -114,7 +114,7 @@ int find_label_line(char* label,struct Label *labels) {
         int value=-1;
 
         for (int i=0; i<NUMBER_LABELS; i++) {
-                if(strcmp(label,labels[i].label_name)==0) {
+                if(strcasecmp(label,labels[i].label_name)==0) {
                         value=i;
                         return i;
                 }
@@ -146,7 +146,7 @@ int find_macro(char* name,struct Macro *macros) {
         }
         for (int i=0; i<NUMBER_MACROS; i++) {
 
-                if(strcmp(name,macros[i].name)==0) {
+                if(strcasecmp(name,macros[i].name)==0) {
                         value=i;
                         return value;
                 }
@@ -198,7 +198,7 @@ struct Data_elements * find_data_element(char * name) {
         }
 
         while (current != NULL) {
-                if(strcmp(current->name,name)==0) return(current);
+                if(strcasecmp(current->name,name)==0) return(current);
                 current = current->next;
         }
         return(NULL);
