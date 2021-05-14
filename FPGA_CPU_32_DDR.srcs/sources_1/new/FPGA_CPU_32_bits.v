@@ -61,7 +61,7 @@ module FPGA_CPU_32_bits(
        );
  
 parameter STACK_SIZE=1024;
-parameter OPCODE_REQUEST=16'd1, OPCODE_FETCH=16'd2, OPCODE_FETCH2=16'd3, OPCODE_EXECUTE=16'd4, HCF_1=16'd5,HCF_2=16'd6,  HCF_3=16'd7, HCF_4=16'd8,VAR1_FETCH=16'd9,VAR1_FETCH2=16'd10;
+parameter OPCODE_REQUEST=16'd1, OPCODE_FETCH=16'd2, OPCODE_FETCH2=16'd3, VAR1_FETCH=16'd4,VAR1_FETCH2=16'd5,VAR1_FETCH3=16'd6,START_WAIT=16'd7,OPCODE_EXECUTE=16'd8, HCF_1=16'd9,HCF_2=16'd10,  HCF_3=16'd11, HCF_4=16'd12;
 parameter LOAD_START=16'd128, LOADING_BYTE=16'd256, LOAD_COMPLETE=16'd512, LOAD_WAIT=16'd1024;
 parameter ERR_INV_OPCODE=8'h1, ERR_INV_FSM_STATE=8'h2, ERR_STACK=8'h3, ERR_DATA_LOAD=8'h4, ERR_CHECKSUM_LOAD=8'h5, ERR_OVERFLOW=8'h6, ERR_SEG_WRITE_TO_CODE='h7, ERR_SEG_EXEC_DATA='h8;
 
@@ -236,16 +236,17 @@ rams_sp_nc rams_sp_nc1 (
                .i_clk(i_Clk),
                .i_opcode_read_addr(r_PC),
                .i_mem_read_addr(r_mem_read_addr),
-               .o_dout_opcode(w_opcode),
+             //  .o_dout_opcode(w_opcode),
                .o_dout_mem(w_mem),
-               .o_dout_var1(w_var1),
+             //  .o_dout_var1(w_var1),
                .o_dout_var2(w_var2),
                .i_write_addr(o_ram_write_addr),
                .i_write_value(o_ram_write_value),
                .i_write_en(o_ram_write_DV)
                 );
          
-           
+   assign w_opcode=r_opcode_mem; 
+   assign w_var1=r_var1_mem;  
            
 stack main_stack (
           .clk(i_Clk),
@@ -271,14 +272,14 @@ stack main_stack (
  .probe1(r_mem_read_addr),
  .probe2(r_PC),
  .probe3(r_SM),
- .probe4(r_opcode_mem),
+ .probe4(r_var1_mem),
  .probe5(r_timer_interupt),
  .probe6(r_interupt_table[0]),
  .probe7(r_mem_write_DV),
  .probe8(r_mem_read_DV),
  .probe9(r_mem_addr),
  .probe10(w_mem_ready),
- .probe11(r_mem_write_data),
+ .probe11(w_var1),
  .probe12(w_mem_read_data),
  .probe13(1'b0),
  .probe14(1'b0),
@@ -361,12 +362,15 @@ begin
         r_SM<=LOADING_BYTE;
         r_load_byte_counter<=0;
         o_ram_write_addr<=32'h0;
-        r_ram_next_write_addr<=12'h0;
+        r_ram_next_write_addr<=32'h0;
         r_checksum<=16'h0;
         r_old_checksum<=16'h0;
         r_RGB_LED_1<=12'h0;
         r_RGB_LED_2<=12'h0;
         o_led<=16'h0;
+        r_mem_write_DV<=1'b0; 
+        r_mem_read_DV<=1'b0;
+        
     end
     else
     begin
@@ -386,7 +390,13 @@ begin
             LOADING_BYTE:
             begin
             
-            
+                 // XXXXXXXXXXXXXXXXXXXXXXXX
+                 if(w_mem_ready)
+                 begin
+                    r_mem_write_DV<=1'b0;               
+                 end
+                 // XXXXXXXXXXXXXXXXXXXXXXXX 
+                                    
                 o_ram_write_DV<=1'b0;
                 r_stack_reset<=1'b1;
                 
@@ -394,10 +404,7 @@ begin
                 if (w_uart_rx_DV)
             
                 begin
-                
-                  // XXXXXXXXXXXXXXXXXXXXXXXX
-            r_mem_write_DV=1'b0;
-            // XXXXXXXXXXXXXXXXXXXXXXXX 
+
                        
                     case(w_uart_rx_value)
                         8'h58: // End char X
@@ -429,11 +436,18 @@ begin
                         begin
                             case (r_load_byte_counter)
                                 0:
+                                begin
                                     o_ram_write_value[15:12]=return_hex_from_ascii(w_uart_rx_value);
+                                                                                        
+                               
+                                end
                                 1:
                                     o_ram_write_value[11:8]=return_hex_from_ascii(w_uart_rx_value);
                                 2:
+                                begin
                                     o_ram_write_value[7:4]=return_hex_from_ascii(w_uart_rx_value);
+
+                                end
                                 3:
                                     o_ram_write_value[3:0]=return_hex_from_ascii(w_uart_rx_value);
                                 default:
@@ -458,7 +472,7 @@ begin
                                 // XXXXXXXXXXXXXXXXXXXXXX Also write data to DDR
                                 r_mem_addr<=r_ram_next_write_addr<<3;
                                 r_mem_write_data<={16'b0,o_ram_write_value,96'b0};
-                                r_mem_write_DV=1'b1;
+                                r_mem_write_DV<=1'b1;
                                 // XXXXXXXXXXXXXXXXXXXXXX
                                
                                 r_old_checksum<=r_checksum;
@@ -481,7 +495,7 @@ begin
                 begin  // Reset all flags and jump to first instruction
                     o_TX_LCD_Count<=4'd1;
                     o_TX_LCD_Byte<=8'b0;
-                    r_SM<=OPCODE_REQUEST;
+                    r_SM<=START_WAIT;
                     r_timeout_counter<=0;
                     o_LCD_reset_n<=1'b0;
                     r_PC<=12'h0;
@@ -510,6 +524,11 @@ begin
                     r_error_code<=ERR_CHECKSUM_LOAD;
                     t_tx_message(8'd2); // Load error message
                 end
+            end
+            
+            START_WAIT:
+            begin
+                r_SM<=OPCODE_REQUEST;
             end
 
             OPCODE_REQUEST:
@@ -577,14 +596,20 @@ begin
                     r_var1_mem[31:16]<=w_mem_read_data[111:96]; // the memory location, allows read of code as well as data
                     r_SM<=VAR1_FETCH2;
                     r_mem_addr<=(r_PC+2)<<3;
-                    r_mem_read_DV=1'b1;
+                    r_mem_read_DV=1'b0;
                 end // if ready asserted, else will loop until ready  
             end
             
             
-            
-            
             VAR1_FETCH2:
+            begin    
+                  r_mem_read_DV=1'b1;
+                  r_SM<=VAR1_FETCH3;
+            end
+            
+                      
+            
+            VAR1_FETCH3:
             begin
                 if(w_mem_ready)
                 begin
@@ -598,7 +623,6 @@ begin
                      
             OPCODE_EXECUTE:
             begin
-
                 t_opcode_select;
             end // case OPCODE_EXECUTE
             
