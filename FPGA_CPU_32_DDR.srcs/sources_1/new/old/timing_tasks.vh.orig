@@ -1,10 +1,10 @@
-// Delay execution input value *2^19 ticks
-// On completion
-// Increment PC by 3
-// Increment r_SM_msg
-
-task t_delay;
-    input [31:0] i_timeout_fraction;
+ // Delay execution input value *2^19 ticks
+ // On completion
+ // Increment PC by 3
+ // Increment r_SM_msg
+ 
+ task t_delay;
+    input [31:0] i_timeout_fraction; 
     begin
         if(r_timing_start==0) // first cycle of timing
         begin
@@ -13,9 +13,9 @@ task t_delay;
             r_timing_start<=1;
         end // if first loop
         else
-        begin
-            if(r_timeout_counter>=r_timeout_max)
-            begin
+        begin    
+            if(r_timeout_counter>=r_timeout_max)  
+            begin 
                 r_timeout_counter<=0;
                 r_timing_start<=0;
                 r_SM<=OPCODE_REQUEST;
@@ -23,23 +23,23 @@ task t_delay;
             end  // if(r_timeout_counter>=DELAY_TIME)
             else
             begin
-                r_timeout_counter<=r_timeout_counter+1;
-                r_SM<=OPCODE_REQUEST; // redo loop on same opcode
+                r_timeout_counter<=r_timeout_counter+1;  
+                r_SM<=OPCODE_REQUEST; // redo loop on same opcode             
             end // else if(r_timeout_counter>=DELAY_TIME)
         end // if subsequent loop
     end
-endtask
+endtask 
 
-// Will delay execution input value *2^19 ticks from reg value
-// On completion
-// Increment PC by 1
-// Increment r_SM_msg
-task t_delay_reg;
-    reg [31:0] r_timeout_fraction;
+ // Will delay execution input value *2^19 ticks from reg value
+ // On completion
+ // Increment PC by 1
+ // Increment r_SM_msg
+ task t_delay_reg;
+    reg [31:0] r_timeout_fraction; 
     reg [3:0] reg_1;
     begin
-
-        if(r_timing_start==0) // first cycle of timing
+    
+    if(r_timing_start==0) // first cycle of timing
         begin
             reg_1=w_opcode[3:0];
             r_timeout_fraction=r_register[reg_1];
@@ -48,9 +48,9 @@ task t_delay_reg;
             r_timing_start<=1;
         end // if first loop
         else
-        begin
-            if(r_timeout_counter>=r_timeout_max)
-            begin
+        begin    
+            if(r_timeout_counter>=r_timeout_max)  
+            begin 
                 r_timeout_counter<=0;
                 r_timing_start<=0;
                 r_SM<=OPCODE_REQUEST;
@@ -58,9 +58,9 @@ task t_delay_reg;
             end  // if(r_timeout_counter>=DELAY_TIME)
             else
             begin
-                r_timeout_counter<=r_timeout_counter+1;
-                r_SM<=OPCODE_REQUEST; // redo loop on same opcode
+                r_timeout_counter<=r_timeout_counter+1;  
+                r_SM<=OPCODE_REQUEST; // redo loop on same opcode             
             end // else if(r_timeout_counter>=DELAY_TIME)
         end // if subsequent loop
     end
-endtask
+endtask 

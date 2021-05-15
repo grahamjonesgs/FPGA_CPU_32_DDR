@@ -1,27 +1,26 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 05/10/2021 10:12:31 AM
-// Design Name: 
+// Design Name:
 // Module Name: ddr2_control
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
 module ddr2_control(
-            input        i_Clk,
            inout  [15:0] ddr2_dq,
            inout  [1:0]  ddr2_dqs_n,
            inout  [1:0]  ddr2_dqs_p,
@@ -41,7 +40,7 @@ module ddr2_control(
 
            input resetn,
            input sys_clk_i,
-           
+
            input i_mem_write_DV,
            input i_mem_read_DV,
            input [26:0] i_mem_addr,
@@ -49,69 +48,49 @@ module ddr2_control(
            output reg [127:0] o_mem_read_data,
            output reg o_mem_ready
 
-    );
-    
+       );
 
- wire calib_done;
 
- reg  [26:0] app_addr = 0;
- reg  [2:0]  app_cmd = 0;
- reg  app_en;
- wire app_rdy;
+wire calib_done;
 
- reg  [127:0] app_wdf_data;
- wire app_wdf_end = 1;
- reg  app_wdf_wren;
- wire app_wdf_rdy;
+reg  [26:0] app_addr = 0;
+reg  [2:0]  app_cmd = 0;
+reg  app_en;
+wire app_rdy;
 
- wire [127:0] app_rd_data;
- reg [15:0] app_wdf_mask = 16'h0; //15'hF;
- wire app_rd_data_end;
- wire app_rd_data_valid;
+reg  [127:0] app_wdf_data;
+wire app_wdf_end = 1;
+reg  app_wdf_wren;
+wire app_wdf_rdy;
 
- wire app_sr_req = 0;
- wire app_ref_req = 0;
- wire app_zq_req = 0;
- wire app_sr_active;
- wire app_ref_ack;
- wire app_zq_ack;
+wire [127:0] app_rd_data;
+reg [15:0] app_wdf_mask = 16'h0; //15'hF;
+wire app_rd_data_end;
+wire app_rd_data_valid;
 
- wire ui_clk;
- wire ui_clk_sync_rst;
-  
-  
- localparam IDLE = 8'd0;
- localparam WAIT = 8'd1;
- localparam WRITE = 8'd2;
- localparam WRITE_DONE = 8'd3;
- localparam READ = 8'd4;
- localparam READ_DONE = 8'd5;
- reg [3:0] state = IDLE;
+wire app_sr_req = 0;
+wire app_ref_req = 0;
+wire app_zq_req = 0;
+wire app_sr_active;
+wire app_ref_ack;
+wire app_zq_ack;
 
- localparam CMD_WRITE = 3'b000;
- localparam CMD_READ = 3'b001;
+wire ui_clk;
+wire ui_clk_sync_rst;
 
- assign led_calib = calib_done;
 
-  
- /*ila_0  myila(.clk(ui_clk),
- .probe0(state),
- .probe1(app_rdy),
- .probe2(app_en),
- .probe3(app_rd_data_valid),
- .probe4(app_wdf_wren),
- .probe5(i_Clk),
- .probe6(1'b0),
- .probe7(i_mem_write_DV),
- .probe8(i_mem_read_DV),
- .probe9(i_mem_addr),
- .probe10(o_mem_ready),
- .probe11(i_mem_write_data),
- .probe12(o_mem_read_data),
- .probe13(1'b0),
- .probe14(1'b0),
- .probe15(1'b0)
- ); */
+localparam IDLE = 8'd0;
+localparam WAIT = 8'd1;
+localparam WRITE = 8'd2;
+localparam WRITE_DONE = 8'd3;
+localparam READ = 8'd4;
+localparam READ_DONE = 8'd5;
+reg [3:0] state = IDLE;
+
+localparam CMD_WRITE = 3'b000;
+localparam CMD_READ = 3'b001;
+
+assign led_calib = calib_done;
 
 initial
 begin
@@ -119,140 +98,140 @@ begin
 end
 
 mig_7series_0 mig_7series_0 (
-   // DDR2 Physical interface ports
-   .ddr2_addr   (ddr2_addr),
-   .ddr2_ba     (ddr2_ba),
-   .ddr2_cas_n  (ddr2_cas_n),
-   .ddr2_ck_n   (ddr2_ck_n),
-   .ddr2_ck_p   (ddr2_ck_p),
-   .ddr2_cke    (ddr2_cke),
-   .ddr2_ras_n  (ddr2_ras_n),
-  // .ddr2_reset_n(ddr2_reset_n),
-   .ddr2_we_n   (ddr2_we_n),
-   .ddr2_dq     (ddr2_dq),
-   .ddr2_dqs_n  (ddr2_dqs_n),
-   .ddr2_dqs_p  (ddr2_dqs_p),
-   .ddr2_cs_n   (ddr2_cs_n),
-   .ddr2_dm     (ddr2_dm),
-   .ddr2_odt    (ddr2_odt),
+                  // DDR2 Physical interface ports
+                  .ddr2_addr   (ddr2_addr),
+                  .ddr2_ba     (ddr2_ba),
+                  .ddr2_cas_n  (ddr2_cas_n),
+                  .ddr2_ck_n   (ddr2_ck_n),
+                  .ddr2_ck_p   (ddr2_ck_p),
+                  .ddr2_cke    (ddr2_cke),
+                  .ddr2_ras_n  (ddr2_ras_n),
+                  // .ddr2_reset_n(ddr2_reset_n),
+                  .ddr2_we_n   (ddr2_we_n),
+                  .ddr2_dq     (ddr2_dq),
+                  .ddr2_dqs_n  (ddr2_dqs_n),
+                  .ddr2_dqs_p  (ddr2_dqs_p),
+                  .ddr2_cs_n   (ddr2_cs_n),
+                  .ddr2_dm     (ddr2_dm),
+                  .ddr2_odt    (ddr2_odt),
 
-   .init_calib_complete (calib_done),
+                  .init_calib_complete (calib_done),
 
-   // User interface ports
-   .app_addr    (app_addr),
-   .app_cmd     (app_cmd),
-   .app_en      (app_en),
-   .app_wdf_data(app_wdf_data),
-   .app_wdf_end (app_wdf_end),
-   .app_wdf_wren(app_wdf_wren),
-   .app_rd_data (app_rd_data),
-   .app_rd_data_end (app_rd_data_end),
-   .app_rd_data_valid (app_rd_data_valid),
-   .app_rdy     (app_rdy),
-   .app_wdf_rdy (app_wdf_rdy),
-   .app_sr_req  (app_sr_req),
-   .app_ref_req (app_ref_req),
-   .app_zq_req  (app_zq_req),
-   .app_sr_active(app_sr_active),
-   .app_ref_ack (app_ref_ack),
-   .app_zq_ack  (app_zq_ack),
-   .ui_clk      (ui_clk),
-   .ui_clk_sync_rst (ui_clk_sync_rst),
-   .app_wdf_mask(app_wdf_mask),
-   // Clock and Reset input ports
-   .sys_clk_i (sys_clk_i),
+                  // User interface ports
+                  .app_addr    (app_addr),
+                  .app_cmd     (app_cmd),
+                  .app_en      (app_en),
+                  .app_wdf_data(app_wdf_data),
+                  .app_wdf_end (app_wdf_end),
+                  .app_wdf_wren(app_wdf_wren),
+                  .app_rd_data (app_rd_data),
+                  .app_rd_data_end (app_rd_data_end),
+                  .app_rd_data_valid (app_rd_data_valid),
+                  .app_rdy     (app_rdy),
+                  .app_wdf_rdy (app_wdf_rdy),
+                  .app_sr_req  (app_sr_req),
+                  .app_ref_req (app_ref_req),
+                  .app_zq_req  (app_zq_req),
+                  .app_sr_active(app_sr_active),
+                  .app_ref_ack (app_ref_ack),
+                  .app_zq_ack  (app_zq_ack),
+                  .ui_clk      (ui_clk),
+                  .ui_clk_sync_rst (ui_clk_sync_rst),
+                  .app_wdf_mask(app_wdf_mask),
+                  // Clock and Reset input ports
+                  .sys_clk_i (sys_clk_i),
 
-   .sys_rst (resetn)
+                  .sys_rst (resetn)
 
-   );
+              );
 
 
 always @ (posedge ui_clk) begin
-//always @ (posedge i_Clk) begin
-  if (ui_clk_sync_rst) begin
-    state <= IDLE;
-    app_en <= 0;
-    app_wdf_wren <= 0;
-  end else begin
-    case (state)
-      IDLE: begin
-        o_mem_ready<=1'b0;
-        if (calib_done) begin
-          state <= WAIT;
-        end
-      end
-      
-      WAIT:
-      begin
-        if (i_mem_write_DV)
+    //always @ (posedge i_Clk) begin
+    if (ui_clk_sync_rst) begin
+        state <= IDLE;
+        app_en <= 0;
+        app_wdf_wren <= 0;
+    end else begin
+        case (state)
+            IDLE: begin
+                o_mem_ready<=1'b0;
+                if (calib_done) begin
+                    state <= WAIT;
+                end
+            end
+
+            WAIT:
             begin
-                state <= WRITE;
-            end // if (i_mem_write_DV)
-            else
-            begin
-                if (i_mem_read_DV)
+                if (i_mem_write_DV)
                 begin
-                    state <= READ;
-                end // f (i_mem_write_DV)
-            end // else if (i_mem_write_DV)
-      end
+                    state <= WRITE;
+                end // if (i_mem_write_DV)
+                else
+                begin
+                    if (i_mem_read_DV)
+                    begin
+                        state <= READ;
+                    end // f (i_mem_write_DV)
+                end // else if (i_mem_write_DV)
+            end
 
-      WRITE: begin
-        if (app_rdy & app_wdf_rdy) begin
-          state <= WRITE_DONE;
-          app_en <= 1;
-          app_wdf_wren <= 1;
-          app_addr <= i_mem_addr;
-          app_cmd <= CMD_WRITE;
-          app_wdf_data <= i_mem_write_data;
-          app_wdf_mask <= 16'h0; // Write all
-        end
-      end
+            WRITE: begin
+                if (app_rdy & app_wdf_rdy) begin
+                    state <= WRITE_DONE;
+                    app_en <= 1;
+                    app_wdf_wren <= 1;
+                    app_addr <= i_mem_addr;
+                    app_cmd <= CMD_WRITE;
+                    app_wdf_data <= i_mem_write_data;
+                    app_wdf_mask <= 16'h0; // Write all
+                end
+            end
 
-      WRITE_DONE: begin
-        if (app_rdy & app_en) begin
-          app_en <= 0;
-        end
+            WRITE_DONE: begin
+                if (app_rdy & app_en) begin
+                    app_en <= 0;
+                end
 
-        if (app_wdf_rdy & app_wdf_wren) begin
-          app_wdf_wren <= 0;
-        end
+                if (app_wdf_rdy & app_wdf_wren) begin
+                    app_wdf_wren <= 0;
+                end
 
-        if (~app_en & ~app_wdf_wren) begin
-          o_mem_ready<=1'b1;
-          state <= IDLE;
-        end
-      end
-      
+                if (~app_en & ~app_wdf_wren) begin
+                    o_mem_ready<=1'b1;
+                    state <= IDLE;
+                end
+            end
 
-      READ: begin
-        if (app_rdy) begin
-          app_en <= 1;
-          app_addr <= i_mem_addr;
-          app_cmd <= CMD_READ;
-          state <= READ_DONE;
-        end
-      end
 
-      READ_DONE: begin
-        if (app_rdy & app_en) begin
-          app_en <= 0;
-        end
+            READ: begin
+                if (app_rdy) begin
+                    app_en <= 1;
+                    app_addr <= i_mem_addr;
+                    app_cmd <= CMD_READ;
+                    state <= READ_DONE;
+                end
+            end
 
-        if (app_rd_data_valid) begin
-          o_mem_read_data <= app_rd_data;
-          o_mem_ready<=1'b1;
-          state <= IDLE;
-        
-        end
-      end
-      
+            READ_DONE: begin
+                if (app_rdy & app_en) begin
+                    app_en <= 0;
+                end
 
-      default: state <= IDLE;
-   endcase
- end
+                if (app_rd_data_valid) begin
+                    o_mem_read_data <= app_rd_data;
+                    o_mem_ready<=1'b1;
+                    state <= IDLE;
+
+                end
+            end
+
+
+            default: state <= IDLE;
+        endcase
+    end
 end
 
-    
-    
+
+
 endmodule

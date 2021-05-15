@@ -162,7 +162,7 @@ int main(int argc, char **argv) {
                 error_control.input_line_number++;
                 strncpy(input_line,str,STR_LEN);
                 input_line[strlen(input_line)-1]=0;
-                token = strtok(str, " ");
+                token = strtok(str, " ,");
                 word_number=0;
                 for (int i=0; i<MAX_WORDS; i++) {
                         line_words[i][0]=0;
@@ -173,7 +173,7 @@ int main(int argc, char **argv) {
                         if(line_words[word_number][strlen(line_words[word_number])-1]=='\n') {
                                 line_words[word_number][strlen(line_words[word_number])-1]=0;
                         }
-                        token = strtok(NULL, " ");
+                        token = strtok(NULL, " ,");
                         word_number++;
                         if (word_number>MAX_WORDS-1)
                         {
@@ -246,7 +246,7 @@ int main(int argc, char **argv) {
                 error_control.input_line_number++;
                 strncpy(input_line,str,STR_LEN);
                 input_line[strlen(input_line)-1]=0;
-                token = strtok(str, " ");
+                token = strtok(str, " ,");
                 word_number=0;
                 for (int i=0; i<MAX_WORDS; i++) {
                         line_words[i][0]=0;
@@ -258,7 +258,7 @@ int main(int argc, char **argv) {
                         if(line_words[word_number][strlen(line_words[word_number])-1]=='\n') {
                                 line_words[word_number][strlen(line_words[word_number])-1]=0;
                         }
-                        token = strtok(NULL, " ");
+                        token = strtok(NULL, " ,");
                         word_number++;
                 }
                 strncpy(line_words[word_number],"",STR_LEN); // blank next word
