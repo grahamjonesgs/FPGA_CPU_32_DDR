@@ -1,0 +1,52 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue Jan 11 22:15:08 2022
+| Host         : ubuntu running 64-bit Ubuntu 20.04.3 LTS
+| Command      : report_qor_suggestions -max_paths 100 -file route_report_qor_suggestions_0.rpt
+| Design       : FPGA_CPU_32_bits
+| Device       : xc7a100t
+| Design State : Routed
+| ML Models    : NA
+--------------------------------------------------------------------------------------------------------
+
+Report QoR Suggestions
+
+Table of Contents
+-----------------
+1. QoR Suggestions Report Summary
+2. ML Strategies
+3. QoR Suggestions - Utilization
+
+1. QoR Suggestions Report Summary
+---------------------------------
+
++---------------+-------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+|      Name     |      Id     |   Status  | Generated At | Applicable For | Automatic |    Scope    | Incremental Friendly |                                        Description                                       |    Source   |
++---------------+-------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+| RQS_UTIL-12-1 | RQS_UTIL-12 | Generated | route_design | opt_design     | Yes       | GLOBALSCOPE | No                   | Remapping small SRL to Registers in the design.                                          | Current Run |
+| RQS_UTIL-15-1 | RQS_UTIL-15 | Generated | route_design | synth_design   | Yes       | GLOBALSCOPE | No                   | Forward retime across Datapath Operators to reduce FF utilization.                       | Current Run |
++---------------+-------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+* No QoR suggestions are provided when the fully routed design is assessed to easily meet timing.
+
+
+2. ML Strategies
+----------------
+
++---+----+---------+---------+
+| # | Id | Command | Options |
++---+----+---------+---------+
+* The design is not compatible for suggesting strategy, as it was not run using vivado implementation default or vivado implementation explore strategy.
+
+
+3. QoR Suggestions - Utilization
+--------------------------------
+
++---------------+------------------------------------------------------------+-----------+--------+
+|      Name     |                         Description                        | Hierarchy | Module |
++---------------+------------------------------------------------------------+-----------+--------+
+| RQS_UTIL-12-1 | Remapping small SRL to Registers.                          | GLOBAL    | GLOBAL |
+| RQS_UTIL-15-1 | Retime across Datapath operators to reduce FF utilization. | GLOBAL    | GLOBAL |
++---------------+------------------------------------------------------------+-----------+--------+
+
+
