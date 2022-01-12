@@ -2,8 +2,8 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Tue Jan 11 21:44:41 2022
-# Process ID: 71893
+# Start of session at: Wed Jan 12 17:02:18 2022
+# Process ID: 135701
 # Current directory: /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/mig_7series_0_synth_1
 # Command line: vivado -log mig_7series_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mig_7series_0.tcl
 # Log file: /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/mig_7series_0_synth_1/mig_7series_0.vds
@@ -11,7 +11,6 @@
 # Running On: ubuntu, OS: Linux, CPU Frequency: 2304.000 MHz, CPU Physical cores: 6, Host memory: 16777 MB
 #-----------------------------------------------------------
 source mig_7series_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2611.258 ; gain = 22.930 ; free physical = 3412 ; free virtual = 9659
 Command: synth_design -top mig_7series_0 -part xc7a100tcsg324-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
@@ -19,9 +18,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 72124
+INFO: [Synth 8-7075] Helper process launched with PID 135801
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2611.324 ; gain = 0.000 ; free physical = 2314 ; free virtual = 8553
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2597.324 ; gain = 0.000 ; free physical = 3062 ; free virtual = 10315
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0.v:71]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_0_mig' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:74]
@@ -59,27 +58,22 @@ INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_iodelay_ctrl' [/home/
 	Parameter TCQ bound to: 100 - type: integer 
 	Parameter IODELAY_GRP0 bound to: MIG_7SERIES_0_IODELAY_MIG0 - type: string 
 	Parameter REFCLK_TYPE bound to: USE_SYSTEM_CLOCK - type: string 
-	Parameter SYSCLK_TYPE bound to: SINGLE_ENDED - type: string 
+	Parameter SYSCLK_TYPE bound to: NO_BUFFER - type: string 
 	Parameter SYS_RST_PORT bound to: FALSE - type: string 
 	Parameter RST_ACT_LOW bound to: 1 - type: integer 
 	Parameter DIFF_TERM_REFCLK bound to: TRUE - type: string 
-INFO: [Synth 8-6157] synthesizing module 'BUFG' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1083]
-INFO: [Synth 8-6155] done synthesizing module 'BUFG' (3#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1083]
 INFO: [Synth 8-6157] synthesizing module 'IDELAYCTRL' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:57300]
-INFO: [Synth 8-6155] done synthesizing module 'IDELAYCTRL' (4#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:57300]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_iodelay_ctrl' (5#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_iodelay_ctrl.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYCTRL' (3#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:57300]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_iodelay_ctrl' (4#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_iodelay_ctrl.v:80]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_clk_ibuf' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_clk_ibuf.v:68]
-	Parameter SYSCLK_TYPE bound to: SINGLE_ENDED - type: string 
-	Parameter DIFF_TERM_SYSCLK bound to: FALSE - type: string 
-INFO: [Synth 8-6157] synthesizing module 'IBUFG' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:55688]
-	Parameter IBUF_LOW_PWR bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUFG' (6#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:55688]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_clk_ibuf' (7#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_clk_ibuf.v:68]
+	Parameter SYSCLK_TYPE bound to: NO_BUFFER - type: string 
+	Parameter DIFF_TERM_SYSCLK bound to: TRUE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_clk_ibuf' (5#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_clk_ibuf.v:68]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_infrastructure' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:78]
 	Parameter TCQ bound to: 100 - type: integer 
 	Parameter CLKIN_PERIOD bound to: 5000 - type: integer 
 	Parameter nCK_PER_CLK bound to: 4 - type: integer 
-	Parameter SYSCLK_TYPE bound to: SINGLE_ENDED - type: string 
+	Parameter SYSCLK_TYPE bound to: NO_BUFFER - type: string 
 	Parameter CLKFBOUT_MULT bound to: 4 - type: integer 
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
@@ -112,7 +106,9 @@ INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/opt/Xilinx/Vivado/2021.2
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter REF_JITTER1 bound to: 0.000000 - type: double 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (8#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:63510]
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (6#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:63510]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (7#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1083]
 INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89397]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT bound to: 4 - type: integer 
@@ -140,15 +136,15 @@ INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/opt/Xilinx/Vivado/2021.2/
 	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
 	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (9#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89397]
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (8#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89397]
 INFO: [Synth 8-6157] synthesizing module 'BUFH' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1319]
-INFO: [Synth 8-6155] done synthesizing module 'BUFH' (10#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1319]
+INFO: [Synth 8-6155] done synthesizing module 'BUFH' (9#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1319]
 WARNING: [Synth 8-3848] Net ui_addn_clk_0 in module/entity mig_7series_v4_2_infrastructure does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:140]
 WARNING: [Synth 8-3848] Net ui_addn_clk_1 in module/entity mig_7series_v4_2_infrastructure does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:141]
 WARNING: [Synth 8-3848] Net ui_addn_clk_2 in module/entity mig_7series_v4_2_infrastructure does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:142]
 WARNING: [Synth 8-3848] Net ui_addn_clk_3 in module/entity mig_7series_v4_2_infrastructure does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:143]
 WARNING: [Synth 8-3848] Net ui_addn_clk_4 in module/entity mig_7series_v4_2_infrastructure does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:144]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_infrastructure' (11#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:78]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_infrastructure' (10#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:78]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_memc_ui_top_std' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_memc_ui_top_std.v:72]
 	Parameter TCQ bound to: 100 - type: integer 
 	Parameter PAYLOAD_WIDTH bound to: 16 - type: integer 
@@ -287,90 +283,90 @@ INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_mc' [/home/graham/Doc
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_rank_mach' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_mach.v:71]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_rank_cntrl' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_cntrl.v:79]
 INFO: [Synth 8-6157] synthesizing module 'SRLC32E' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:106149]
-INFO: [Synth 8-6155] done synthesizing module 'SRLC32E' (12#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:106149]
+INFO: [Synth 8-6155] done synthesizing module 'SRLC32E' (11#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:106149]
 WARNING: [Synth 8-567] referenced signal 'periodic_rd_generation.periodic_rd_timer_one' should be on the sensitivity list [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_cntrl.v:509]
 WARNING: [Synth 8-6014] Unused sequential element periodic_rd_generation.read_this_rank_r1_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_cntrl.v:487]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_rank_cntrl' (13#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_cntrl.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_rank_cntrl' (12#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_cntrl.v:79]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_rank_common' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_common.v:72]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_round_robin_arb' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
 WARNING: [Synth 8-3936] Found unconnected internal register 'dbl_req_reg' and it is trimmed from '6' to '5' bits. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:145]
 WARNING: [Synth 8-3936] Found unconnected internal register 'dbl_last_master_ns_reg' and it is trimmed from '6' to '4' bits. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:143]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_round_robin_arb' (14#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_round_robin_arb' (13#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
 WARNING: [Synth 8-6014] Unused sequential element last_master_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:181]
 WARNING: [Synth 8-3848] Net channel[0].inh_group in module/entity mig_7series_v4_2_round_robin_arb__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:153]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized0' (14#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_rank_common' (15#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_common.v:72]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_rank_mach' (16#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_mach.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized0' (13#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_rank_common' (14#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_common.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_rank_mach' (15#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_mach.v:71]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_mach' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_mach.v:72]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_cntrl' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_compare' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_compare.v:74]
 WARNING: [Synth 8-3936] Found unconnected internal register 'col_addr_template_reg' and it is trimmed from '16' to '13' bits. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_compare.v:251]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_compare' (17#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_compare.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_compare' (16#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_compare.v:74]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_state' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state' (18#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state' (17#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_queue' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue' (18#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_state__parameterized0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state__parameterized0' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state__parameterized0' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_queue__parameterized0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue__parameterized0' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized0' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue__parameterized0' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized0' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized1' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_state__parameterized1' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state__parameterized1' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state__parameterized1' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_queue__parameterized1' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue__parameterized1' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized1' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue__parameterized1' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized1' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized2' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_state__parameterized2' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state__parameterized2' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state__parameterized2' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_queue__parameterized2' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue__parameterized2' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized2' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue__parameterized2' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized2' (19#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_common' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_common.v:73]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_common' (21#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_common.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_common' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_common.v:73]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_arb_mux' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_mux.v:69]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_arb_row_col' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v:83]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized1' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
 WARNING: [Synth 8-3936] Found unconnected internal register 'dbl_req_reg' and it is trimmed from '8' to '7' bits. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:145]
 WARNING: [Synth 8-3936] Found unconnected internal register 'dbl_last_master_ns_reg' and it is trimmed from '8' to '6' bits. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:143]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized1' (21#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized1' (20#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
 WARNING: [Synth 8-6014] Unused sequential element sent_row_or_maint_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v:357]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_arb_row_col' (22#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v:83]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_arb_row_col' (21#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v:83]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_arb_select' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_select.v:75]
 WARNING: [Synth 8-6014] Unused sequential element mc_aux_out_r_1_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_select.v:680]
 WARNING: [Synth 8-6014] Unused sequential element mc_aux_out_r_2_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_select.v:681]
 WARNING: [Synth 8-3848] Net col_mux.col_row_r in module/entity mig_7series_v4_2_arb_select does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_select.v:390]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_arb_select' (23#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_select.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_arb_mux' (24#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_mux.v:69]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_mach' (25#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_mach.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_arb_select' (22#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_select.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_arb_mux' (23#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_mux.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_mach' (24#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_mach.v:72]
 WARNING: [Synth 8-7071] port 'idle' of module 'mig_7series_v4_2_bank_mach' is unconnected for instance 'bank_mach0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_mc.v:670]
 WARNING: [Synth 8-7023] instance 'bank_mach0' of module 'mig_7series_v4_2_bank_mach' has 74 connections declared, but only 73 given [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_mc.v:670]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_col_mach' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_col_mach.v:88]
 INFO: [Synth 8-6157] synthesizing module 'RAM32M' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:98066]
-INFO: [Synth 8-6155] done synthesizing module 'RAM32M' (26#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:98066]
+INFO: [Synth 8-6155] done synthesizing module 'RAM32M' (25#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:98066]
 WARNING: [Synth 8-3936] Found unconnected internal register 'read_fifo.fifo_out_data_r_reg' and it is trimmed from '12' to '8' bits. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_col_mach.v:396]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_col_mach' (27#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_col_mach.v:88]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_mc' (28#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_mc.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_col_mach' (26#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_col_mach.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_mc' (27#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_mc.v:73]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_top' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_mc_phy_wrapper' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:71]
 INFO: [Synth 8-6157] synthesizing module 'OBUF' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:71221]
-INFO: [Synth 8-6155] done synthesizing module 'OBUF' (29#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:71221]
+INFO: [Synth 8-6155] done synthesizing module 'OBUF' (28#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:71221]
 INFO: [Synth 8-6157] synthesizing module 'OBUFT' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:71572]
-INFO: [Synth 8-6155] done synthesizing module 'OBUFT' (30#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:71572]
+INFO: [Synth 8-6155] done synthesizing module 'OBUFT' (29#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:71572]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF_INTERMDISABLE' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:60377]
-INFO: [Synth 8-6155] done synthesizing module 'IOBUF_INTERMDISABLE' (31#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:60377]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF_INTERMDISABLE' (30#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:60377]
 INFO: [Synth 8-6157] synthesizing module 'IOBUFDS_INTERMDISABLE' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:59953]
-INFO: [Synth 8-6155] done synthesizing module 'IOBUFDS_INTERMDISABLE' (32#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:59953]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUFDS_INTERMDISABLE' (31#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:59953]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo' (33#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo' (32#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
 WARNING: [Synth 8-7071] port 'afull' of module 'mig_7series_v4_2_ddr_of_pre_fifo' is unconnected for instance 'phy_ctl_pre_fifo_0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1428]
 WARNING: [Synth 8-7023] instance 'phy_ctl_pre_fifo_0' of module 'mig_7series_v4_2_ddr_of_pre_fifo' has 8 connections declared, but only 7 given [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1428]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized0' (33#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized0' (32#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
 WARNING: [Synth 8-7071] port 'afull' of module 'mig_7series_v4_2_ddr_of_pre_fifo' is unconnected for instance 'phy_ctl_pre_fifo_1' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1445]
 WARNING: [Synth 8-7023] instance 'phy_ctl_pre_fifo_1' of module 'mig_7series_v4_2_ddr_of_pre_fifo' has 8 connections declared, but only 7 given [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1445]
 WARNING: [Synth 8-7071] port 'afull' of module 'mig_7series_v4_2_ddr_of_pre_fifo' is unconnected for instance 'phy_ctl_pre_fifo_2' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1462]
@@ -381,46 +377,46 @@ INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_4lanes' [/hom
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_lane' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_if_post_fifo' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_if_post_fifo.v:68]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_if_post_fifo.v:110]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_if_post_fifo' (34#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_if_post_fifo.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_if_post_fifo' (33#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_if_post_fifo.v:68]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized1' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized1' (34#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized1' (33#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
 INFO: [Synth 8-6157] synthesizing module 'PHASER_IN_PHY' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89083]
-INFO: [Synth 8-6155] done synthesizing module 'PHASER_IN_PHY' (35#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89083]
+INFO: [Synth 8-6155] done synthesizing module 'PHASER_IN_PHY' (34#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89083]
 INFO: [Synth 8-6157] synthesizing module 'IN_FIFO' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:59667]
-INFO: [Synth 8-6155] done synthesizing module 'IN_FIFO' (36#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:59667]
+INFO: [Synth 8-6155] done synthesizing module 'IN_FIFO' (35#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:59667]
 INFO: [Synth 8-6157] synthesizing module 'PHASER_OUT_PHY' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89220]
-INFO: [Synth 8-6155] done synthesizing module 'PHASER_OUT_PHY' (37#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89220]
+INFO: [Synth 8-6155] done synthesizing module 'PHASER_OUT_PHY' (36#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89220]
 INFO: [Synth 8-6157] synthesizing module 'OUT_FIFO' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75471]
-INFO: [Synth 8-6155] done synthesizing module 'OUT_FIFO' (38#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75471]
+INFO: [Synth 8-6155] done synthesizing module 'OUT_FIFO' (37#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75471]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_group_io' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
 INFO: [Synth 8-6157] synthesizing module 'IDELAYE2' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:57313]
-INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2' (39#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:57313]
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2' (38#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:57313]
 INFO: [Synth 8-6157] synthesizing module 'ISERDESE2' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:62115]
-INFO: [Synth 8-6155] done synthesizing module 'ISERDESE2' (40#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:62115]
+INFO: [Synth 8-6155] done synthesizing module 'ISERDESE2' (39#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:62115]
 INFO: [Synth 8-6157] synthesizing module 'OSERDESE2' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75356]
-INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2' (41#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75356]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2' (40#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75356]
 INFO: [Synth 8-6157] synthesizing module 'OSERDESE2__parameterized0' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75356]
-INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized0' (41#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75356]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized0' (40#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75356]
 INFO: [Synth 8-6157] synthesizing module 'ODDR' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:74749]
-INFO: [Synth 8-6155] done synthesizing module 'ODDR' (42#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:74749]
+INFO: [Synth 8-6155] done synthesizing module 'ODDR' (41#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:74749]
 WARNING: [Synth 8-6014] Unused sequential element fine_delay_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:185]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io' (43#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io' (42#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
 WARNING: [Synth 8-3848] Net dummy_i5 in module/entity mig_7series_v4_2_ddr_byte_lane does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:269]
 WARNING: [Synth 8-3848] Net dummy_i6 in module/entity mig_7series_v4_2_ddr_byte_lane does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:270]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane' (44#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane' (43#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
 INFO: [Synth 8-6157] synthesizing module 'PHASER_OUT_PHY__parameterized0' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89220]
-INFO: [Synth 8-6155] done synthesizing module 'PHASER_OUT_PHY__parameterized0' (44#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89220]
+INFO: [Synth 8-6155] done synthesizing module 'PHASER_OUT_PHY__parameterized0' (43#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89220]
 INFO: [Synth 8-6157] synthesizing module 'OUT_FIFO__parameterized0' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75471]
-INFO: [Synth 8-6155] done synthesizing module 'OUT_FIFO__parameterized0' (44#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75471]
+INFO: [Synth 8-6155] done synthesizing module 'OUT_FIFO__parameterized0' (43#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75471]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized0' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
 INFO: [Synth 8-6157] synthesizing module 'OSERDESE2__parameterized1' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75356]
-INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized1' (44#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75356]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized1' (43#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:75356]
 WARNING: [Synth 8-3848] Net oserdes_dqts_buf in module/entity mig_7series_v4_2_ddr_byte_group_io__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:143]
 WARNING: [Synth 8-3848] Net oserdes_dqs_buf in module/entity mig_7series_v4_2_ddr_byte_group_io__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:144]
 WARNING: [Synth 8-3848] Net oserdes_dqsts_buf in module/entity mig_7series_v4_2_ddr_byte_group_io__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:145]
 WARNING: [Synth 8-3848] Net iserdes_dout in module/entity mig_7series_v4_2_ddr_byte_group_io__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:92]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized0' (44#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized0' (43#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
 WARNING: [Synth 8-6014] Unused sequential element ififo_rst_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:307]
 WARNING: [Synth 8-3848] Net rclk in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:147]
 WARNING: [Synth 8-3848] Net pi_iserdes_rst in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:193]
@@ -429,23 +425,23 @@ WARNING: [Synth 8-3848] Net pi_counter_read_val_w in module/entity mig_7series_v
 WARNING: [Synth 8-3848] Net dqs_out_of_range in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:198]
 WARNING: [Synth 8-3848] Net iserdes_clk in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:275]
 WARNING: [Synth 8-3848] Net iserdes_clkdiv in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized0 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:276]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized0' (44#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized0' (43#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized1' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized1' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
 WARNING: [Synth 8-6014] Unused sequential element fine_delay_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:185]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized1' (44#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized1' (43#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
 WARNING: [Synth 8-3848] Net dummy_i5 in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized1 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:269]
 WARNING: [Synth 8-3848] Net dummy_i6 in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized1 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:270]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized1' (44#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized1' (43#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized2' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
 INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:71235]
-INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (45#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:71235]
+INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (44#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:71235]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized2' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
 WARNING: [Synth 8-3848] Net oserdes_dqts_buf in module/entity mig_7series_v4_2_ddr_byte_group_io__parameterized2 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:143]
 WARNING: [Synth 8-3848] Net oserdes_dqs_buf in module/entity mig_7series_v4_2_ddr_byte_group_io__parameterized2 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:144]
 WARNING: [Synth 8-3848] Net oserdes_dqsts_buf in module/entity mig_7series_v4_2_ddr_byte_group_io__parameterized2 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:145]
 WARNING: [Synth 8-3848] Net iserdes_dout in module/entity mig_7series_v4_2_ddr_byte_group_io__parameterized2 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:92]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized2' (45#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized2' (44#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
 WARNING: [Synth 8-6014] Unused sequential element ififo_rst_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:307]
 WARNING: [Synth 8-3848] Net rclk in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized2 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:147]
 WARNING: [Synth 8-3848] Net pi_iserdes_rst in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized2 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:193]
@@ -454,35 +450,35 @@ WARNING: [Synth 8-3848] Net pi_counter_read_val_w in module/entity mig_7series_v
 WARNING: [Synth 8-3848] Net dqs_out_of_range in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized2 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:198]
 WARNING: [Synth 8-3848] Net iserdes_clk in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized2 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:275]
 WARNING: [Synth 8-3848] Net iserdes_clkdiv in module/entity mig_7series_v4_2_ddr_byte_lane__parameterized2 does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:276]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized2' (45#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized2' (44#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
 INFO: [Synth 8-6157] synthesizing module 'BUFIO' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1344]
-INFO: [Synth 8-6155] done synthesizing module 'BUFIO' (46#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1344]
+INFO: [Synth 8-6155] done synthesizing module 'BUFIO' (45#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1344]
 INFO: [Synth 8-6157] synthesizing module 'PHY_CONTROL' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89311]
-INFO: [Synth 8-6155] done synthesizing module 'PHY_CONTROL' (47#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89311]
+INFO: [Synth 8-6155] done synthesizing module 'PHY_CONTROL' (46#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89311]
 INFO: [Synth 8-226] default block is never used [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v:1557]
 INFO: [Synth 8-6157] synthesizing module 'PHASER_REF' [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89295]
-INFO: [Synth 8-6155] done synthesizing module 'PHASER_REF' (48#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89295]
+INFO: [Synth 8-6155] done synthesizing module 'PHASER_REF' (47#1) [/opt/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:89295]
 WARNING: [Synth 8-6014] Unused sequential element B_rst_primitives_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v:737]
 WARNING: [Synth 8-6014] Unused sequential element C_rst_primitives_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v:738]
 WARNING: [Synth 8-6014] Unused sequential element D_rst_primitives_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v:739]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_4lanes' (49#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v:72]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_mc_phy' (50#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_4lanes' (48#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_mc_phy' (49#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy.v:70]
 WARNING: [Synth 8-689] width (12) of port connection 'pi_dqs_found_lanes' does not match port width (4) of module 'mig_7series_v4_2_ddr_mc_phy' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1671]
 WARNING: [Synth 8-689] width (12) of port connection 'pi_phase_locked_lanes' does not match port width (4) of module 'mig_7series_v4_2_ddr_mc_phy' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1679]
 WARNING: [Synth 8-7071] port 'of_data_a_full' of module 'mig_7series_v4_2_ddr_mc_phy' is unconnected for instance 'u_ddr_mc_phy' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1579]
 WARNING: [Synth 8-7023] instance 'u_ddr_mc_phy' of module 'mig_7series_v4_2_ddr_mc_phy' has 89 connections declared, but only 88 given [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1579]
 WARNING: [Synth 8-3936] Found unconnected internal register 'byte_sel_data_map_reg' and it is trimmed from '96' to '88' bits. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:731]
 WARNING: [Synth 8-3848] Net phy_data_full in module/entity mig_7series_v4_2_ddr_mc_phy_wrapper does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:227]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_mc_phy_wrapper' (51#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_mc_phy_wrapper' (50#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:71]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_calib_top' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:82]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_wrlvl_off_delay' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrlvl_off_delay.v:68]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_wrlvl_off_delay' (52#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrlvl_off_delay.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_wrlvl_off_delay' (51#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrlvl_off_delay.v:68]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_dqs_found_cal_hr' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v:79]
 WARNING: [Synth 8-6014] Unused sequential element rank_final_loop[0].final_do_max_reg[0] was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v:1116]
 WARNING: [Synth 8-6014] Unused sequential element rank_final_loop[0].final_do_index_reg[0] was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v:1146]
 WARNING: [Synth 8-6014] Unused sequential element dqsfound_retry_r1_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v:690]
 WARNING: [Synth 8-3848] Net dqsfound_retry_done in module/entity mig_7series_v4_2_ddr_phy_dqs_found_cal_hr does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v:131]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_dqs_found_cal_hr' (53#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_dqs_found_cal_hr' (52#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v:79]
 WARNING: [Synth 8-689] width (2) of port connection 'fine_adjust_lane_cnt' does not match port width (1) of module 'mig_7series_v4_2_ddr_phy_dqs_found_cal_hr' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:1963]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_rdlvl' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v:81]
 WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
@@ -510,14 +506,14 @@ WARNING: [Synth 8-6014] Unused sequential element regl_rank_done_r_reg was remov
 WARNING: [Synth 8-6014] Unused sequential element cal1_state_r2_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v:2696]
 WARNING: [Synth 8-6014] Unused sequential element cal1_state_r3_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v:2697]
 WARNING: [Synth 8-6014] Unused sequential element cal1_cnt_cpt_timing_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v:610]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_rdlvl' (54#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v:81]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_rdlvl' (53#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v:81]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_prbs_gen' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:92]
 WARNING: [Synth 8-7186] Applying attribute ram_style = "distributed" is ignored, object 'rd_addr' is not inferred as ram due to incorrect usage [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:203]
 WARNING: [Synth 8-7186] Applying attribute ram_style = "distributed" is ignored, object 'mem_out' is not inferred as ram due to incorrect usage [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:205]
 WARNING: [Synth 8-6014] Unused sequential element sample_cnt_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:156]
 WARNING: [Synth 8-6014] Unused sequential element reseed_prbs_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:157]
 WARNING: [Synth 8-6014] Unused sequential element lfsr_q_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_prbs_gen' (55#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_prbs_gen' (54#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:92]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_init' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:89]
 INFO: [Synth 8-226] default block is never used [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:5303]
 WARNING: [Synth 8-6014] Unused sequential element gen_single_slot_odt.phy_tmp_cs1_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:4271]
@@ -551,7 +547,7 @@ WARNING: [Synth 8-6014] Unused sequential element gen_single_slot_odt.tmp_mr1_r_
 WARNING: [Synth 8-6014] Unused sequential element prech_done_r1_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:1303]
 WARNING: [Synth 8-6014] Unused sequential element calib_cmd_wren_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:4229]
 WARNING: [Synth 8-3848] Net calib_aux_out in module/entity mig_7series_v4_2_ddr_phy_init does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:276]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_init' (56#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_init' (55#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:89]
 WARNING: [Synth 8-7071] port 'complex_oclk_prech_req' of module 'mig_7series_v4_2_ddr_phy_init' is unconnected for instance 'u_ddr_phy_init' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:1367]
 WARNING: [Synth 8-7023] instance 'u_ddr_phy_init' of module 'mig_7series_v4_2_ddr_phy_init' has 131 connections declared, but only 130 given [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:1367]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_wrcal' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v:77]
@@ -562,12 +558,12 @@ WARNING: [Synth 8-6014] Unused sequential element pat1_detect_reg was removed.  
 WARNING: [Synth 8-6014] Unused sequential element early1_detect_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v:1125]
 WARNING: [Synth 8-6014] Unused sequential element rd_mux_sel_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v:438]
 WARNING: [Synth 8-3848] Net i in module/entity mig_7series_v4_2_ddr_phy_wrcal does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v:155]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_wrcal' (57#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_wrcal' (56#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v:77]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_tempmon' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_tempmon.v:69]
 WARNING: [Synth 8-6014] Unused sequential element calib_complete_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_tempmon.v:182]
 WARNING: [Synth 8-6014] Unused sequential element sample_en_cnt_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_tempmon.v:188]
 WARNING: [Synth 8-6014] Unused sequential element device_temp_capture_102_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_tempmon.v:290]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_tempmon' (58#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_tempmon.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_tempmon' (57#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_tempmon.v:69]
 WARNING: [Synth 8-6014] Unused sequential element gen_byte_sel_div2.ctl_lane_sel_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:963]
 WARNING: [Synth 8-6014] Unused sequential element tempmon_sel_pi_incdec_r_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:883]
 WARNING: [Synth 8-6014] Unused sequential element ck_addr_cmd_delay_done_r1_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:898]
@@ -593,29 +589,29 @@ WARNING: [Synth 8-3848] Net rd_victim_sel in module/entity mig_7series_v4_2_ddr_
 WARNING: [Synth 8-3848] Net oclkdelay_center_calib_start in module/entity mig_7series_v4_2_ddr_calib_top does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:597]
 WARNING: [Synth 8-3848] Net oclk_center_write_resume in module/entity mig_7series_v4_2_ddr_calib_top does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:615]
 WARNING: [Synth 8-3848] Net oclkdelay_center_calib_done in module/entity mig_7series_v4_2_ddr_calib_top does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:616]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_calib_top' (59#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_calib_top' (58#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:82]
 WARNING: [Synth 8-689] width (12) of port connection 'pi_dqs_found_lanes' does not match port width (4) of module 'mig_7series_v4_2_ddr_calib_top' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.v:1340]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_top' (60#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.v:70]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_mem_intfc' (61#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_mem_intfc.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_top' (59#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_mem_intfc' (60#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_mem_intfc.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ui_top' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_top.v:71]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ui_cmd' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_cmd.v:70]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_cmd' (62#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_cmd.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_cmd' (61#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_cmd.v:70]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ui_wr_data' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:131]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:342]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:380]
 WARNING: [Synth 8-6014] Unused sequential element app_wdf_rdy_r_copy4_reg was removed.  [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:268]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_wr_data' (63#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:131]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_wr_data' (62#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:131]
 INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ui_rd_data' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:140]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_rd_data' (64#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:140]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_top' (65#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_top.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_rd_data' (63#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:140]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_top' (64#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_top.v:71]
 WARNING: [Synth 8-3848] Net error in module/entity mig_7series_v4_2_memc_ui_top_std does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_memc_ui_top_std.v:417]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_memc_ui_top_std' (66#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_memc_ui_top_std.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_memc_ui_top_std' (65#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_memc_ui_top_std.v:72]
 WARNING: [Synth 8-689] width (1) of port connection 'dbg_poc' does not match port width (1024) of module 'mig_7series_v4_2_memc_ui_top_std' [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:1080]
 WARNING: [Synth 8-3848] Net clk_ref_p in module/entity mig_7series_0_mig does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:589]
 WARNING: [Synth 8-3848] Net clk_ref_n in module/entity mig_7series_0_mig does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:590]
 WARNING: [Synth 8-3848] Net device_temp_i in module/entity mig_7series_0_mig does not have driver. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:593]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0_mig' (67#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:74]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (68#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0_mig' (66#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (67#1) [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/mig_7series_0.v:71]
 WARNING: [Synth 8-7129] Port rd_data_addr[4] in module mig_7series_v4_2_ui_rd_data is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rd_data_addr[3] in module mig_7series_v4_2_ui_rd_data is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rd_data_addr[2] in module mig_7series_v4_2_ui_rd_data is either unconnected or has no load
@@ -718,20 +714,19 @@ WARNING: [Synth 8-7129] Port dbg_phy_init[220] in module mig_7series_v4_2_ddr_ph
 WARNING: [Synth 8-7129] Port dbg_phy_init[219] in module mig_7series_v4_2_ddr_phy_init is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2611.324 ; gain = 0.000 ; free physical = 2621 ; free virtual = 8860
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2597.324 ; gain = 0.000 ; free physical = 3572 ; free virtual = 10829
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2611.324 ; gain = 0.000 ; free physical = 2665 ; free virtual = 8906
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2600.227 ; gain = 2.902 ; free physical = 3607 ; free virtual = 10864
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2611.324 ; gain = 0.000 ; free physical = 2665 ; free virtual = 8906
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2600.227 ; gain = 2.902 ; free physical = 3607 ; free virtual = 10864
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2611.324 ; gain = 0.000 ; free physical = 2647 ; free virtual = 8887
-INFO: [Netlist 29-17] Analyzing 88 Unisim elements for replacement
-WARNING: [Netlist 29-432] The IBUFG primitive 'u_mig_7series_0_mig/u_ddr2_clk_ibuf/se_input_clk.u_ibufg_sys_clk' has been retargeted to an IBUF primitive only. No BUFG will be added. If a global buffer is intended, please instantiate an available global clock primitive from the current architecture.
+Netlist sorting complete. Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2603.195 ; gain = 0.000 ; free physical = 3589 ; free virtual = 10847
+INFO: [Netlist 29-17] Analyzing 87 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -740,32 +735,31 @@ Initializing timing engine
 Parsing XDC File [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc]
 Finished Parsing XDC File [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc]
 Parsing XDC File [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc]
-WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc:338]
-WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc:345]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc:334]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc:341]
 Finished Parsing XDC File [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mig_7series_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/mig_7series_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2744.094 ; gain = 0.000 ; free physical = 2523 ; free virtual = 8763
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2745.000 ; gain = 0.000 ; free physical = 3464 ; free virtual = 10721
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 47 instances were transformed.
-  IBUFG => IBUF: 1 instance 
+  A total of 46 instances were transformed.
   IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT(x2), INV, OBUFTDS(x2)): 2 instances
   IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 28 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2744.094 ; gain = 0.000 ; free physical = 2523 ; free virtual = 8763
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2745.000 ; gain = 0.000 ; free physical = 3463 ; free virtual = 10720
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2744.094 ; gain = 132.770 ; free physical = 2646 ; free virtual = 8887
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2745.000 ; gain = 147.676 ; free physical = 3587 ; free virtual = 10845
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2744.094 ; gain = 132.770 ; free physical = 2646 ; free virtual = 8887
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2745.000 ; gain = 147.676 ; free physical = 3587 ; free virtual = 10845
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -773,7 +767,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property IO_BUFFER_TYPE = NONE for ddr2_ck_n[0]. (constraint file  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc, line 27).
 Applied set_property IO_BUFFER_TYPE = NONE for ddr2_ck_p[0]. (constraint file  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc, line 28).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2744.094 ; gain = 132.770 ; free physical = 2646 ; free virtual = 8887
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2745.000 ; gain = 147.676 ; free physical = 3587 ; free virtual = 10845
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'xadc_supplied_temperature.tempmon_state_reg' in module 'mig_7series_v4_2_tempmon'
 INFO: [Synth 8-802] inferred FSM for state register 'fine_adj_state_r_reg' in module 'mig_7series_v4_2_ddr_phy_dqs_found_cal_hr'
@@ -856,7 +850,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'cal1_state_r_reg' using en
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'tempmon_state_reg' in module 'mig_7series_v4_2_ddr_phy_tempmon'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 2744.094 ; gain = 132.770 ; free physical = 2673 ; free virtual = 8903
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2745.000 ; gain = 147.676 ; free physical = 3562 ; free virtual = 10825
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1004,7 +998,7 @@ WARNING: [Synth 8-3936] Found unconnected internal register 'oclkdelay_start_dly
 WARNING: [Synth 8-3936] Found unconnected internal register 'wrcal_start_dly_r_reg' and it is trimmed from '15' to '14' bits. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:1230]
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_cal1_state_r_reg[33]) is unused and will be removed from module mig_7series_v4_2_ddr_phy_rdlvl.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2602 ; free virtual = 8854
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:01:39 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3496 ; free virtual = 10781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1038,15 +1032,15 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3321] set_false_path : Empty through list for constraint at line 351 of /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc:351]
+WARNING: [Synth 8-3321] set_false_path : Empty through list for constraint at line 347 of /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc. [/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc:347]
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:58 ; elapsed = 00:02:04 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2501 ; free virtual = 8753
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:39 ; elapsed = 00:01:44 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3393 ; free virtual = 10679
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:59 ; elapsed = 00:02:05 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2497 ; free virtual = 8749
+Finished Timing Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:01:45 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3389 ; free virtual = 10674
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1071,7 +1065,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:05 ; elapsed = 00:02:12 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2502 ; free virtual = 8753
+Finished Technology Mapping : Time (s): cpu = 00:01:44 ; elapsed = 00:01:49 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3399 ; free virtual = 10684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1089,37 +1083,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:12 ; elapsed = 00:02:18 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2518 ; free virtual = 8770
+Finished IO Insertion : Time (s): cpu = 00:01:48 ; elapsed = 00:01:54 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3396 ; free virtual = 10682
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:12 ; elapsed = 00:02:18 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2518 ; free virtual = 8770
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:48 ; elapsed = 00:01:54 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3396 ; free virtual = 10682
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:14 ; elapsed = 00:02:20 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2518 ; free virtual = 8769
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:50 ; elapsed = 00:01:55 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3395 ; free virtual = 10681
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:14 ; elapsed = 00:02:20 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2519 ; free virtual = 8770
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:50 ; elapsed = 00:01:55 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3395 ; free virtual = 10681
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:14 ; elapsed = 00:02:21 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2519 ; free virtual = 8770
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:50 ; elapsed = 00:01:55 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3395 ; free virtual = 10681
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:14 ; elapsed = 00:02:21 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2519 ; free virtual = 8770
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:50 ; elapsed = 00:01:55 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3395 ; free virtual = 10681
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1160,7 +1154,7 @@ Report Cell Usage:
 +------+----------------------+------+
 |      |Cell                  |Count |
 +------+----------------------+------+
-|1     |BUFG                  |     4|
+|1     |BUFG                  |     3|
 |2     |BUFH                  |     1|
 |3     |BUFIO                 |     1|
 |4     |CARRY4                |   101|
@@ -1193,44 +1187,41 @@ Report Cell Usage:
 |35    |FDPE                  |    70|
 |36    |FDRE                  |  3134|
 |37    |FDSE                  |    75|
-|38    |IBUFG                 |     1|
-|39    |IOBUFDS_INTERMDISABLE |     2|
-|40    |IOBUF_INTERMDISABLE   |    16|
-|41    |OBUF                  |    22|
-|42    |OBUFDS                |     1|
-|43    |OBUFT                 |     2|
+|38    |IOBUFDS_INTERMDISABLE |     2|
+|39    |IOBUF_INTERMDISABLE   |    16|
+|40    |OBUF                  |    22|
+|41    |OBUFDS                |     1|
+|42    |OBUFT                 |     2|
 +------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:14 ; elapsed = 00:02:21 . Memory (MB): peak = 2790.406 ; gain = 179.082 ; free physical = 2519 ; free virtual = 8770
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:50 ; elapsed = 00:01:55 . Memory (MB): peak = 2791.312 ; gain = 193.988 ; free physical = 3395 ; free virtual = 10681
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:09 ; elapsed = 00:02:16 . Memory (MB): peak = 2790.406 ; gain = 46.312 ; free physical = 2566 ; free virtual = 8818
-Synthesis Optimization Complete : Time (s): cpu = 00:02:15 ; elapsed = 00:02:21 . Memory (MB): peak = 2790.414 ; gain = 179.082 ; free physical = 2566 ; free virtual = 8818
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:45 ; elapsed = 00:01:51 . Memory (MB): peak = 2791.312 ; gain = 49.215 ; free physical = 3445 ; free virtual = 10731
+Synthesis Optimization Complete : Time (s): cpu = 00:01:50 ; elapsed = 00:01:55 . Memory (MB): peak = 2791.320 ; gain = 193.988 ; free physical = 3445 ; free virtual = 10731
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2790.414 ; gain = 0.000 ; free physical = 2656 ; free virtual = 8907
-INFO: [Netlist 29-17] Analyzing 264 Unisim elements for replacement
-WARNING: [Netlist 29-432] The IBUFG primitive 'u_mig_7series_0_mig/u_ddr2_clk_ibuf/se_input_clk.u_ibufg_sys_clk' has been retargeted to an IBUF primitive only. No BUFG will be added. If a global buffer is intended, please instantiate an available global clock primitive from the current architecture.
+Netlist sorting complete. Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2791.320 ; gain = 0.000 ; free physical = 3534 ; free virtual = 10820
+INFO: [Netlist 29-17] Analyzing 263 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 16 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2806.414 ; gain = 0.000 ; free physical = 2599 ; free virtual = 8850
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2807.320 ; gain = 0.000 ; free physical = 3476 ; free virtual = 10762
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 119 instances were transformed.
-  IBUFG => IBUF: 1 instance 
+  A total of 118 instances were transformed.
   IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT(x2), INV, OBUFTDS(x2)): 2 instances
   IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 93 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 6 instances
 
-Synth Design complete, checksum: 750c0fe0
+Synth Design complete, checksum: 59cb7ad6
 INFO: [Common 17-83] Releasing license: Synthesis
-216 Infos, 285 Warnings, 0 Critical Warnings and 0 Errors encountered.
+214 Infos, 283 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:28 ; elapsed = 00:02:28 . Memory (MB): peak = 2806.414 ; gain = 195.156 ; free physical = 2809 ; free virtual = 9060
+synth_design: Time (s): cpu = 00:02:01 ; elapsed = 00:02:00 . Memory (MB): peak = 2807.320 ; gain = 210.062 ; free physical = 3683 ; free virtual = 10969
 INFO: [Common 17-1381] The checkpoint '/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/mig_7series_0_synth_1/mig_7series_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mig_7series_0, cache-ID = 54c7a5d430398a34
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mig_7series_0, cache-ID = d733061596453e11
 INFO: [Coretcl 2-1174] Renamed 69 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/mig_7series_0_synth_1/mig_7series_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mig_7series_0_utilization_synth.rpt -pb mig_7series_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 11 21:47:34 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 12 17:04:38 2022...

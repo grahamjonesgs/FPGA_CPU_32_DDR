@@ -72,7 +72,6 @@ module clk_wiz_0_clk_wiz
   output        clk_200,
   // Status and control signals
   input         resetn,
-  output        locked,
   input         i_Clk
  );
   // Input buffering
@@ -179,7 +178,6 @@ wire clk_in2_clk_wiz_0;
     .RST                 (reset_high));
   assign reset_high = ~resetn; 
 
-  assign locked = locked_int;
 // Clock Monitor clock assigning
 //--------------------------------------
  // Output buffering

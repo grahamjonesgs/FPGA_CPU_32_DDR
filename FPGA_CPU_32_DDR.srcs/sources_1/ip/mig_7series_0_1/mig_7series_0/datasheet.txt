@@ -12,7 +12,7 @@ MIG Output Options:
    Selected Compatible Device(s)   : xc7a100ti-csg324
 
 FPGA Options:
-   System Clock Type               : Single-Ended
+   System Clock Type               : No Buffer
    Reference Clock Type            : Use System Clock
    Debug Port                      : OFF
    Internal Vref                   : enabled
@@ -64,10 +64,6 @@ Bank Selections:
 		Byte Group T1:	DQ[8-15]
 		Byte Group T2:	Address/Ctrl-0
 		Byte Group T3:	DQ[0-7]
-
-System_Clock: 
-	SignalName: sys_clk_i
-		PadLocation: R3(SRCC_P)  Bank: 34
 
 System_Control: 
 	SignalName: sys_rst

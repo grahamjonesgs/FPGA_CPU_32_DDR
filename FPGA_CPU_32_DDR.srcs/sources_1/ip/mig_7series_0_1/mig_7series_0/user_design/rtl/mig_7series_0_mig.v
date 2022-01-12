@@ -392,7 +392,7 @@ module mig_7series_0_mig #
                                      // It is associated to a set of IODELAYs with
                                      // an IDELAYCTRL that have same IODELAY CONTROLLER
                                      // clock frequency (200MHz).
-   parameter SYSCLK_TYPE           = "SINGLE_ENDED",
+   parameter SYSCLK_TYPE           = "NO_BUFFER",
                                      // System clock type DIFFERENTIAL, SINGLE_ENDED,
                                      // NO_BUFFER
    parameter REFCLK_TYPE           = "USE_SYSTEM_CLOCK",
@@ -427,7 +427,7 @@ module mig_7series_0_mig #
                                      // # = Clock Period in pS.
    parameter nCK_PER_CLK           = 4,
                                      // # of memory CKs per fabric CLK
-   parameter DIFF_TERM_SYSCLK      = "FALSE",
+   parameter DIFF_TERM_SYSCLK      = "TRUE",
                                      // Differential Termination for System
                                      // clock input pins
       

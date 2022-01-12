@@ -112,7 +112,7 @@ reg  [15:0]  r_calc_checksum;
 reg  [15:0]  r_rec_checksum;
 
 // Register control
-(* ram_style = "block" *) reg  [31:0]  r_register[15:0];
+reg  [31:0]  r_register[15:0];
 reg          r_zero_flag;
 reg          r_equal_flag;
 reg          r_carry_flag;
@@ -207,7 +207,7 @@ uart_rx uart_rx1 (
 
 Seven_seg_LED_Display_Controller Seven_seg_LED_Display_Controller1 (
                                      .i_sysclk(i_Clk),
-                                     .i_reset(i_Rst_H),
+                                     .i_reset(i_reset_H),
                                      .i_displayed_number1(r_seven_seg_value1), // Number to display
                                      .i_displayed_number2(r_seven_seg_value2), // Number to display
                                      .o_Anode_Activate(o_Anode_Activate),
@@ -215,7 +215,7 @@ Seven_seg_LED_Display_Controller Seven_seg_LED_Display_Controller1 (
                                  );
 
 SPI_Master_With_Single_CS SPI_Master_With_Single_CS_inst (
-                              .i_Rst_L(~i_Rst_H),
+                              .i_Rst_L(~i_reset_H),
                               .i_Clk(i_Clk),
                               // TX (MOSI) Signals
                               .i_TX_Count(o_TX_LCD_Count),     // # bytes per CS low
@@ -250,7 +250,7 @@ assign w_var1=r_var1_mem;
 
 stack main_stack (
           .clk(i_Clk),
-          .i_reset(i_Rst_H),
+          .i_reset(i_reset_H),
           .i_read_flag(r_stack_read_flag),
           .i_write_flag(r_stack_write_flag),
           .i_write_value(r_stack_write_value),
@@ -329,11 +329,12 @@ begin
     r_timer_interupt_counter_sec<=0;
     r_mem_write_DV<=0;
     r_mem_read_DV<=0;
+    r_msg=4096'b0;
 end
 
 always @(posedge i_Clk)
 begin
-    if (i_Rst_H)
+    if (i_reset_H)
     begin
         o_TX_LCD_Count<=4'd1;
         o_TX_LCD_Byte<=8'b0;
@@ -346,7 +347,7 @@ begin
         r_carry_flag<=0;
         r_overflow_flag<=0;
         r_error_code<=8'h0;
-        rx_count<=8'b0;
+        //rx_count<=8'b0;
         o_ram_write_addr<=32'h0;
         r_ram_next_write_addr<=12'h0;
         r_seven_seg_value1=32'h20_10_00_07;
@@ -356,7 +357,7 @@ begin
         r_hcf_message_sent<=1'b0;
         r_timing_start<=0;
         r_timer_interupt_counter<=0;
-    end // if (i_Rst_H)
+    end // if (i_reset_H)
     // else if(w_uart_rx_DV&w_uart_rx_value==8'h53&i_load_H) // Load start flag received and down button pressed
     else if(w_uart_rx_DV&w_uart_rx_value==8'h53) // Load start flag received ignore if button pressed
     begin
@@ -540,7 +541,7 @@ begin
                     r_carry_flag<=1'b0;
                     r_overflow_flag<=1'b0;
                     r_equal_flag<=1'b0;
-                    rx_count<=8'b0;
+                    //rx_count<=8'b0;
                     o_ram_write_addr<=12'h0;
                     r_stack_reset<=1'b0;
                     t_tx_message(8'd1); // Load OK message
@@ -753,7 +754,7 @@ begin
             default:
                 r_SM<=HCF_1; // loop in error
         endcase // case(r_SM)
-    end // else if (i_Rst_H)
+    end // else if (i_reset_H)
 end // always @(posedge i_Clk)
 
 endmodule

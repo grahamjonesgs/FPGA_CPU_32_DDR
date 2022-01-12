@@ -23,9 +23,9 @@
 
   <Version>4.2</Version>
 
-  <SystemClock>Single-Ended</SystemClock>
+  <SystemClock>No Buffer</SystemClock>
 
-  <ReferenceClock>No Buffer</ReferenceClock>
+  <ReferenceClock>Use System Clock</ReferenceClock>
 
   <SysResetPolarity>ACTIVE LOW</SysResetPolarity>
 
@@ -43,10 +43,10 @@
 
   <Controller number="0">
     <MemoryDevice>DDR2_SDRAM/Components/MT47H64M16HR-25E</MemoryDevice>
-    <TimePeriod>3077</TimePeriod>
+    <TimePeriod>5000</TimePeriod>
     <VccAuxIO>1.8V</VccAuxIO>
     <PHYRatio>4:1</PHYRatio>
-    <InputClkFreq>324.991</InputClkFreq>
+    <InputClkFreq>200</InputClkFreq>
     <UIExtraClocks>0</UIExtraClocks>
     <MMCM_VCO>1200</MMCM_VCO>
     <MMCMClkOut0> 1.000</MMCMClkOut0>
@@ -114,9 +114,6 @@
       <Pin IN_TERM="" IOSTANDARD="SSTL18_II" PADName="N4" SLEW="" VCCAUX_IO="" name="ddr2_ras_n"/>
       <Pin IN_TERM="" IOSTANDARD="SSTL18_II" PADName="N2" SLEW="" VCCAUX_IO="" name="ddr2_we_n"/>
     </PinSelection>
-    <System_Clock>
-      <Pin Bank="34" PADName="R3(SRCC_P)" name="sys_clk_i"/>
-    </System_Clock>
     <System_Control>
       <Pin Bank="Select Bank" PADName="No connect" name="sys_rst"/>
       <Pin Bank="Select Bank" PADName="No connect" name="init_calib_complete"/>
@@ -127,11 +124,11 @@
     </TimingParameters>
     <mrBurstLength name="Burst Length">8</mrBurstLength>
     <mrBurstType name="Burst Type">Sequential</mrBurstType>
-    <mrCasLatency name="CAS Latency">5</mrCasLatency>
+    <mrCasLatency name="CAS Latency">3</mrCasLatency>
     <mrMode name="Mode">Normal</mrMode>
     <mrDllReset name="DLL Reset">No</mrDllReset>
     <mrPdMode name="PD Mode">Fast exit</mrPdMode>
-    <mrWriteRecovery name="Write Recovery">5</mrWriteRecovery>
+    <mrWriteRecovery name="Write Recovery">3</mrWriteRecovery>
     <emrDllEnable name="DLL Enable">Enable-Normal</emrDllEnable>
     <emrOutputDriveStrength name="Output Drive Strength">Fullstrength</emrOutputDriveStrength>
     <emrCSSelection name="Controller Chip Select Pin">Enable</emrCSSelection>
