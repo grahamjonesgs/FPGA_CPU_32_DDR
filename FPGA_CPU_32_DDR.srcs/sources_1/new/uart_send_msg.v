@@ -1,6 +1,6 @@
 module uart_send_msg
        (input  i_Clk,
-        input [4095:0]   i_msg_flat,
+        input [2047:0]   i_msg_flat,
         input [7:0]      i_msg_length,
         input            i_msg_send_DV,
         output           o_Tx_Serial,

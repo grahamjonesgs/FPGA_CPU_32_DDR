@@ -135,7 +135,7 @@ reg  [31:0]  r_stack_write_value;
 reg          r_stack_reset;
 
 // UART send message
-reg [4095:0] r_msg;
+reg [2047:0] r_msg;
 reg [7:0]   r_msg_length;
 reg         r_msg_send_DV;
 wire        i_msg_sent_DV;
@@ -329,7 +329,7 @@ begin
     r_timer_interupt_counter_sec<=0;
     r_mem_write_DV<=0;
     r_mem_read_DV<=0;
-    r_msg=4096'b0;
+    r_msg=2047'b0;
 end
 
 always @(posedge i_Clk)

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Wed Jan 12 17:08:58 2022
+| Date         : Thu Jan 13 16:45:06 2022
 | Host         : ubuntu running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_clock_utilization -file route_report_clock_utilization_0.rpt
 | Design       : FPGA_CPU_32_bits
