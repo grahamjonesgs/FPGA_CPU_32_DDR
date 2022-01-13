@@ -82,7 +82,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/wt [current_project]
 set_property parent.project_path /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/ip [current_project]
@@ -123,6 +123,12 @@ set_property used_in_implementation false [get_files -all /home/graham/Documents
 read_ip -quiet /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0.xci
 set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc]
 set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc]
+
+read_ip -quiet /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_0.xci
+set_property used_in_synthesis false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
