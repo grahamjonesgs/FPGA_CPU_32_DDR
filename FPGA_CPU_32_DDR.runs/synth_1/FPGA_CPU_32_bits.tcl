@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.tcl"
+  variable script "/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -string {{HW Target shutdown}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
@@ -80,55 +79,55 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/wt [current_project]
-set_property parent.project_path /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.xpr [current_project]
+set_property webtalk.parent_dir /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/wt [current_project]
+set_property parent.project_path /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/ip [current_project]
+set_property ip_output_repo /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog {
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/memory_tasks.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_tasks.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/opcode_select.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/seven_seg.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/led_tasks.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/register_tasks.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/timing_tasks.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/stack_tasks.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/control_tasks.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/LCD_tasks.vh
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/functions.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/memory_tasks.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/register_tasks.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/stack_tasks.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/led_tasks.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/functions.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/timing_tasks.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/LCD_tasks.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/control_tasks.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/seven_seg.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_tasks.vh
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/opcode_select.vh
 }
 read_verilog -library xil_defaultlib {
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/LED_Display_Controller.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/RGB_LED.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/SPI_Master.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/SPI_Master_With_Single_CS.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/ddr2_control.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/stack.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_rx.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_send_msg.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_transmit.v
-  /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/LED_Display_Controller.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/RGB_LED.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/SPI_Master.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/SPI_Master_With_Single_CS.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/ddr2_control.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/stack.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_rx.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_send_msg.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_transmit.v
+  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v
 }
-read_ip -quiet /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
+read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0.xci
-set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc]
-set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc]
+read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0.xci
+set_property used_in_implementation false [get_files -all /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc]
 
-read_ip -quiet /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_0.xci
-set_property used_in_synthesis false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_0_ooc.xdc]
+read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_0.xci
+set_property used_in_synthesis false [get_files -all /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/ila_0_1/ila_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -139,8 +138,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc
-set_property used_in_implementation false [get_files /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc]
+read_xdc /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc
+set_property used_in_implementation false [get_files /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

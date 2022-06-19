@@ -1,8 +1,8 @@
-Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Thu Jan 13 17:15:15 2022
-| Host         : ubuntu running 64-bit Ubuntu 20.04.3 LTS
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Jun 19 09:31:40 2022
+| Host         : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command      : report_methodology -file opt_report_methodology_0.rpt -pb opt_report_methodology_0.pb -rpx opt_report_methodology_0.rpx
 | Design       : FPGA_CPU_32_bits
 | Device       : xc7a100tcsg324-1
@@ -33,7 +33,7 @@ Table of Contents
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                       | 6          |
 | TIMING-10 | Warning          | Missing property on synchronizer                   | 1          |
-| TIMING-15 | Warning          | Large hold violation on inter-clock path           | 12         |
+| TIMING-15 | Warning          | Large hold violation                               | 12         |
 | TIMING-18 | Warning          | Missing input or output delay                      | 62         |
 | XDCB-5    | Warning          | Runtime inefficient way to find pin objects        | 1          |
 | REQP-1959 | Advisory         | connects_SERDES_RST_driver_not_FF                  | 16         |
@@ -101,21 +101,21 @@ Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_iodelay_ctrl/rstdiv2_sync_r[11]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__0/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__1/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__10/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__11/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__12/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__13/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__14/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__15/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__2/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__3/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__4/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__5/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__6/PRE,
-mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__7/PRE
+LUT cell mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_iodelay_ctrl/rstdiv2_sync_r[11]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__7/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__8/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep__9/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[0]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[10]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[11]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[1]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[2]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[3]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[4]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[5]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[6]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[7]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[8]/PRE,
+mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/u_ddr2_infrastructure/rstdiv0_sync_r_reg[9]/PRE
  (the first 15 of 29 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
@@ -130,63 +130,63 @@ One or more logic synchronizer has been detected between 2 clock domains but the
 Related violations: <none>
 
 TIMING-15#1 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[0]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[0]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[0]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[0]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#2 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[10]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[10]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[10]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[10]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#3 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[11]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[11]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[11]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[11]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#4 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[1]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[1]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[1]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[1]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#5 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[2]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[2]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[2]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[2]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#6 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[3]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[3]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[3]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[3]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#7 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[4]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[4]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[4]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[4]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#8 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[5]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[5]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[5]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[5]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#9 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[6]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[6]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[6]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[6]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#10 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[7]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[7]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[7]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[7]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#11 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[8]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[8]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[8]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[8]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#12 Warning
-Large hold violation on inter-clock path  
-There is a large inter-clock skew of 1.742 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[9]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[9]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Large hold violation  
+There is a large clock skew of 1.752 ns between mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[9]/C (clocked by clk_200_clk_wiz_0) and mem_read_write/ddr2_control/mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[9]/D (clocked by clk_pll_i) that results in large hold timing violation(s) of -1.367 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-18#1 Warning
@@ -502,7 +502,7 @@ Related violations: <none>
 XDCB-5#1 Warning
 Runtime inefficient way to find pin objects  
 The option '-to : [get_pins -hier -include_replicated_objects -filter {NAME =~ *temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[*]/D}]' of constraint 'set_max_delay' uses inefficient query to find pin objects (see constraint position '8' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
-Current XDC: /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc (Line: 344)
+Current XDC: /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc (Line: 344)
 Related violations: <none>
 
 REQP-1959#1 Advisory

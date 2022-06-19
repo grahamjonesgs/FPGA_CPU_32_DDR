@@ -1,8 +1,8 @@
-Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Wed Jan 12 17:04:36 2022
-| Host         : ubuntu running 64-bit Ubuntu 20.04.3 LTS
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Jun 19 09:18:50 2022
+| Host         : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command      : report_utilization -file mig_7series_0_utilization_synth.rpt -pb mig_7series_0_utilization_synth.pb
 | Design       : mig_7series_0
 | Device       : xc7a100tcsg324-1
@@ -156,12 +156,12 @@ Table of Contents
 |         Ref Name         | Used | Functional Category |
 +--------------------------+------+---------------------+
 | FDRE                     | 3134 |        Flop & Latch |
-| LUT6                     |  953 |                 LUT |
-| LUT4                     |  838 |                 LUT |
-| LUT5                     |  806 |                 LUT |
-| LUT3                     |  727 |                 LUT |
+| LUT6                     |  956 |                 LUT |
+| LUT4                     |  842 |                 LUT |
+| LUT5                     |  799 |                 LUT |
+| LUT3                     |  729 |                 LUT |
 | RAMD32                   |  570 |  Distributed Memory |
-| LUT2                     |  393 |                 LUT |
+| LUT2                     |  390 |                 LUT |
 | LUT1                     |  335 |                 LUT |
 | RAMS32                   |  186 |  Distributed Memory |
 | CARRY4                   |  101 |          CarryLogic |

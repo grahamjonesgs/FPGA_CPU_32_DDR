@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/impl_1/FPGA_CPU_32_bits.tcl"
+  variable script "/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/impl_1/FPGA_CPU_32_bits.tcl"
   variable category "vivado_impl"
 }
 
@@ -115,7 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -string {{HW Target shutdown}}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -131,19 +130,19 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/wt [current_project]
-  set_property parent.project_path /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.xpr [current_project]
-  set_property ip_output_repo /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/wt [current_project]
+  set_property parent.project_path /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.xpr [current_project]
+  set_property ip_output_repo /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.dcp
-  read_ip -quiet /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
-  read_ip -quiet /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0.xci
-  read_ip -quiet /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_0.xci
+  add_files -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.dcp
+  read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+  read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0.xci
+  read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc
+  read_xdc /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
@@ -263,10 +262,10 @@ OPTRACE "route_design reports" START { REPORT }
 OPTRACE "route_design reports" END { }
 OPTRACE "route_design misc" START { }
   close_msg_db -file route_design.pb
-OPTRACE "route_design write_checkpoint" START { CHECKPOINT }
-OPTRACE "route_design write_checkpoint" END { }
 } RESULT]
 if {$rc} {
+OPTRACE "route_design write_checkpoint" START { CHECKPOINT }
+OPTRACE "route_design write_checkpoint" END { }
   write_checkpoint -force FPGA_CPU_32_bits_routed_error.dcp
   step_failed route_design
   return -code error $RESULT

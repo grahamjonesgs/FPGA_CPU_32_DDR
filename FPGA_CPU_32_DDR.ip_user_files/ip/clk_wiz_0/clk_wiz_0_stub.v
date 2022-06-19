@@ -1,10 +1,10 @@
-// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Wed Jan 12 16:39:16 2022
-// Host        : ubuntu running 64-bit Ubuntu 20.04.3 LTS
+// Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+// Date        : Sun Jun 19 09:27:11 2022
+// Host        : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               /home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_stub.v
+//               /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/clk_wiz_0_synth_1/clk_wiz_0_stub.v
 // Design      : clk_wiz_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1

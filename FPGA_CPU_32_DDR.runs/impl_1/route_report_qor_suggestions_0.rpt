@@ -1,13 +1,13 @@
-Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Thu Jan 13 17:17:50 2022
-| Host         : ubuntu running 64-bit Ubuntu 20.04.3 LTS
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Jun 19 09:33:44 2022
+| Host         : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command      : report_qor_suggestions -max_paths 100 -file route_report_qor_suggestions_0.rpt
 | Design       : FPGA_CPU_32_bits
 | Device       : xc7a100t
 | Design State : Routed
-| ML Models    : NA
+| ML Models    : v2020.1.0
 --------------------------------------------------------------------------------------------------------
 
 Report QoR Suggestions
@@ -17,16 +17,18 @@ Table of Contents
 1. QoR Suggestions Report Summary
 2. ML Strategies
 3. QoR Suggestions - Utilization
+4. QoR Suggestions - Netlist
 
 1. QoR Suggestions Report Summary
 ---------------------------------
 
-+---------------+-------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
-|      Name     |      Id     |   Status  | Generated At | Applicable For | Automatic |    Scope    | Incremental Friendly |                                        Description                                       |    Source   |
-+---------------+-------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
-| RQS_UTIL-12-1 | RQS_UTIL-12 | Generated | route_design | opt_design     | Yes       | GLOBALSCOPE | No                   | Remapping small SRL to Registers in the design.                                          | Current Run |
-| RQS_UTIL-15-1 | RQS_UTIL-15 | Generated | route_design | synth_design   | Yes       | GLOBALSCOPE | No                   | Forward retime across Datapath Operators to reduce FF utilization.                       | Current Run |
-+---------------+-------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
++------------------+----------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+|       Name       |       Id       |   Status  | Generated At | Applicable For | Automatic |    Scope    | Incremental Friendly |                                        Description                                       |    Source   |
++------------------+----------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
+| RQS_UTIL-12-1    | RQS_UTIL-12    | Generated | route_design | opt_design     | Yes       | GLOBALSCOPE | No                   | Remapping small SRL to Registers in the design.                                          | Current Run |
+| RQS_UTIL-15-1    | RQS_UTIL-15    | Generated | route_design | synth_design   | Yes       | GLOBALSCOPE | No                   | Forward retime across Datapath Operators to reduce FF utilization.                       | Current Run |
+| RQS_NETLIST-10-1 | RQS_NETLIST-10 | Generated | route_design | synth_design   | Yes       | GLOBALSCOPE | No                   | Rebalance timing paths by forward and backward retiming.                                 | Current Run |
++------------------+----------------+-----------+--------------+----------------+-----------+-------------+----------------------+------------------------------------------------------------------------------------------+-------------+
 * No QoR suggestions are provided when the fully routed design is assessed to easily meet timing.
 
 
@@ -48,5 +50,238 @@ Table of Contents
 | RQS_UTIL-12-1 | Remapping small SRL to Registers.                          | GLOBAL    | GLOBAL |
 | RQS_UTIL-15-1 | Retime across Datapath operators to reduce FF utilization. | GLOBAL    | GLOBAL |
 +---------------+------------------------------------------------------------+-----------+--------+
+
+
+4. QoR Suggestions - Netlist
+----------------------------
+
++------------------+-------------+--------------+--------+-------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+-------------------------+--------------------------+
+|       Name       | No of Paths | Logic Levels | Routes | Slack |  Req.  |  Skew  | Fanout | Datapath Delay | Cell% | Route% | Source Clock | Destination Clock |        Startpoint       |         Endpoint         |
++------------------+-------------+--------------+--------+-------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+-------------------------+--------------------------+
+| RQS_NETLIST-10-1 | 1           | 13           | 14     | 0.955 | 10.000 | -0.030 | -      | 8.912          | 31.90 | 68.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[3][27]/D  |
+|                  | 1           | 14           | 15     | 1.041 | 10.000 | -0.031 | -      | 8.811          | 34.90 | 65.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][26]/D  |
+|                  | 1           | 14           | 15     | 1.240 | 10.000 | -0.036 | -      | 8.608          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][26]/D  |
+|                  | 1           | 14           | 15     | 1.055 | 10.000 | -0.036 | -      | 8.816          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[8][30]/D  |
+|                  | 1           | 14           | 15     | 0.929 | 10.000 | -0.031 | -      | 8.934          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][28]/D  |
+|                  | 1           | 13           | 14     | 1.553 | 10.000 | -0.034 | -      | 8.347          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[0][26]/D  |
+|                  | 1           | 13           | 14     | 1.219 | 10.000 | -0.034 | -      | 8.645          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][24]/D  |
+|                  | 1           | 14           | 15     | 0.912 | 10.000 | -0.034 | -      | 8.951          | 34.20 | 65.80  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][28]/D  |
+|                  | 1           | 14           | 15     | 0.879 | 10.000 | -0.034 | -      | 8.970          | 34.20 | 65.80  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][28]/D  |
+|                  | 1           | 15           | 16     | 1.026 | 10.000 | -0.036 | -      | 8.845          | 34.50 | 65.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[13][31]/D |
+|                  | 1           | 15           | 16     | 1.775 | 10.000 | -0.123 | -      | 7.999          | 36.90 | 63.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_overflow_flag_reg/D    |
+|                  | 1           | 13           | 14     | 1.483 | 10.000 | -0.037 | -      | 8.363          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][23]/D  |
+|                  | 1           | 15           | 15     | 1.034 | 10.000 | -0.034 | -      | 8.830          | 36.20 | 63.80  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[7][29]/D  |
+|                  | 1           | 14           | 15     | 1.010 | 10.000 | -0.034 | -      | 8.853          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][28]/D |
+|                  | 1           | 14           | 15     | 1.397 | 10.000 | -0.033 | -      | 8.490          | 36.10 | 63.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[2][30]/D  |
+|                  | 1           | 14           | 15     | 0.912 | 10.000 | -0.036 | -      | 8.956          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[9][30]/D  |
+|                  | 1           | 13           | 14     | 1.352 | 10.000 | -0.038 | -      | 8.547          | 34.50 | 65.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][24]/D  |
+|                  | 1           | 14           | 15     | 1.083 | 10.000 | -0.030 | -      | 8.821          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][25]/D |
+|                  | 1           | 14           | 15     | 1.187 | 10.000 | -0.032 | -      | 8.679          | 35.40 | 64.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][26]/D  |
+|                  | 1           | 14           | 15     | 1.028 | 10.000 | -0.032 | -      | 8.838          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][25]/D  |
+|                  | 1           | 15           | 16     | 1.314 | 10.000 | -0.036 | -      | 8.585          | 35.60 | 64.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[0][31]/D  |
+|                  | 1           | 14           | 15     | 1.276 | 10.000 | -0.036 | -      | 8.592          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[14][30]/D |
+|                  | 1           | 14           | 15     | 1.456 | 10.000 | -0.032 | -      | 8.395          | 33.70 | 66.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][31]/D  |
+|                  | 1           | 13           | 14     | 1.150 | 10.000 | -0.036 | -      | 8.684          | 32.70 | 67.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[8][27]/D  |
+|                  | 1           | 14           | 15     | 1.592 | 10.000 | -0.034 | -      | 8.322          | 36.80 | 63.20  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[0][30]/D  |
+|                  | 1           | 14           | 15     | 1.322 | 10.000 | -0.034 | -      | 8.528          | 33.10 | 66.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][31]/D  |
+|                  | 1           | 14           | 15     | 0.842 | 10.000 | -0.031 | -      | 9.046          | 33.90 | 66.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][28]/D  |
+|                  | 1           | 15           | 16     | 1.104 | 10.000 | -0.035 | -      | 8.744          | 34.90 | 65.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[14][31]/D |
+|                  | 1           | 13           | 14     | 1.384 | 10.000 | -0.036 | -      | 8.513          | 32.90 | 67.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[15][26]/D |
+|                  | 1           | 14           | 15     | 1.224 | 10.000 | -0.038 | -      | 8.671          | 35.20 | 64.80  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[4][30]/D  |
+|                  | 1           | 13           | 14     | 1.372 | 10.000 | -0.037 | -      | 8.527          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][24]/D  |
+|                  | 1           | 14           | 15     | 1.054 | 10.000 | -0.032 | -      | 8.817          | 34.80 | 65.20  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][26]/D |
+|                  | 1           | 14           | 15     | 1.300 | 10.000 | -0.035 | -      | 8.599          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][26]/D  |
+|                  | 1           | 14           | 15     | 0.950 | 10.000 | -0.038 | -      | 8.949          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[10][30]/D |
+|                  | 1           | 14           | 15     | 1.088 | 10.000 | -0.035 | -      | 8.781          | 35.00 | 65.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][26]/D  |
+|                  | 1           | 13           | 14     | 1.076 | 10.000 | -0.121 | -      | 8.798          | 32.20 | 67.80  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[1]/C        | r_zero_flag_reg/D        |
+|                  | 1           | 13           | 14     | 0.993 | 10.000 | -0.035 | -      | 8.870          | 31.00 | 69.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[14][22]/D |
+|                  | 1           | 13           | 14     | 1.230 | 10.000 | -0.036 | -      | 8.656          | 31.70 | 68.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[0][22]/D  |
+|                  | 1           | 15           | 16     | 1.033 | 10.000 | -0.037 | -      | 8.867          | 34.40 | 65.60  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[12][31]/D |
+|                  | 1           | 14           | 15     | 1.311 | 10.000 | -0.034 | -      | 8.573          | 33.00 | 67.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][31]/D  |
+|                  | 1           | 14           | 15     | 1.041 | 10.000 | -0.031 | -      | 8.811          | 34.90 | 65.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][26]/D  |
+|                  | 1           | 14           | 15     | 1.187 | 10.000 | -0.032 | -      | 8.679          | 35.40 | 64.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][26]/D  |
+|                  | 1           | 15           | 16     | 1.033 | 10.000 | -0.037 | -      | 8.867          | 34.40 | 65.60  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[12][31]/D |
+|                  | 1           | 14           | 15     | 0.849 | 10.000 | -0.032 | -      | 9.013          | 32.80 | 67.20  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][25]/D  |
+|                  | 1           | 15           | 15     | 0.984 | 10.000 | -0.036 | -      | 8.877          | 36.00 | 64.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[11][29]/D |
+|                  | 1           | 13           | 14     | 1.326 | 10.000 | -0.037 | -      | 8.557          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][23]/D  |
+|                  | 1           | 13           | 14     | 1.188 | 10.000 | -0.035 | -      | 8.675          | 34.00 | 66.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][24]/D  |
+|                  | 1           | 13           | 14     | 1.109 | 10.000 | -0.031 | -      | 8.757          | 32.70 | 67.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][23]/D  |
+|                  | 1           | 14           | 15     | 1.435 | 10.000 | -0.031 | -      | 8.418          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][31]/D  |
+|                  | 1           | 13           | 14     | 1.184 | 10.000 | -0.038 | -      | 8.698          | 32.90 | 67.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][23]/D  |
+|                  | 1           | 15           | 15     | 0.984 | 10.000 | -0.036 | -      | 8.877          | 36.00 | 64.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[11][29]/D |
+|                  | 1           | 14           | 15     | 1.510 | 10.000 | -0.032 | -      | 8.392          | 33.70 | 66.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][31]/D  |
+|                  | 1           | 13           | 14     | 0.993 | 10.000 | -0.035 | -      | 8.870          | 31.00 | 69.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[14][22]/D |
+|                  | 1           | 14           | 15     | 0.927 | 10.000 | -0.033 | -      | 8.923          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][28]/D  |
+|                  | 1           | 14           | 15     | 0.842 | 10.000 | -0.031 | -      | 9.046          | 33.90 | 66.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][28]/D  |
+|                  | 1           | 15           | 15     | 1.208 | 10.000 | -0.036 | -      | 8.660          | 36.90 | 63.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[8][29]/D  |
+|                  | 1           | 14           | 15     | 1.368 | 10.000 | -0.032 | -      | 8.484          | 36.10 | 63.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[1][30]/D  |
+|                  | 1           | 13           | 14     | 1.553 | 10.000 | -0.034 | -      | 8.347          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[0][26]/D  |
+|                  | 1           | 14           | 15     | 1.322 | 10.000 | -0.034 | -      | 8.528          | 33.10 | 66.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][31]/D  |
+|                  | 1           | 13           | 14     | 1.011 | 10.000 | -0.037 | -      | 8.836          | 31.10 | 68.90  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[1][22]/D  |
+|                  | 1           | 14           | 15     | 1.224 | 10.000 | -0.038 | -      | 8.671          | 35.20 | 64.80  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[4][30]/D  |
+|                  | 1           | 14           | 15     | 0.927 | 10.000 | -0.033 | -      | 8.923          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][28]/D  |
+|                  | 1           | 14           | 15     | 0.806 | 10.000 | -0.031 | -      | 9.046          | 33.90 | 66.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][28]/D  |
+|                  | 1           | 14           | 15     | 1.036 | 10.000 | -0.031 | -      | 8.831          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][25]/D  |
+|                  | 1           | 14           | 15     | 1.250 | 10.000 | -0.032 | -      | 8.612          | 35.60 | 64.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[15][30]/D |
+|                  | 1           | 13           | 14     | 0.999 | 10.000 | -0.035 | -      | 8.864          | 31.00 | 69.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[15][22]/D |
+|                  | 1           | 13           | 14     | 0.999 | 10.000 | -0.035 | -      | 8.864          | 31.00 | 69.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[15][22]/D |
+|                  | 1           | 14           | 15     | 0.928 | 10.000 | -0.036 | -      | 8.973          | 34.00 | 66.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[6][30]/D  |
+|                  | 1           | 13           | 14     | 1.323 | 10.000 | -0.035 | -      | 8.539          | 32.80 | 67.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[13][26]/D |
+|                  | 1           | 13           | 14     | 1.483 | 10.000 | -0.037 | -      | 8.363          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][23]/D  |
+|                  | 1           | 14           | 15     | 1.020 | 10.000 | -0.030 | -      | 8.848          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][25]/D  |
+|                  | 1           | 13           | 14     | 1.348 | 10.000 | -0.036 | -      | 8.513          | 32.90 | 67.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[14][26]/D |
+|                  | 1           | 14           | 15     | 1.254 | 10.000 | -0.034 | -      | 8.615          | 35.60 | 64.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[13][30]/D |
+|                  | 1           | 13           | 14     | 0.920 | 10.000 | -0.030 | -      | 8.947          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[10][27]/D |
+|                  | 1           | 14           | 15     | 0.950 | 10.000 | -0.038 | -      | 8.949          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[10][30]/D |
+|                  | 1           | 14           | 15     | 1.435 | 10.000 | -0.031 | -      | 8.418          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][31]/D  |
+|                  | 1           | 13           | 14     | 1.117 | 10.000 | -0.033 | -      | 8.748          | 32.50 | 67.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[5][27]/D  |
+|                  | 1           | 14           | 15     | 0.928 | 10.000 | -0.036 | -      | 8.973          | 34.00 | 66.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[6][30]/D  |
+|                  | 1           | 13           | 14     | 1.274 | 10.000 | -0.037 | -      | 8.573          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][23]/D  |
+|                  | 1           | 13           | 14     | 0.923 | 10.000 | -0.032 | -      | 8.907          | 32.20 | 67.80  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][23]/D |
+|                  | 1           | 14           | 15     | 1.311 | 10.000 | -0.034 | -      | 8.573          | 33.00 | 67.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][31]/D  |
+|                  | 1           | 14           | 15     | 0.962 | 10.000 | -0.036 | -      | 8.936          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][28]/D |
+|                  | 1           | 13           | 14     | 1.535 | 10.000 | -0.035 | -      | 8.350          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[1][26]/D  |
+|                  | 1           | 14           | 15     | 1.040 | 10.000 | -0.031 | -      | 8.826          | 34.80 | 65.20  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][26]/D |
+|                  | 1           | 14           | 15     | 1.040 | 10.000 | -0.031 | -      | 8.826          | 34.80 | 65.20  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][26]/D |
+|                  | 1           | 14           | 15     | 1.471 | 10.000 | -0.036 | -      | 8.429          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][31]/D |
+|                  | 1           | 15           | 15     | 1.108 | 10.000 | -0.038 | -      | 8.774          | 36.40 | 63.60  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[10][29]/D |
+|                  | 1           | 13           | 14     | 1.219 | 10.000 | -0.034 | -      | 8.645          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][24]/D  |
+|                  | 1           | 14           | 15     | 1.024 | 10.000 | -0.035 | -      | 8.824          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[5][30]/D  |
+|                  | 1           | 13           | 14     | 0.941 | 10.000 | -0.030 | -      | 8.926          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[7][27]/D  |
+|                  | 1           | 15           | 15     | 1.034 | 10.000 | -0.033 | -      | 8.831          | 36.20 | 63.80  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[4][29]/D  |
+|                  | 1           | 14           | 15     | 1.034 | 10.000 | -0.034 | -      | 8.830          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[3][30]/D  |
+|                  | 1           | 14           | 15     | 1.510 | 10.000 | -0.032 | -      | 8.392          | 33.70 | 66.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][31]/D  |
+|                  | 1           | 14           | 15     | 1.461 | 10.000 | -0.031 | -      | 8.406          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][31]/D  |
+|                  | 1           | 14           | 15     | 1.592 | 10.000 | -0.034 | -      | 8.322          | 36.80 | 63.20  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[0][30]/D  |
+|                  | 1           | 14           | 15     | 0.912 | 10.000 | -0.036 | -      | 8.956          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[9][30]/D  |
+|                  | 1           | 15           | 15     | 0.844 | 10.000 | -0.036 | -      | 9.003          | 35.50 | 64.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[9][29]/D  |
+|                  | 1           | 15           | 16     | 1.136 | 10.000 | -0.034 | -      | 8.734          | 35.00 | 65.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[1][31]/D  |
+|                  | 1           | 14           | 15     | 1.565 | 10.000 | -0.034 | -      | 8.284          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][31]/D |
+|                  | 1           | 14           | 15     | 1.300 | 10.000 | -0.035 | -      | 8.599          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][26]/D  |
+|                  | 1           | 13           | 14     | 1.188 | 10.000 | -0.035 | -      | 8.675          | 34.00 | 66.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][24]/D  |
+|                  | 1           | 15           | 16     | 1.545 | 10.000 | -0.115 | -      | 8.334          | 36.60 | 63.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[15][31]/D |
+|                  | 1           | 14           | 15     | 1.471 | 10.000 | -0.036 | -      | 8.429          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][31]/D |
+|                  | 1           | 13           | 14     | 1.454 | 10.000 | -0.038 | -      | 8.445          | 33.20 | 66.80  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[12][26]/D |
+|                  | 1           | 14           | 15     | 0.962 | 10.000 | -0.036 | -      | 8.936          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][28]/D |
+|                  | 1           | 13           | 14     | 0.935 | 10.000 | -0.029 | -      | 8.933          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[9][27]/D  |
+|                  | 1           | 13           | 14     | 1.109 | 10.000 | -0.031 | -      | 8.757          | 32.70 | 67.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][23]/D  |
+|                  | 1           | 14           | 15     | 1.035 | 10.000 | -0.033 | -      | 8.830          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][25]/D  |
+|                  | 1           | 13           | 14     | 1.297 | 10.000 | -0.032 | -      | 8.569          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][23]/D |
+|                  | 1           | 13           | 14     | 1.067 | 10.000 | -0.035 | -      | 8.795          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][24]/D  |
+|                  | 1           | 13           | 14     | 1.268 | 10.000 | -0.035 | -      | 8.581          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][23]/D  |
+|                  | 1           | 14           | 15     | 0.849 | 10.000 | -0.032 | -      | 9.013          | 32.80 | 67.20  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][25]/D  |
+|                  | 1           | 14           | 15     | 1.028 | 10.000 | -0.032 | -      | 8.838          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][25]/D  |
+|                  | 1           | 13           | 14     | 0.940 | 10.000 | -0.030 | -      | 8.927          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[6][27]/D  |
+|                  | 1           | 13           | 14     | 1.348 | 10.000 | -0.036 | -      | 8.513          | 32.90 | 67.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[14][26]/D |
+|                  | 1           | 13           | 14     | 1.076 | 10.000 | -0.121 | -      | 8.798          | 32.20 | 67.80  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[1]/C        | r_zero_flag_reg/D        |
+|                  | 1           | 13           | 14     | 1.184 | 10.000 | -0.038 | -      | 8.698          | 32.90 | 67.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][23]/D  |
+|                  | 1           | 14           | 15     | 1.083 | 10.000 | -0.030 | -      | 8.821          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][25]/D |
+|                  | 1           | 13           | 14     | 1.323 | 10.000 | -0.035 | -      | 8.539          | 32.80 | 67.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[13][26]/D |
+|                  | 1           | 15           | 15     | 1.046 | 10.000 | -0.035 | -      | 8.817          | 36.30 | 63.70  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[5][29]/D  |
+|                  | 1           | 13           | 14     | 1.141 | 10.000 | -0.033 | -      | 8.760          | 32.50 | 67.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[4][27]/D  |
+|                  | 1           | 15           | 15     | 0.920 | 10.000 | -0.033 | -      | 8.944          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[3][29]/D  |
+|                  | 1           | 15           | 15     | 1.034 | 10.000 | -0.033 | -      | 8.831          | 36.20 | 63.80  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[4][29]/D  |
+|                  | 1           | 14           | 15     | 1.047 | 10.000 | -0.036 | -      | 8.801          | 34.70 | 65.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[11][30]/D |
+|                  | 1           | 14           | 15     | 1.084 | 10.000 | -0.037 | -      | 8.783          | 35.00 | 65.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][26]/D  |
+|                  | 1           | 14           | 15     | 0.893 | 10.000 | -0.031 | -      | 8.959          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][26]/D  |
+|                  | 1           | 15           | 15     | 1.208 | 10.000 | -0.036 | -      | 8.660          | 36.90 | 63.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[8][29]/D  |
+|                  | 1           | 14           | 15     | 1.667 | 10.000 | -0.115 | -      | 8.116          | 35.00 | 65.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_carry_flag_reg/D       |
+|                  | 1           | 14           | 15     | 1.020 | 10.000 | -0.030 | -      | 8.848          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][25]/D  |
+|                  | 1           | 13           | 14     | 1.268 | 10.000 | -0.035 | -      | 8.581          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][23]/D  |
+|                  | 1           | 14           | 15     | 1.368 | 10.000 | -0.032 | -      | 8.484          | 36.10 | 63.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[1][30]/D  |
+|                  | 1           | 14           | 15     | 1.250 | 10.000 | -0.032 | -      | 8.612          | 35.60 | 64.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[15][30]/D |
+|                  | 1           | 15           | 15     | 1.108 | 10.000 | -0.038 | -      | 8.774          | 36.40 | 63.60  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[10][29]/D |
+|                  | 1           | 14           | 15     | 1.276 | 10.000 | -0.036 | -      | 8.592          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[14][30]/D |
+|                  | 1           | 14           | 15     | 1.055 | 10.000 | -0.036 | -      | 8.816          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[8][30]/D  |
+|                  | 1           | 14           | 15     | 1.267 | 10.000 | -0.034 | -      | 8.633          | 35.50 | 64.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[12][30]/D |
+|                  | 1           | 13           | 14     | 1.384 | 10.000 | -0.036 | -      | 8.513          | 32.90 | 67.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[15][26]/D |
+|                  | 1           | 13           | 14     | 1.274 | 10.000 | -0.037 | -      | 8.573          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][23]/D  |
+|                  | 1           | 14           | 15     | 1.094 | 10.000 | -0.034 | -      | 8.756          | 34.90 | 65.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[7][30]/D  |
+|                  | 1           | 15           | 15     | 0.915 | 10.000 | -0.033 | -      | 8.950          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[6][29]/D  |
+|                  | 1           | 14           | 15     | 1.092 | 10.000 | -0.032 | -      | 8.810          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][25]/D  |
+|                  | 1           | 14           | 15     | 1.047 | 10.000 | -0.036 | -      | 8.801          | 34.70 | 65.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[11][30]/D |
+|                  | 1           | 13           | 14     | 1.312 | 10.000 | -0.034 | -      | 8.552          | 34.50 | 65.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][24]/D |
+|                  | 1           | 15           | 15     | 1.034 | 10.000 | -0.034 | -      | 8.830          | 36.20 | 63.80  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[7][29]/D  |
+|                  | 1           | 15           | 16     | 1.775 | 10.000 | -0.123 | -      | 7.999          | 36.90 | 63.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_overflow_flag_reg/D    |
+|                  | 1           | 15           | 15     | 0.844 | 10.000 | -0.036 | -      | 9.003          | 35.50 | 64.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[9][29]/D  |
+|                  | 1           | 14           | 15     | 1.456 | 10.000 | -0.032 | -      | 8.395          | 33.70 | 66.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][31]/D  |
+|                  | 1           | 13           | 14     | 1.326 | 10.000 | -0.037 | -      | 8.557          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][23]/D  |
+|                  | 1           | 13           | 14     | 1.312 | 10.000 | -0.034 | -      | 8.552          | 34.50 | 65.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][24]/D |
+|                  | 1           | 13           | 14     | 1.297 | 10.000 | -0.032 | -      | 8.575          | 34.40 | 65.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][24]/D |
+|                  | 1           | 14           | 15     | 1.088 | 10.000 | -0.035 | -      | 8.781          | 35.00 | 65.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][26]/D  |
+|                  | 1           | 13           | 14     | 0.923 | 10.000 | -0.032 | -      | 8.907          | 32.20 | 67.80  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][23]/D |
+|                  | 1           | 13           | 14     | 1.067 | 10.000 | -0.035 | -      | 8.795          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][24]/D  |
+|                  | 1           | 15           | 16     | 1.104 | 10.000 | -0.035 | -      | 8.744          | 34.90 | 65.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[14][31]/D |
+|                  | 1           | 13           | 14     | 1.261 | 10.000 | -0.038 | -      | 8.634          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][24]/D  |
+|                  | 1           | 14           | 15     | 1.667 | 10.000 | -0.115 | -      | 8.116          | 35.00 | 65.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_carry_flag_reg/D       |
+|                  | 1           | 14           | 15     | 1.094 | 10.000 | -0.034 | -      | 8.756          | 34.90 | 65.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[7][30]/D  |
+|                  | 1           | 15           | 16     | 0.958 | 10.000 | -0.035 | -      | 8.944          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[2][31]/D  |
+|                  | 1           | 15           | 15     | 0.915 | 10.000 | -0.033 | -      | 8.950          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[6][29]/D  |
+|                  | 1           | 14           | 15     | 1.397 | 10.000 | -0.033 | -      | 8.490          | 36.10 | 63.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[2][30]/D  |
+|                  | 1           | 13           | 14     | 1.226 | 10.000 | -0.032 | -      | 8.626          | 32.50 | 67.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[2][26]/D  |
+|                  | 1           | 14           | 15     | 1.054 | 10.000 | -0.032 | -      | 8.817          | 34.80 | 65.20  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][26]/D |
+|                  | 1           | 14           | 15     | 1.240 | 10.000 | -0.036 | -      | 8.608          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][26]/D  |
+|                  | 1           | 14           | 15     | 1.024 | 10.000 | -0.035 | -      | 8.824          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[5][30]/D  |
+|                  | 1           | 14           | 15     | 1.036 | 10.000 | -0.031 | -      | 8.831          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][25]/D  |
+|                  | 1           | 14           | 15     | 1.461 | 10.000 | -0.031 | -      | 8.406          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][31]/D  |
+|                  | 1           | 13           | 14     | 1.352 | 10.000 | -0.038 | -      | 8.547          | 34.50 | 65.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[4][24]/D  |
+|                  | 1           | 13           | 14     | 1.141 | 10.000 | -0.033 | -      | 8.760          | 32.50 | 67.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[4][27]/D  |
+|                  | 1           | 14           | 15     | 1.565 | 10.000 | -0.034 | -      | 8.284          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][31]/D |
+|                  | 1           | 14           | 15     | 0.901 | 10.000 | -0.034 | -      | 8.985          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][28]/D  |
+|                  | 1           | 14           | 15     | 0.901 | 10.000 | -0.034 | -      | 8.985          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][28]/D  |
+|                  | 1           | 14           | 15     | 1.267 | 10.000 | -0.034 | -      | 8.633          | 35.50 | 64.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[12][30]/D |
+|                  | 1           | 14           | 15     | 1.092 | 10.000 | -0.032 | -      | 8.810          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][25]/D  |
+|                  | 1           | 13           | 14     | 1.150 | 10.000 | -0.036 | -      | 8.684          | 32.70 | 67.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[8][27]/D  |
+|                  | 1           | 15           | 16     | 1.026 | 10.000 | -0.036 | -      | 8.845          | 34.50 | 65.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[13][31]/D |
+|                  | 1           | 13           | 14     | 1.164 | 10.000 | -0.036 | -      | 8.684          | 31.60 | 68.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[2][22]/D  |
+|                  | 1           | 15           | 16     | 1.136 | 10.000 | -0.034 | -      | 8.734          | 35.00 | 65.00  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[1][31]/D  |
+|                  | 1           | 14           | 15     | 1.016 | 10.000 | -0.032 | -      | 8.859          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][25]/D |
+|                  | 1           | 15           | 16     | 1.545 | 10.000 | -0.115 | -      | 8.334          | 36.60 | 63.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[15][31]/D |
+|                  | 1           | 15           | 15     | 1.046 | 10.000 | -0.035 | -      | 8.817          | 36.30 | 63.70  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[5][29]/D  |
+|                  | 1           | 14           | 15     | 0.879 | 10.000 | -0.034 | -      | 8.970          | 34.20 | 65.80  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][28]/D  |
+|                  | 1           | 13           | 14     | 0.955 | 10.000 | -0.030 | -      | 8.912          | 31.90 | 68.10  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[3][27]/D  |
+|                  | 1           | 14           | 15     | 0.806 | 10.000 | -0.031 | -      | 9.046          | 33.90 | 66.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][28]/D  |
+|                  | 1           | 13           | 14     | 1.011 | 10.000 | -0.037 | -      | 8.836          | 31.10 | 68.90  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[1][22]/D  |
+|                  | 1           | 14           | 15     | 0.964 | 10.000 | -0.034 | -      | 8.935          | 33.10 | 66.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][25]/D  |
+|                  | 1           | 14           | 15     | 1.517 | 10.000 | -0.031 | -      | 8.386          | 33.70 | 66.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][31]/D  |
+|                  | 1           | 15           | 16     | 1.314 | 10.000 | -0.036 | -      | 8.585          | 35.60 | 64.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[0][31]/D  |
+|                  | 1           | 14           | 15     | 1.517 | 10.000 | -0.031 | -      | 8.386          | 33.70 | 66.30  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][31]/D  |
+|                  | 1           | 13           | 14     | 1.454 | 10.000 | -0.038 | -      | 8.445          | 33.20 | 66.80  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[12][26]/D |
+|                  | 1           | 14           | 15     | 0.893 | 10.000 | -0.031 | -      | 8.959          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[8][26]/D  |
+|                  | 1           | 13           | 14     | 1.164 | 10.000 | -0.036 | -      | 8.684          | 31.60 | 68.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[2][22]/D  |
+|                  | 1           | 14           | 15     | 1.254 | 10.000 | -0.034 | -      | 8.615          | 35.60 | 64.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[13][30]/D |
+|                  | 1           | 13           | 14     | 1.161 | 10.000 | -0.032 | -      | 8.705          | 32.90 | 67.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][23]/D  |
+|                  | 1           | 13           | 14     | 1.297 | 10.000 | -0.032 | -      | 8.575          | 34.40 | 65.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][24]/D |
+|                  | 1           | 13           | 14     | 1.372 | 10.000 | -0.037 | -      | 8.527          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][24]/D  |
+|                  | 1           | 13           | 14     | 1.535 | 10.000 | -0.035 | -      | 8.350          | 33.60 | 66.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[1][26]/D  |
+|                  | 1           | 13           | 14     | 0.920 | 10.000 | -0.030 | -      | 8.947          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[10][27]/D |
+|                  | 1           | 13           | 14     | 1.236 | 10.000 | -0.037 | -      | 8.647          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[12][22]/D |
+|                  | 1           | 13           | 14     | 0.970 | 10.000 | -0.030 | -      | 8.933          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[11][27]/D |
+|                  | 1           | 13           | 14     | 0.941 | 10.000 | -0.030 | -      | 8.926          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[7][27]/D  |
+|                  | 1           | 13           | 14     | 1.347 | 10.000 | -0.035 | -      | 8.555          | 34.40 | 65.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][24]/D  |
+|                  | 1           | 13           | 14     | 1.162 | 10.000 | -0.036 | -      | 8.686          | 31.60 | 68.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[13][22]/D |
+|                  | 1           | 13           | 14     | 1.161 | 10.000 | -0.032 | -      | 8.705          | 32.90 | 67.10  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][23]/D  |
+|                  | 1           | 13           | 14     | 1.297 | 10.000 | -0.032 | -      | 8.569          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][23]/D |
+|                  | 1           | 14           | 15     | 1.035 | 10.000 | -0.033 | -      | 8.830          | 33.50 | 66.50  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[3][25]/D  |
+|                  | 1           | 14           | 15     | 0.964 | 10.000 | -0.034 | -      | 8.935          | 33.10 | 66.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[6][25]/D  |
+|                  | 1           | 14           | 15     | 1.084 | 10.000 | -0.037 | -      | 8.783          | 35.00 | 65.00  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][26]/D  |
+|                  | 1           | 14           | 15     | 1.034 | 10.000 | -0.034 | -      | 8.830          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[3][30]/D  |
+|                  | 1           | 13           | 14     | 1.261 | 10.000 | -0.038 | -      | 8.634          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[5][24]/D  |
+|                  | 1           | 14           | 15     | 0.912 | 10.000 | -0.034 | -      | 8.951          | 34.20 | 65.80  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][28]/D  |
+|                  | 1           | 13           | 14     | 1.347 | 10.000 | -0.035 | -      | 8.555          | 34.40 | 65.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[9][24]/D  |
+|                  | 1           | 15           | 16     | 0.958 | 10.000 | -0.035 | -      | 8.944          | 34.10 | 65.90  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[2][31]/D  |
+|                  | 1           | 14           | 15     | 1.010 | 10.000 | -0.034 | -      | 8.853          | 34.60 | 65.40  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[11][28]/D |
+|                  | 1           | 14           | 15     | 1.016 | 10.000 | -0.032 | -      | 8.859          | 33.40 | 66.60  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[10][25]/D |
+|                  | 1           | 13           | 14     | 0.970 | 10.000 | -0.030 | -      | 8.933          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[11][27]/D |
+|                  | 1           | 13           | 14     | 0.935 | 10.000 | -0.029 | -      | 8.933          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[9][27]/D  |
+|                  | 1           | 13           | 14     | 1.226 | 10.000 | -0.032 | -      | 8.626          | 32.50 | 67.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[2][26]/D  |
+|                  | 1           | 14           | 15     | 0.929 | 10.000 | -0.031 | -      | 8.934          | 34.30 | 65.70  | sys_clk_pin  | sys_clk_pin       | r_reg_2_reg[0]/C        | r_register_reg[7][28]/D  |
+|                  | 1           | 13           | 14     | 1.117 | 10.000 | -0.033 | -      | 8.748          | 32.50 | 67.50  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[5][27]/D  |
+|                  | 1           | 13           | 14     | 1.230 | 10.000 | -0.036 | -      | 8.656          | 31.70 | 68.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[0][22]/D  |
+|                  | 1           | 13           | 14     | 1.162 | 10.000 | -0.036 | -      | 8.686          | 31.60 | 68.40  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[13][22]/D |
+|                  | 1           | 13           | 14     | 1.236 | 10.000 | -0.037 | -      | 8.647          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[14][1]/C | r_register_reg[12][22]/D |
+|                  | 1           | 13           | 14     | 0.940 | 10.000 | -0.030 | -      | 8.927          | 31.80 | 68.20  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[6][27]/D  |
+|                  | 1           | 15           | 15     | 0.920 | 10.000 | -0.033 | -      | 8.944          | 35.70 | 64.30  | sys_clk_pin  | sys_clk_pin       | r_register_reg[11][1]/C | r_register_reg[3][29]/D  |
++------------------+-------------+--------------+--------+-------+--------+--------+--------+----------------+-------+--------+--------------+-------------------+-------------------------+--------------------------+
 
 

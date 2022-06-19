@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/graham/Documents/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc rfile:../../../FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc id:1 order:EARLY} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc rfile:../../../FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc id:1 order:EARLY} [current_design]
 set_property src_info {type:XDC file:1 line:39 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN R7 [get_ports {ddr2_dq[0]}]
 set_property src_info {type:XDC file:1 line:45 export:INPUT save:INPUT read:READ} [current_design]
