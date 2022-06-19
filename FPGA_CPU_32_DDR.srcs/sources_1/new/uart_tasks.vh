@@ -104,7 +104,7 @@ task t_tx_message;
                 r_msg[7:0]<=8'h00;
                 r_msg_length<=8'h0;
             end
-        endcase;
-        r_msg_send_DV<=1'b1;
+        endcase
+        r_msg_send_DV<=1'b1;       
     end
 endtask

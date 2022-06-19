@@ -100,7 +100,7 @@ reg  [31:0]  r_stack_base;
 reg  [31:0]  r_stack_limit;
 
 //load control
-reg          o_ram_write_DV;
+//reg          o_ram_write_DV;
 reg  [15:0]  o_ram_write_value;
 reg  [31:0]  o_ram_write_addr;
 reg  [31:0]  r_ram_next_write_addr;
@@ -267,7 +267,7 @@ RGB_LED RGB_LED (
         );
 
 
-ila_0  myila(.clk(i_Clk),
+/*ila_0  myila(.clk(i_Clk),
              .probe0(w_opcode),
              .probe1(r_mem_read_addr),
              .probe2(r_PC),
@@ -286,7 +286,7 @@ ila_0  myila(.clk(i_Clk),
              .probe15(1'b0)
 
 
-            );
+            );*/
 
 `include "timing_tasks.vh"
     `include "LCD_tasks.vh"
@@ -434,7 +434,7 @@ begin
                 end
                 // XXXXXXXXXXXXXXXXXXXXXXXX
 
-                o_ram_write_DV<=1'b0;
+                //o_ram_write_DV<=1'b0;
                 r_stack_reset<=1'b1;
 
                 r_seven_seg_value1<={8'h24,4'h0,r_ram_next_write_addr[11:8],4'h0,r_ram_next_write_addr[7:4],4'h0,r_ram_next_write_addr[3:0]};
@@ -452,7 +452,7 @@ begin
                                 r_calc_checksum<=r_old_checksum+o_ram_write_addr-1; //adding number byte to checksum for zeros
                                 r_rec_checksum<=o_ram_write_value;
                                 o_ram_write_value<=16'h0;
-                                o_ram_write_DV<=1'b1; // This blanks the checksum as last byte from memory
+                                //o_ram_write_DV<=1'b1; // This blanks the checksum as last byte from memory
                                 r_SP<=o_ram_write_addr-1; // Set stack pointer, currently stack size not checked
                                 r_stack_base<=o_ram_write_addr-1;
 
@@ -504,7 +504,7 @@ begin
                                     r_SM<=HCF_1; // Halt and catch fire error
                                     r_error_code<=ERR_OVERFLOW;
                                 end
-                                o_ram_write_DV<=1'b1;
+                                //o_ram_write_DV<=1'b1;
 
                                 // XXXXXXXXXXXXXXXXXXXXXX Also write data to DDR
                                 r_mem_addr<=r_ram_next_write_addr<<3;
@@ -526,7 +526,7 @@ begin
 
             LOAD_COMPLETE:
             begin
-                o_ram_write_DV<=1'b0; // Finish write cycle from removing the old Checksum value
+                //o_ram_write_DV<=1'b0; // Finish write cycle from removing the old Checksum value
                 r_seven_seg_value1<=32'h22222222; // Blank 7 seg
                 if (r_calc_checksum==r_rec_checksum) // Last value received should be checksum
                 begin  // Reset all flags and jump to first instruction
@@ -573,7 +573,7 @@ begin
                 r_stack_write_flag<=2'h0;
                 r_stack_read_flag<=2'h0;
                 r_msg_send_DV<=1'b0;
-                o_ram_write_DV<=1'b0;
+                //o_ram_write_DV<=1'b0;
                 r_extra_clock<=1'b0;
                 if(r_stack_write_flag)
                 begin
