@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-// Date        : Sun Jun 19 09:27:10 2022
+// Date        : Tue Jun 21 19:13:20 2022
 // Host        : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top clk_wiz_0 -prefix
 //               clk_wiz_0_ clk_wiz_0_stub.v

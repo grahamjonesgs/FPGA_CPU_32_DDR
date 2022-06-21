@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
 // Date        : Sun Jun 19 09:27:11 2022
 // Host        : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/clk_wiz_0_synth_1/clk_wiz_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top clk_wiz_0 -prefix
+//               clk_wiz_0_ clk_wiz_0_sim_netlist.v
 // Design      : clk_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,13 +25,13 @@ module clk_wiz_0
   (* IBUF_LOW_PWR *) wire i_Clk;
   wire resetn;
 
-  clk_wiz_0_clk_wiz inst
+  clk_wiz_0_clk_wiz_0_clk_wiz inst
        (.clk_200(clk_200),
         .i_Clk(i_Clk),
         .resetn(resetn));
 endmodule
 
-module clk_wiz_0_clk_wiz
+module clk_wiz_0_clk_wiz_0_clk_wiz
    (clk_200,
     resetn,
     i_Clk);

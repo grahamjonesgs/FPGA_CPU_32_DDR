@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1655832983" LaunchIncrCheckpoint="$PPRDIR/../../Documents/LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/utils_1/imports/impl_1/FPGA_CPU_32_bits_routed.dcp">
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="FPGA_CPU_32_bits_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="FPGA_CPU_32_bits_routed.rqs"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-DRC" Name="FPGA_CPU_32_bits.drc"/>
+  <File Type="BG-BGN" Name="FPGA_CPU_32_bits.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="FPGA_CPU_32_bits.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="FPGA_CPU_32_bits.ltx"/>
+  <File Type="RBD_FILE" Name="FPGA_CPU_32_bits.rbd"/>
+  <File Type="NPI_FILE" Name="FPGA_CPU_32_bits.npi"/>
+  <File Type="RNPI_FILE" Name="FPGA_CPU_32_bits.rnpi"/>
+  <File Type="CFI_FILE" Name="FPGA_CPU_32_bits.cfi"/>
+  <File Type="RCFI_FILE" Name="FPGA_CPU_32_bits.rcfi"/>
+  <File Type="RDI-RDI" Name="FPGA_CPU_32_bits.vdi"/>
+  <File Type="PDI-FILE" Name="FPGA_CPU_32_bits.pdi"/>
+  <File Type="BITSTR-MMI" Name="FPGA_CPU_32_bits.mmi"/>
+  <File Type="BITSTR-BMM" Name="FPGA_CPU_32_bits_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="FPGA_CPU_32_bits.nky"/>
+  <File Type="BITSTR-RBT" Name="FPGA_CPU_32_bits.rbt"/>
+  <File Type="BITSTR-MSK" Name="FPGA_CPU_32_bits.msk"/>
+  <File Type="BG-BIN" Name="FPGA_CPU_32_bits.bin"/>
+  <File Type="BG-BIT" Name="FPGA_CPU_32_bits.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="FPGA_CPU_32_bits_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="FPGA_CPU_32_bits_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="FPGA_CPU_32_bits_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="FPGA_CPU_32_bits_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="FPGA_CPU_32_bits_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="FPGA_CPU_32_bits_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="FPGA_CPU_32_bits_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="FPGA_CPU_32_bits_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="route_report_bus_skew_0.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="route_report_bus_skew_0.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="route_report_bus_skew_0.rpt"/>
+  <File Type="ROUTE-CLK" Name="route_report_clock_utilization_0.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="route_report_incremental_reuse_0.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="route_report_timing_summary_0.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="FPGA_CPU_32_bits_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="route_report_timing_summary_0.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="route_report_route_status_0.pb"/>
+  <File Type="ROUTE-STATUS" Name="route_report_route_status_0.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="route_report_power_0.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="route_report_power_summary_0.pb"/>
+  <File Type="ROUTE-PWR" Name="route_report_power_0.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="FPGA_CPU_32_bits_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="FPGA_CPU_32_bits_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="FPGA_CPU_32_bits_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="route_report_drc_0.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="route_report_drc_0.pb"/>
+  <File Type="ROUTE-DRC" Name="route_report_drc_0.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="FPGA_CPU_32_bits_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="FPGA_CPU_32_bits_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="FPGA_CPU_32_bits_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="FPGA_CPU_32_bits_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="FPGA_CPU_32_bits_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="FPGA_CPU_32_bits_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="FPGA_CPU_32_bits_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="FPGA_CPU_32_bits_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="place_report_timing_summary_0.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="FPGA_CPU_32_bits_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="place_report_incremental_reuse_0.rpt"/>
+  <File Type="PLACE-CTRL" Name="FPGA_CPU_32_bits_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="FPGA_CPU_32_bits_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="FPGA_CPU_32_bits_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="FPGA_CPU_32_bits_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="place_report_io_0.rpt"/>
+  <File Type="PLACE-DCP" Name="FPGA_CPU_32_bits_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="FPGA_CPU_32_bits_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="FPGA_CPU_32_bits_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="FPGA_CPU_32_bits_pwropt.dcp"/>
+  <File Type="OPT-HWDEF" Name="FPGA_CPU_32_bits.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="opt_report_methodology_0.rpt"/>
+  <File Type="OPT-DRC" Name="opt_report_drc_0.rpt"/>
+  <File Type="OPT-DCP" Name="FPGA_CPU_32_bits_opt.dcp"/>
+  <File Type="OPT-TIMING" Name="opt_report_timing_summary_0.rpt"/>
+  <File Type="REPORTS-TCL" Name="FPGA_CPU_32_bits_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="FPGA_CPU_32_bits_timing_summary_init.rpt"/>
+  <File Type="PA-TCL" Name="FPGA_CPU_32_bits.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/LED_Display_Controller.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/LED_Display_Controller.v"/>
+        <Attr Name="ImportTime" Val="1604603346"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RGB_LED.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_CPU_32_bits/FPGA_CPU_32_bits.srcs/sources_1/new/RGB_LED.v"/>
+        <Attr Name="ImportTime" Val="1620229833"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SPI_Master.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/SPI_Master.v"/>
+        <Attr Name="ImportTime" Val="1600977224"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SPI_Master_With_Single_CS.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/SPI_Master_With_Single_CS.v"/>
+        <Attr Name="ImportTime" Val="1601831796"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ddr2_control.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mem_read_write.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/stack.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/stack.v"/>
+        <Attr Name="ImportTime" Val="1618573104"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_rx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/uart_rx.v"/>
+        <Attr Name="ImportTime" Val="1618863344"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_send_msg.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/uart_send_msg.v"/>
+        <Attr Name="ImportTime" Val="1618825070"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_transmit.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/uart_transmit.v"/>
+        <Attr Name="ImportTime" Val="1618676958"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_tasks.vh">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/register_tasks.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Verilog_projects/ram_lcd_spi_test/ram_lcd_spi_test.srcs/sources_1/new/register_tasks.vh"/>
+        <Attr Name="ImportTime" Val="1601669105"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/stack_tasks.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/stack_tasks.vh"/>
+        <Attr Name="ImportTime" Val="1618491562"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/led_tasks.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Verilog_projects/ram_lcd_spi_test/ram_lcd_spi_test.srcs/sources_1/new/led_tasks.vh"/>
+        <Attr Name="ImportTime" Val="1601667570"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/functions.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/functions.vh"/>
+        <Attr Name="ImportTime" Val="1604438668"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/timing_tasks.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Verilog_projects/ram_lcd_spi_test/ram_lcd_spi_test.srcs/sources_1/new/timing_tasks.vh"/>
+        <Attr Name="ImportTime" Val="1601667706"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/LCD_tasks.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Verilog_projects/ram_lcd_spi_test/ram_lcd_spi_test.srcs/sources_1/new/LCD_tasks.vh"/>
+        <Attr Name="ImportTime" Val="1601667674"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/control_tasks.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/control_tasks.vh"/>
+        <Attr Name="ImportTime" Val="1617867652"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/seven_seg.vh">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_tasks.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/uart_tasks.vh"/>
+        <Attr Name="ImportTime" Val="1618678145"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/opcode_select.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/sources_1/new/opcode_select.vh"/>
+        <Attr Name="ImportTime" Val="1618835944"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FPGA_CPU_32_bits.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_CPU_32_bits/FPGA_CPU_32_bits.srcs/sources_1/new/FPGA_CPU_32_bits.v"/>
+        <Attr Name="ImportTime" Val="1620414241"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0.xcix">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci"/>
+        <Attr Name="ImportTime" Val="1655622553"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ram_sp.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../verilog_test_projects/ram_test/ram_test.srcs/sources_1/new/ram_sp.v"/>
+        <Attr Name="ImportTime" Val="1601577664"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mig_7series_0_1/mig_a.prj">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/ip/mig_7series_0_1/mig_a.prj"/>
+        <Attr Name="ImportTime" Val="1655620995"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="mig_7series_0"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mig_7series_0_1/mig_b.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="mig_7series_0"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="FPGA_CPU_32_bits"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_2">
+    <File Path="$PSRCDIR/constrs_2/new/nexys_ddr.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_CPU_32_bits/FPGA_CPU_32_bits.srcs/constrs_2/new/nexys_ddr.xdc"/>
+        <Attr Name="ImportTime" Val="1620210465"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_2/new/nexys_ddr.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PPRDIR/../../Documents/LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/utils_1/imports/impl_1/FPGA_CPU_32_bits_routed.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="impl_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Documents/LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/utils_1/imports/synth_1/FPGA_CPU_32_bits.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Implementation 2020"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design">
+      <Option Id="Directive">4</Option>
+    </Step>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design">
+      <Option Id="Directive">15</Option>
+    </Step>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="0"/>
+    <Step Id="route_design">
+      <Option Id="Directive">5</Option>
+    </Step>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream">
+      <Option Id="BinFile">1</Option>
+    </Step>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="mig_7series_0"/>
+</GenRun>

@@ -338,7 +338,7 @@ begin
     begin
         o_TX_LCD_Count<=4'd1;
         o_TX_LCD_Byte<=8'b0;
-        r_SM<=OPCODE_REQUEST;
+        r_SM<=NO_PROGRAM;
         r_timeout_counter<=0;
         o_LCD_reset_n<=1'b0;
         r_PC<=32'h0;
@@ -409,14 +409,14 @@ begin
                     case(o_led[0])
                         0:
                         begin
-                            r_RGB_LED_1<=12'h050;
-                            r_RGB_LED_2<=12'h500;
+                            r_RGB_LED_1<=12'h010;
+                            r_RGB_LED_2<=12'h100;
                             o_led[0]<=1;
                         end
                         default:
                         begin
-                            r_RGB_LED_1<=12'h500;
-                            r_RGB_LED_2<=12'h050;
+                            r_RGB_LED_1<=12'h100;
+                            r_RGB_LED_2<=12'h010;
                             o_led[0]<=0;
                         end
                     endcase

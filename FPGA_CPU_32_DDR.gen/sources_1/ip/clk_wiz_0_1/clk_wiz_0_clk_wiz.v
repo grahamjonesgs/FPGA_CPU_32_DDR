@@ -78,9 +78,7 @@ module clk_wiz_0_clk_wiz
   //------------------------------------
 wire i_Clk_clk_wiz_0;
 wire clk_in2_clk_wiz_0;
-  IBUF clkin1_ibufg
-   (.O (i_Clk_clk_wiz_0),
-    .I (i_Clk));
+  assign i_Clk_clk_wiz_0 = i_Clk;
 
 
 

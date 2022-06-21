@@ -10,7 +10,7 @@
 
 int uartFd = -1;
 
-int set_interface_attribs (int fd, int speed, int parity)
+int f (int fd, int speed, int parity)
 {
         struct termios tty;
         memset (&tty, 0, sizeof tty);

@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-// Date        : Sun Jun 19 09:27:11 2022
+// Date        : Tue Jun 21 19:13:21 2022
 // Host        : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 // Command     : write_verilog -force -mode funcsim -rename_top clk_wiz_0 -prefix
 //               clk_wiz_0_ clk_wiz_0_sim_netlist.v
@@ -22,7 +22,7 @@ module clk_wiz_0
   input i_Clk;
 
   wire clk_200;
-  (* IBUF_LOW_PWR *) wire i_Clk;
+  wire i_Clk;
   wire resetn;
 
   clk_wiz_0_clk_wiz_0_clk_wiz inst
@@ -44,7 +44,6 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   wire clkfbout_buf_clk_wiz_0;
   wire clkfbout_clk_wiz_0;
   wire i_Clk;
-  wire i_Clk_clk_wiz_0;
   wire reset_high;
   wire resetn;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
@@ -69,15 +68,6 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   BUFG clkf_buf
        (.I(clkfbout_clk_wiz_0),
         .O(clkfbout_buf_clk_wiz_0));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  (* CAPACITANCE = "DONT_CARE" *) 
-  (* IBUF_DELAY_VALUE = "0" *) 
-  (* IFD_DELAY_VALUE = "AUTO" *) 
-  IBUF #(
-    .IOSTANDARD("DEFAULT")) 
-    clkin1_ibufg
-       (.I(i_Clk),
-        .O(i_Clk_clk_wiz_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
        (.I(clk_200_clk_wiz_0),
@@ -137,7 +127,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .CLKFBOUT(clkfbout_clk_wiz_0),
         .CLKFBOUTB(NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED),
         .CLKFBSTOPPED(NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED),
-        .CLKIN1(i_Clk_clk_wiz_0),
+        .CLKIN1(i_Clk),
         .CLKIN2(1'b0),
         .CLKINSEL(1'b1),
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
