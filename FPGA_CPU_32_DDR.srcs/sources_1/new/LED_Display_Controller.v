@@ -11,7 +11,7 @@ module Seven_seg_LED_Display_Controller(
 
 reg     [7:0]   r_LED_Bytes;
 reg     [19:0]  r_refresh_counter;
-wire    [2:0]   r_LED_activating_counter; // Which LED block to use
+wire    [4:0]   r_LED_activating_counter; // Which LED block to use
 
 always @(posedge i_sysclk or posedge i_reset)
 begin
@@ -20,7 +20,7 @@ begin
     else
         r_refresh_counter <= r_refresh_counter + 1;
 end
-assign r_LED_activating_counter = r_refresh_counter[19:17];
+assign r_LED_activating_counter = r_refresh_counter[19:15];
 
 always @(*)
 begin
@@ -64,6 +64,10 @@ begin
         begin
             o_Anode_Activate = 8'b11101111;
             r_LED_Bytes = i_displayed_number1[7:0];
+        end
+        default:  // To dim the LED's to 75% igonre 25% duty cycle
+        begin
+            o_Anode_Activate = 8'b11111111;
         end
     endcase
 end

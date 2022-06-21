@@ -316,6 +316,7 @@ begin
     r_timeout_counter=32'b0;
     r_seven_seg_value1=32'h20_10_00_07;
     r_seven_seg_value2=32'h21_21_21_21;
+    o_led<=16'h0;
     rx_count=8'b0;
     o_ram_write_addr=32'h0;
     r_ram_next_write_addr=12'h0;
@@ -350,8 +351,11 @@ begin
         //rx_count<=8'b0;
         o_ram_write_addr<=32'h0;
         r_ram_next_write_addr<=12'h0;
-        r_seven_seg_value1=32'h20_10_00_07;
-        r_seven_seg_value2=32'h21_21_21_21;
+        r_seven_seg_value1=32'h22222222;
+        r_seven_seg_value2=32'h22222222;
+        r_RGB_LED_1=24'h000;
+        r_RGB_LED_2=24'h000;
+        o_led<=16'h0;
         r_stack_reset=1'b0;
         r_msg_send_DV<=1'b0;
         r_hcf_message_sent<=1'b0;

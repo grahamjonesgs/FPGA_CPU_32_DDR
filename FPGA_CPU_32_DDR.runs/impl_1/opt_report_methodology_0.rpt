@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Tue Jun 21 19:39:04 2022
+| Date         : Tue Jun 21 21:04:22 2022
 | Host         : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command      : report_methodology -file opt_report_methodology_0.rpt -pb opt_report_methodology_0.pb -rpx opt_report_methodology_0.rpx
 | Design       : FPGA_CPU_32_bits
@@ -23,15 +23,17 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 151
+             Violations found: 150
 +-----------+----------+---------------------------------------------+------------+
 | Rule      | Severity | Description                                 | Violations |
 +-----------+----------+---------------------------------------------+------------+
 | LUTAR-1   | Warning  | LUT drives async reset alert                | 2          |
 | TIMING-10 | Warning  | Missing property on synchronizer            | 1          |
 | TIMING-15 | Warning  | Large hold violation                        | 69         |
-| TIMING-18 | Warning  | Missing input or output delay               | 62         |
+| TIMING-18 | Warning  | Missing input or output delay               | 54         |
+| TIMING-20 | Warning  | Non-clocked latch                           | 6          |
 | XDCB-5    | Warning  | Runtime inefficient way to find pin objects | 1          |
+| LATCH-1   | Advisory | Existing latches in the design              | 1          |
 | REQP-1959 | Advisory | connects_SERDES_RST_driver_not_FF           | 16         |
 +-----------+----------+---------------------------------------------+------------+
 
@@ -584,148 +586,143 @@ Related violations: <none>
 
 TIMING-18#35 Warning
 Missing input or output delay  
-An output delay is missing on o_LED_cathode[0] relative to clock(s) sys_clk_pin
+An output delay is missing on o_SPI_LCD_CS_n relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#36 Warning
 Missing input or output delay  
-An output delay is missing on o_LED_cathode[1] relative to clock(s) sys_clk_pin
+An output delay is missing on o_SPI_LCD_Clk relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#37 Warning
 Missing input or output delay  
-An output delay is missing on o_LED_cathode[2] relative to clock(s) sys_clk_pin
+An output delay is missing on o_SPI_LCD_MOSI relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#38 Warning
 Missing input or output delay  
-An output delay is missing on o_LED_cathode[3] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#39 Warning
 Missing input or output delay  
-An output delay is missing on o_LED_cathode[4] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[10] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#40 Warning
 Missing input or output delay  
-An output delay is missing on o_LED_cathode[5] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[11] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#41 Warning
 Missing input or output delay  
-An output delay is missing on o_LED_cathode[6] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[12] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#42 Warning
 Missing input or output delay  
-An output delay is missing on o_LED_cathode[7] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[13] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#43 Warning
 Missing input or output delay  
-An output delay is missing on o_SPI_LCD_CS_n relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[14] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#44 Warning
 Missing input or output delay  
-An output delay is missing on o_SPI_LCD_Clk relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[15] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#45 Warning
 Missing input or output delay  
-An output delay is missing on o_SPI_LCD_MOSI relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#46 Warning
 Missing input or output delay  
-An output delay is missing on o_led[0] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[2] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#47 Warning
 Missing input or output delay  
-An output delay is missing on o_led[10] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[3] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#48 Warning
 Missing input or output delay  
-An output delay is missing on o_led[11] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[4] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#49 Warning
 Missing input or output delay  
-An output delay is missing on o_led[12] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[5] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#50 Warning
 Missing input or output delay  
-An output delay is missing on o_led[13] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[6] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#51 Warning
 Missing input or output delay  
-An output delay is missing on o_led[14] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[7] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#52 Warning
 Missing input or output delay  
-An output delay is missing on o_led[15] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[8] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#53 Warning
 Missing input or output delay  
-An output delay is missing on o_led[1] relative to clock(s) sys_clk_pin
+An output delay is missing on o_led[9] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#54 Warning
 Missing input or output delay  
-An output delay is missing on o_led[2] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#55 Warning
-Missing input or output delay  
-An output delay is missing on o_led[3] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#56 Warning
-Missing input or output delay  
-An output delay is missing on o_led[4] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#57 Warning
-Missing input or output delay  
-An output delay is missing on o_led[5] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#58 Warning
-Missing input or output delay  
-An output delay is missing on o_led[6] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#59 Warning
-Missing input or output delay  
-An output delay is missing on o_led[7] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#60 Warning
-Missing input or output delay  
-An output delay is missing on o_led[8] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#61 Warning
-Missing input or output delay  
-An output delay is missing on o_led[9] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#62 Warning
-Missing input or output delay  
 An output delay is missing on o_uart_tx relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[0] cannot be properly analyzed as its control pin Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[1] cannot be properly analyzed as its control pin Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[2] cannot be properly analyzed as its control pin Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[3] cannot be properly analyzed as its control pin Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[4] cannot be properly analyzed as its control pin Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[5] cannot be properly analyzed as its control pin Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 XDCB-5#1 Warning
 Runtime inefficient way to find pin objects  
 The option '-to : [get_pins -hier -include_replicated_objects -filter {NAME =~ *temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[*]/D}]' of constraint 'set_max_delay' uses inefficient query to find pin objects (see constraint position '6' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
 Current XDC: /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/constraints/mig_7series_0.xdc (Line: 344)
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 6 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
 Related violations: <none>
 
 REQP-1959#1 Advisory
