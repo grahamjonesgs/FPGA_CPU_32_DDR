@@ -22,7 +22,7 @@
 
 
 module FPGA_CPU_32_bits(
-           input                i_reset_H,     // Center button reset
+           input                CPU_RESETN,     // CPU reset button
            input                i_Clk,       // FPGA Clock
            input                i_uart_rx,
            input                i_load_H,   // Load button
@@ -160,6 +160,10 @@ wire        w_mem_ready;
 reg [15:0]  r_opcode_mem;
 reg [31:0]  r_var1_mem;
 
+wire w_reset_H;
+
+assign w_reset_H=!CPU_RESETN;
+
 
 mem_read_write mem_read_write (
                    .i_Clk (i_Clk),
@@ -207,7 +211,7 @@ uart_rx uart_rx1 (
 
 Seven_seg_LED_Display_Controller Seven_seg_LED_Display_Controller1 (
                                      .i_sysclk(i_Clk),
-                                     .i_reset(i_reset_H),
+                                     .i_reset(w_reset_H),
                                      .i_displayed_number1(r_seven_seg_value1), // Number to display
                                      .i_displayed_number2(r_seven_seg_value2), // Number to display
                                      .o_Anode_Activate(o_Anode_Activate),
@@ -215,7 +219,7 @@ Seven_seg_LED_Display_Controller Seven_seg_LED_Display_Controller1 (
                                  );
 
 SPI_Master_With_Single_CS SPI_Master_With_Single_CS_inst (
-                              .i_Rst_L(~i_reset_H),
+                              .i_Rst_L(~w_reset_H),
                               .i_Clk(i_Clk),
                               // TX (MOSI) Signals
                               .i_TX_Count(o_TX_LCD_Count),     // # bytes per CS low
@@ -250,7 +254,7 @@ assign w_var1=r_var1_mem;
 
 stack main_stack (
           .clk(i_Clk),
-          .i_reset(i_reset_H),
+          .i_reset(w_reset_H),
           .i_read_flag(r_stack_read_flag),
           .i_write_flag(r_stack_write_flag),
           .i_write_value(r_stack_write_value),
@@ -335,7 +339,7 @@ end
 
 always @(posedge i_Clk)
 begin
-    if (i_reset_H)
+    if (w_reset_H)
     begin
         o_TX_LCD_Count<=4'd1;
         o_TX_LCD_Byte<=8'b0;
@@ -361,7 +365,7 @@ begin
         r_hcf_message_sent<=1'b0;
         r_timing_start<=0;
         r_timer_interupt_counter<=0;
-    end // if (i_reset_H)
+    end // if (w_reset_H)
     // else if(w_uart_rx_DV&w_uart_rx_value==8'h53&i_load_H) // Load start flag received and down button pressed
     else if(w_uart_rx_DV&w_uart_rx_value==8'h53) // Load start flag received ignore if button pressed
     begin
@@ -758,7 +762,7 @@ begin
             default:
                 r_SM<=HCF_1; // loop in error
         endcase // case(r_SM)
-    end // else if (i_reset_H)
+    end // else if (w_reset_H)
 end // always @(posedge i_Clk)
 
 endmodule

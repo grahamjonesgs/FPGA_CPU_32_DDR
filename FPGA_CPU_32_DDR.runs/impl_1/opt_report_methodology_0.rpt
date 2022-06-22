@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Tue Jun 21 21:04:22 2022
+| Date         : Wed Jun 22 14:45:37 2022
 | Host         : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command      : report_methodology -file opt_report_methodology_0.rpt -pb opt_report_methodology_0.pb -rpx opt_report_methodology_0.rpx
 | Design       : FPGA_CPU_32_bits
@@ -416,7 +416,7 @@ Related violations: <none>
 
 TIMING-18#1 Warning
 Missing input or output delay  
-An input delay is missing on i_reset_H relative to clock(s) sys_clk_pin
+An input delay is missing on CPU_RESETN relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#2 Warning

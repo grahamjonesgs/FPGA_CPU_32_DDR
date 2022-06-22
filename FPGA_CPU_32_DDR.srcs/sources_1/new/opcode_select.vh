@@ -93,6 +93,7 @@ task t_opcode_select;
 
             // Coms 5xxxx
             16'h5000: t_test_message;                           // TESTMSG test UART message
+            16'h501?: t_tx_reg;                                 // MSGREG send reg value in message
 
             // CPU Setting 6xxxx
 
