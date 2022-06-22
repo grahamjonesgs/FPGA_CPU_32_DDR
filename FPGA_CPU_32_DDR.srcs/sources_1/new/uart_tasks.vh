@@ -5,9 +5,30 @@
 
 task t_test_message;
     begin
-        t_tx_message(8'd3);
-        r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+    if (!w_sending_msg)
+        begin
+            t_tx_message(8'd3);
+            r_SM<=OPCODE_REQUEST;
+            r_PC<=r_PC+1;
+        end
+    end
+endtask
+
+// Send message newline
+// On completion
+// Increment PC 1
+// Increamaent r_SM_msg
+task t_tx_newline;
+    begin   
+    if (!w_sending_msg)
+        begin  
+            r_msg[7:0]<=8'h0A;
+            r_msg[15:8]<=8'h0D;
+            r_msg_length<=8'h2;
+            r_msg_send_DV<=1'b1; 
+            r_SM<=OPCODE_REQUEST;
+            r_PC<=r_PC+1;
+        end
     end
 endtask
 
@@ -16,20 +37,22 @@ endtask
 // Increment PC 1
 // Increamaent r_SM_msg
 task t_tx_reg;
-    begin
-        
-        r_msg[7:0]<=return_ascii_from_hex(r_register[r_reg_2][31:28]);
-        r_msg[15:8]<=return_ascii_from_hex(r_register[r_reg_2][27:24]);
-        r_msg[23:16]<=return_ascii_from_hex(r_register[r_reg_2][23:20]);
-        r_msg[31:24]<=return_ascii_from_hex(r_register[r_reg_2][19:16]);
-        r_msg[39:32]<=return_ascii_from_hex(r_register[r_reg_2][15:12]);
-        r_msg[47:40]<=return_ascii_from_hex(r_register[r_reg_2][11:8]);
-        r_msg[55:48]<=return_ascii_from_hex(r_register[r_reg_2][7:4]);
-        r_msg[63:56]<=return_ascii_from_hex(r_register[r_reg_2][3:0]);
-        r_msg_length<=8'h8;
-        r_msg_send_DV<=1'b1; 
-        r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+    begin  
+    if (!w_sending_msg)
+        begin      
+            r_msg[7:0]<=return_ascii_from_hex(r_register[r_reg_2][31:28]);
+            r_msg[15:8]<=return_ascii_from_hex(r_register[r_reg_2][27:24]);
+            r_msg[23:16]<=return_ascii_from_hex(r_register[r_reg_2][23:20]);
+            r_msg[31:24]<=return_ascii_from_hex(r_register[r_reg_2][19:16]);
+            r_msg[39:32]<=return_ascii_from_hex(r_register[r_reg_2][15:12]);
+            r_msg[47:40]<=return_ascii_from_hex(r_register[r_reg_2][11:8]);
+            r_msg[55:48]<=return_ascii_from_hex(r_register[r_reg_2][7:4]);
+            r_msg[63:56]<=return_ascii_from_hex(r_register[r_reg_2][3:0]);
+            r_msg_length<=8'h8;
+            r_msg_send_DV<=1'b1; 
+            r_SM<=OPCODE_REQUEST;
+            r_PC<=r_PC+1;
+        end
     end
 endtask
 

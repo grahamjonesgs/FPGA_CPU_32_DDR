@@ -55,7 +55,6 @@ begin
                 begin
                     r_msg[i][7:0]<=i_msg_flat[8*i +:8];
                 end
-
             end
         end
 

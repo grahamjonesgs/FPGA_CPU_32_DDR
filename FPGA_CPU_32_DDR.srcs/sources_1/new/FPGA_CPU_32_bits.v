@@ -139,7 +139,7 @@ reg [2047:0] r_msg;
 reg [7:0]   r_msg_length;
 reg         r_msg_send_DV;
 wire        i_msg_sent_DV;
-wire        i_sending_msg;
+wire        w_sending_msg;
 
 // temp vars for timing
 reg         r_timing_start;
@@ -199,7 +199,7 @@ uart_send_msg  uart_send_msg1 (
                    .i_msg_send_DV(r_msg_send_DV),
                    .o_Tx_Serial(o_uart_tx),
                    .o_msg_sent_DV(i_msg_sent_DV),
-                   .o_sending_msg(i_sending_msg));
+                   .o_sending_msg(w_sending_msg));
 
 
 uart_rx uart_rx1 (
