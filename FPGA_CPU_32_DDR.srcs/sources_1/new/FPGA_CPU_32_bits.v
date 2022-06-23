@@ -101,11 +101,11 @@ reg  [31:0]  r_stack_limit;
 
 //load control
 //reg          o_ram_write_DV;
-reg  [15:0]  o_ram_write_value;
+reg  [31:0]  o_ram_write_value;
 reg  [31:0]  o_ram_write_addr;
 reg  [31:0]  r_ram_next_write_addr;
 reg  [7:0]   rx_count;
-reg  [1:0]   r_load_byte_counter;
+reg  [2:0]   r_load_byte_counter;
 reg  [15:0]  r_checksum;
 reg  [15:0]  r_old_checksum;
 reg  [15:0]  r_calc_checksum;
@@ -457,9 +457,9 @@ begin
                             if (r_load_byte_counter==0)
                             begin
                                 r_SM<=LOAD_COMPLETE;
-                                r_calc_checksum<=r_old_checksum+o_ram_write_addr-1; //adding number byte to checksum for zeros
-                                r_rec_checksum<=o_ram_write_value;
-                                o_ram_write_value<=16'h0;
+                                r_calc_checksum<=r_old_checksum+o_ram_write_addr*2+o_ram_write_value[31:16]; //adding number byte to checksum for zeros
+                                r_rec_checksum<=o_ram_write_value[15:0];
+                                o_ram_write_value<=32'h0;
                                 //o_ram_write_DV<=1'b1; // This blanks the checksum as last byte from memory
                                 r_SP<=o_ram_write_addr-1; // Set stack pointer, currently stack size not checked
                                 r_stack_base<=o_ram_write_addr-1;
@@ -481,24 +481,25 @@ begin
                         begin
                             case (r_load_byte_counter)
                                 0:
-                                begin
-                                    o_ram_write_value[15:12]=return_hex_from_ascii(w_uart_rx_value);
-
-
-                                end
+                                    o_ram_write_value[31:28]=return_hex_from_ascii(w_uart_rx_value);
                                 1:
-                                    o_ram_write_value[11:8]=return_hex_from_ascii(w_uart_rx_value);
+                                    o_ram_write_value[27:24]=return_hex_from_ascii(w_uart_rx_value);
                                 2:
-                                begin
-                                    o_ram_write_value[7:4]=return_hex_from_ascii(w_uart_rx_value);
-
-                                end
+                                    o_ram_write_value[23:20]=return_hex_from_ascii(w_uart_rx_value);
                                 3:
+                                    o_ram_write_value[19:16]=return_hex_from_ascii(w_uart_rx_value);
+                                4:
+                                    o_ram_write_value[15:12]=return_hex_from_ascii(w_uart_rx_value);   
+                                5:
+                                    o_ram_write_value[11:8]=return_hex_from_ascii(w_uart_rx_value);
+                                6:
+                                    o_ram_write_value[7:4]=return_hex_from_ascii(w_uart_rx_value);
+                                7:
                                     o_ram_write_value[3:0]=return_hex_from_ascii(w_uart_rx_value);
                                 default:
                                     ;
                             endcase //r_load_byte_counter
-                            if (r_load_byte_counter==3)
+                            if (r_load_byte_counter==7)
                             begin
                                 r_load_byte_counter<=0;
                                 case (r_RGB_LED_1)
@@ -516,12 +517,13 @@ begin
 
                                 // XXXXXXXXXXXXXXXXXXXXXX Also write data to DDR
                                 r_mem_addr<=r_ram_next_write_addr<<3;
-                                r_mem_write_data<={16'b0,o_ram_write_value,96'b0};
+                               // r_mem_write_data<={16'b0,o_ram_write_value,96'b0};
+                                r_mem_write_data<={o_ram_write_value,96'b0};
                                 r_mem_write_DV<=1'b1;
                                 // XXXXXXXXXXXXXXXXXXXXXX
 
                                 r_old_checksum<=r_checksum;
-                                r_checksum<=r_checksum+o_ram_write_value;
+                                r_checksum<=r_checksum+o_ram_write_value[31:16]+o_ram_write_value[15:0];
                             end // if (r_load_byte_counter==3)
                             else
                             begin
@@ -543,7 +545,7 @@ begin
                     r_SM<=START_WAIT;
                     r_timeout_counter<=0;
                     o_LCD_reset_n<=1'b0;
-                    r_PC<=12'h1;
+                    r_PC<=12'h0;
                     r_error_code<=8'h0;
                     r_zero_flag<=1'b0;
                     r_carry_flag<=1'b0;
@@ -626,7 +628,6 @@ begin
                 r_mem_read_addr<=w_var1;  // In case we need to read the memory
 
                 r_SM<=VAR1_FETCH;
-                //r_SM<=OPCODE_EXECUTE;
 
                 r_mem_addr<=(r_PC+1)<<3;
                 r_mem_read_DV=1'b1;
@@ -638,9 +639,9 @@ begin
             begin
                 if(w_mem_ready)
                 begin
-                    r_var1_mem[31:16]<=w_mem_read_data[111:96]; // the memory location, allows read of code as well as data
-                    r_SM<=VAR1_FETCH2;
-                    r_mem_addr<=(r_PC+2)<<3;
+                    r_var1_mem<=w_mem_read_data[127:96]; // the memory location, allows read of code as well as data
+                    r_SM<=OPCODE_EXECUTE;
+                    //r_mem_addr<=(r_PC+2)<<3;
                     r_mem_read_DV=1'b0;
                 end // if ready asserted, else will loop until ready
             end

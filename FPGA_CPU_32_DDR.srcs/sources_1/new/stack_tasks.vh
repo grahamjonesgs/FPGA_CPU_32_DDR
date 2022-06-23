@@ -8,7 +8,7 @@ task t_stack_push_value;
         r_stack_write_value<=i_value;
         r_stack_write_flag<=2'h1; // to move stack pointer 1
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+2;
+        r_PC<=r_PC+1;
     end
 endtask
 
@@ -23,7 +23,7 @@ task t_stack_push_reg;
         r_stack_write_flag<=2'h1;  // to move stack pointer 1
         r_stack_write_value <= r_register[reg_1];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+2;
+        r_PC<=r_PC+1;
 
     end
 endtask
@@ -39,7 +39,7 @@ task t_stack_pop_reg;
         r_register[reg_1] <= i_stack_top_value;
         r_stack_read_flag<=2'h1; // to move stack pointer
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+2;
+        r_PC<=r_PC+1;
     end
 endtask
 

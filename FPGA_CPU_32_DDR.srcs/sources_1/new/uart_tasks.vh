@@ -9,7 +9,7 @@ task t_test_message;
         begin
             t_tx_message(8'd3);
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+2;
+            r_PC<=r_PC+1;
         end
     end
 endtask
@@ -45,7 +45,7 @@ task t_tx_char_from_mem_value;
                 r_mem_read_DV<=1'b0;
                 if (r_mem_read_DV)
                 begin
-                    r_PC<=r_PC+4;
+                    r_PC<=r_PC+2;
                 end
             end // if ready asserted, else will loop until ready
         end  // if sebsequent loop
@@ -65,7 +65,7 @@ task t_tx_newline;
             r_msg_length<=8'h2;
             r_msg_send_DV<=1'b1; 
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+2;
+            r_PC<=r_PC+1;
         end
     end
 endtask
@@ -89,7 +89,7 @@ task t_tx_reg;
             r_msg_length<=8'h8;
             r_msg_send_DV<=1'b1; 
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+2;
+            r_PC<=r_PC+1;
         end
     end
 endtask

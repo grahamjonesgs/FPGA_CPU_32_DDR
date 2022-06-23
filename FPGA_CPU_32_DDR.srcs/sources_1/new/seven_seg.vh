@@ -7,7 +7,7 @@ task t_7_seg1_value;
     begin
         r_seven_seg_value1<={4'h0,i_byte[15:12],4'h0,i_byte[11:8],4'h0,i_byte[7:4],4'h0,i_byte[3:0]};
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+4;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -20,7 +20,7 @@ task t_7_seg2_value;
     begin
         r_seven_seg_value2<={4'h0,i_byte[15:12],4'h0,i_byte[11:8],4'h0,i_byte[7:4],4'h0,i_byte[3:0]};
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+4;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -33,7 +33,7 @@ task t_7_seg1_reg;
     begin
         r_seven_seg_value1<={4'h0,r_register[r_reg_2][15:12],4'h0,r_register[r_reg_2][11:8],4'h0,r_register[r_reg_2][7:4],4'h0,r_register[r_reg_2][3:0]};
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+2;
+        r_PC<=r_PC+1;
     end
 endtask
 
@@ -46,7 +46,7 @@ task t_7_seg2_reg;
     begin
         r_seven_seg_value2<={4'h0,r_register[r_reg_2][15:12],4'h0,r_register[r_reg_2][11:8],4'h0,r_register[r_reg_2][7:4],4'h0,r_register[r_reg_2][3:0]};
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+2;
+        r_PC<=r_PC+1;
     end
 endtask
 // Set 7 Seg all reg
@@ -59,7 +59,7 @@ task t_7_seg_reg;
         r_seven_seg_value1<={4'h0,r_register[r_reg_2][31:28],4'h0,r_register[r_reg_2][27:24],4'h0,r_register[r_reg_2][23:20],4'h0,r_register[r_reg_2][19:16]};
         r_seven_seg_value2<={4'h0,r_register[r_reg_2][15:12],4'h0,r_register[r_reg_2][11:8],4'h0,r_register[r_reg_2][7:4],4'h0,r_register[r_reg_2][3:0]};
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+2;
+        r_PC<=r_PC+1;
     end
 endtask
 
@@ -73,7 +73,7 @@ task t_7_seg_blank;
         r_seven_seg_value1<=32'h22222222;
         r_seven_seg_value2<=32'h22222222;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+2;
+        r_PC<=r_PC+1;
     end
 endtask
 

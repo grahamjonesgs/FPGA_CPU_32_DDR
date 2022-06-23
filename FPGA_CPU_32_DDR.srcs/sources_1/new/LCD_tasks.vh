@@ -12,7 +12,7 @@ task spi_dc_write_command_value;
             o_TX_LCD_DV<=1'b1;
             r_timeout_counter<=0;
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+4;
+            r_PC<=r_PC+2;
         end // if (i_TX_Ready)
         else
         begin
@@ -35,7 +35,7 @@ task spi_dc_write_data_value;
             o_TX_LCD_DV<=1'b1;
             r_timeout_counter<=0;
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+4;
+            r_PC<=r_PC+2;
         end // if (i_TX_Ready)
         else
         begin
@@ -60,7 +60,7 @@ task spi_dc_write_command_reg;
             o_TX_LCD_DV<=1'b1;
             r_timeout_counter<=0;
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+2;
+            r_PC<=r_PC+1;
         end // if (i_TX_Ready)
         else
         begin
@@ -84,7 +84,7 @@ task spi_dc_data_command_reg;
             o_TX_LCD_DV<=1'b1;
             r_timeout_counter<=0;
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+2;
+            r_PC<=r_PC+1;
         end // if (i_TX_Ready)
         else
         begin
@@ -102,6 +102,6 @@ task t_lcd_reset_value;
     begin
         o_LCD_reset_n<=i_state[0];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+4;
+        r_PC<=r_PC+2;
     end
 endtask

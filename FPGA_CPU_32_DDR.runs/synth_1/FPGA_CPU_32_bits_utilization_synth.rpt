@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Thu Jun 23 15:19:27 2022
+| Date         : Thu Jun 23 22:42:50 2022
 | Host         : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command      : report_utilization -file FPGA_CPU_32_bits_utilization_synth.rpt -pb FPGA_CPU_32_bits_utilization_synth.pb
 | Design       : FPGA_CPU_32_bits
@@ -31,14 +31,14 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 3288 |     0 |          0 |     63400 |  5.19 |
-|   LUT as Logic          | 3288 |     0 |          0 |     63400 |  5.19 |
+| Slice LUTs*             | 3839 |     0 |          0 |     63400 |  6.06 |
+|   LUT as Logic          | 3839 |     0 |          0 |     63400 |  6.06 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         | 1554 |     0 |          0 |    126800 |  1.23 |
-|   Register as Flip Flop | 1548 |     0 |          0 |    126800 |  1.22 |
+| Slice Registers         | 1586 |     0 |          0 |    126800 |  1.25 |
+|   Register as Flip Flop | 1580 |     0 |          0 |    126800 |  1.25 |
 |   Register as Latch     |    6 |     0 |          0 |    126800 | <0.01 |
-| F7 Muxes                |  102 |     0 |          0 |     31700 |  0.32 |
-| F8 Muxes                |   17 |     0 |          0 |     15850 |  0.11 |
+| F7 Muxes                |  118 |     0 |          0 |     31700 |  0.37 |
+| F8 Muxes                |   25 |     0 |          0 |     15850 |  0.16 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -57,8 +57,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 5     |          Yes |           - |          Set |
 | 54    |          Yes |           - |        Reset |
-| 37    |          Yes |         Set |            - |
-| 1458  |          Yes |       Reset |            - |
+| 8     |          Yes |         Set |            - |
+| 1519  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,21 +148,21 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 2079 |                 LUT |
-| FDRE     | 1458 |        Flop & Latch |
-| LUT2     |  578 |                 LUT |
-| LUT5     |  441 |                 LUT |
-| LUT4     |  314 |                 LUT |
-| CARRY4   |  208 |          CarryLogic |
-| LUT1     |  194 |                 LUT |
-| LUT3     |  187 |                 LUT |
-| MUXF7    |  102 |               MuxFx |
+| LUT6     | 2491 |                 LUT |
+| FDRE     | 1519 |        Flop & Latch |
+| LUT2     |  535 |                 LUT |
+| LUT5     |  523 |                 LUT |
+| LUT4     |  382 |                 LUT |
+| LUT3     |  370 |                 LUT |
+| CARRY4   |  186 |          CarryLogic |
+| MUXF7    |  118 |               MuxFx |
+| LUT1     |   99 |                 LUT |
 | FDCE     |   48 |        Flop & Latch |
 | OBUF     |   44 |                  IO |
-| FDSE     |   37 |        Flop & Latch |
+| MUXF8    |   25 |               MuxFx |
 | IBUF     |   19 |                  IO |
-| MUXF8    |   17 |               MuxFx |
 | RAMB36E1 |    8 |        Block Memory |
+| FDSE     |    8 |        Flop & Latch |
 | LDCE     |    6 |        Flop & Latch |
 | FDPE     |    5 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
