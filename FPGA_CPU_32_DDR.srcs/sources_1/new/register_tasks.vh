@@ -13,7 +13,7 @@ input [31:0] i_location; // Not used here, but needed to show this is a two word
         begin
             r_register[r_reg_2]<=w_mem; // the memory location, allows read of code as well as data
             r_SM<=OPCODE_REQUEST;  
-            r_PC<=r_PC+3;  
+            r_PC<=r_PC+4;  
         end  
     end
 endtask 
@@ -43,7 +43,7 @@ input [31:0] i_location; // Not used here, but needed to show this is a two word
             o_ram_write_value<=r_register[r_reg_2];
             o_ram_write_DV<=1'b1;
             r_SM<=OPCODE_REQUEST;  
-            r_PC<=r_PC+3; 
+            r_PC<=r_PC+4; 
        // end   
        end
     end
@@ -58,7 +58,7 @@ task t_copy_regs;
     begin
         r_register[r_reg_1]<=r_register[r_reg_2];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -71,7 +71,7 @@ task t_set_reg;
     begin
         r_register[r_reg_2]<=i_value;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
     end
 endtask
 
@@ -83,7 +83,7 @@ task t_set_reg_flags;
     begin
         r_register[r_reg_2]<={r_zero_flag, r_equal_flag,r_carry_flag,r_overflow_flag,12'b0};
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -97,7 +97,7 @@ task t_and_regs;
     begin
         r_register[r_reg_1]<=r_register[r_reg_1]&r_register[r_reg_2];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -109,7 +109,7 @@ task t_or_regs;
     begin
         r_register[r_reg_1]<=r_register[r_reg_1]|r_register[r_reg_2];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -121,7 +121,7 @@ task t_xor_regs;
     begin
         r_register[r_reg_1]<=r_register[r_reg_1]^r_register[r_reg_2];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -134,7 +134,7 @@ task t_and_reg_value;
     begin
         r_register[r_reg_2]<=r_register[r_reg_2]&i_value;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
     end
 endtask
 
@@ -147,7 +147,7 @@ task t_or_reg_value;
     begin
         r_register[r_reg_2]<=r_register[r_reg_2]|i_value;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
     end
 endtask
 
@@ -160,7 +160,7 @@ task t_xor_reg_value;
     begin
         r_register[r_reg_2]<=r_register[r_reg_2]^i_value;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
     end
 endtask
 
@@ -180,7 +180,7 @@ task t_add_value;
         r_overflow_flag = (r_register[r_reg_2][31]&&i_value[31]&&!hold[31])||(!r_register[r_reg_2][31]&&!i_value[31]&&hold[31]) ? 1'b1 : 1'b0;
         r_register[r_reg_2]<= hold;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
 
     end
 endtask
@@ -198,7 +198,7 @@ task t_minus_value;
         r_overflow_flag = (r_register[r_reg_2][31]&&!i_value[31]&&!hold[31])||(!r_register[r_reg_2][31]&&i_value[31]&&hold[31]) ? 1'b1 : 1'b0;
         r_register[r_reg_2]<= hold;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
     end
 endtask
 
@@ -214,7 +214,7 @@ task t_dec_reg;
         r_overflow_flag = (r_register[r_reg_2][31]&&!hold[31]) ? 1'b1 : 1'b0;
         r_register[r_reg_2]<= hold;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -230,7 +230,7 @@ task t_inc_reg;
         r_overflow_flag = (!r_register[r_reg_2][31]&&hold[31]) ? 1'b1 : 1'b0;
         r_register[r_reg_2]<= hold;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -243,7 +243,7 @@ task t_compare_reg_value;
     begin
         r_equal_flag <= r_register[r_reg_2]==i_value ? 1'b1 : 1'b0;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
     end
 endtask
 
@@ -261,7 +261,7 @@ task t_add_regs;
         r_register[r_reg_1]<= hold;
 
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
 
     end
 endtask
@@ -279,7 +279,7 @@ task t_minus_regs;
         r_register[r_reg_1]<= hold;
 
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -291,7 +291,7 @@ task t_negate_reg;
     begin
         r_register[r_reg_2]<=~r_register[r_reg_2]+1;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -303,7 +303,7 @@ task t_left_shift_reg;
     begin
         r_register[r_reg_2]<=r_register[r_reg_2]<<1;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -315,7 +315,7 @@ task t_right_shift_reg;
     begin
         r_register[r_reg_2]<=r_register[r_reg_2]>>1;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -327,7 +327,7 @@ task t_left_shift_a_reg;
     begin
         r_register[r_reg_2]<=r_register[r_reg_2]<<<1;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -339,7 +339,7 @@ task t_right_shift_a_reg;
     begin
         r_register[r_reg_2]<=r_register[r_reg_2]>>>1;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -352,7 +352,7 @@ task t_compare_regs;
     begin
         r_equal_flag <= r_register[r_reg_1]==r_register[r_reg_2] ? 1'b1 : 1'b0;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 

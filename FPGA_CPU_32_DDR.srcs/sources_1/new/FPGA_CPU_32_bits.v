@@ -543,7 +543,7 @@ begin
                     r_SM<=START_WAIT;
                     r_timeout_counter<=0;
                     o_LCD_reset_n<=1'b0;
-                    r_PC<=12'h0;
+                    r_PC<=12'h1;
                     r_error_code<=8'h0;
                     r_zero_flag<=1'b0;
                     r_carry_flag<=1'b0;

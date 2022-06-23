@@ -17,7 +17,7 @@ task t_set_mem_from_value_reg;
             if(w_mem_ready)
             begin
                 r_SM<=OPCODE_REQUEST;
-                r_PC<=r_PC+3;
+                r_PC<=r_PC+4;
                 r_mem_write_DV<=1'b0;
             end // if ready asserted, else will loop until ready
         end  // if sebsequent loop
@@ -42,7 +42,7 @@ task t_set_mem_from_reg_reg;
             if(w_mem_ready)
             begin
                 r_SM<=OPCODE_REQUEST;
-                r_PC<=r_PC+1;
+                r_PC<=r_PC+2;
                 r_mem_write_DV<=1'b0;
             end // if ready asserted, else will loop until ready
         end  // if sebsequent loop
@@ -71,7 +71,7 @@ task t_set_reg_from_mem_value;
                 r_mem_read_DV<=1'b0;
                 if (r_mem_read_DV)
                 begin
-                    r_PC<=r_PC+3;
+                    r_PC<=r_PC+4;
                 end
             end // if ready asserted, else will loop until ready
         end  // if sebsequent loop
@@ -99,7 +99,7 @@ task t_set_reg_from_mem_reg;
                 r_mem_read_DV<=1'b0;
                 if (r_mem_read_DV)
                 begin
-                    r_PC<=r_PC+1;
+                    r_PC<=r_PC+2;
                 end
             end // if ready asserted, else will loop until ready
         end  // if sebsequent loop

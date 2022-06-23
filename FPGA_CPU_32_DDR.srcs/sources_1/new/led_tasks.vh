@@ -8,7 +8,7 @@ task t_led_value;
     begin
         o_led<=i_state[15:0];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
     end
 endtask
 
@@ -22,7 +22,7 @@ task t_led_reg;
         reg_1=w_opcode[3:0];
         o_led<=r_register[reg_1][15:0];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -35,7 +35,7 @@ task t_led_rgb1_value;
     begin
         r_RGB_LED_1<=i_state[11:0];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
     end
 endtask
 
@@ -49,7 +49,7 @@ task t_led_rgb1_reg;
         reg_1=w_opcode[3:0];
         r_RGB_LED_1<=r_register[reg_1][11:0];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -62,7 +62,7 @@ task t_led_rgb2_value;
     begin
         r_RGB_LED_2<=i_state[11:0];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+3;
+        r_PC<=r_PC+4;
     end
 endtask
 
@@ -76,7 +76,7 @@ task t_led_rgb2_reg;
         reg_1=w_opcode[3:0];
         r_RGB_LED_2<=r_register[reg_1][11:0];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 
@@ -90,7 +90,7 @@ task t_get_switch_reg;
         reg_1=w_opcode[3:0];
         r_register[reg_1][15:0]<=i_switch;
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
+        r_PC<=r_PC+2;
     end
 endtask
 

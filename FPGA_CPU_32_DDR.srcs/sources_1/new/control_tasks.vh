@@ -9,12 +9,12 @@ task t_cond_jump;
         if(i_condition)
         begin
             r_SM<=OPCODE_REQUEST;
-            r_PC<=i_value; // jump
+            r_PC<=i_value+1; // jump
         end // if(i_condition)
         else
         begin
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+3;
+            r_PC<=r_PC+4;
         end // else if(i_condition)
     end
 endtask
@@ -32,12 +32,12 @@ task t_cond_call;
             r_stack_write_value=r_PC+3;   // push PC on stack
             r_stack_write_flag<=1'b1;   // to move stack pointer
             r_SM<=OPCODE_REQUEST;
-            r_PC<=i_value;
+            r_PC<=i_value+1;
         end // if(i_condition)
         else
         begin
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+3;
+            r_PC<=r_PC+4;
         end // else if(i_condition)
     end
 endtask
@@ -50,7 +50,7 @@ task t_ret;
     begin
         r_stack_read_flag<=1'b1;  // to move stack pointer
         r_SM<=OPCODE_REQUEST;
-        r_PC<=i_stack_top_value; // Pop PC from stack plus 2 to jump over call
+        r_PC<=i_stack_top_value+1; // Pop PC from stack plus 2 to jump over call
     end
 endtask
 
@@ -61,7 +61,7 @@ endtask
 task t_nop;
     begin
         r_SM<=OPCODE_REQUEST;
-        r_PC<=+1;
+        r_PC<=+2;
     end
 endtask
 
@@ -82,7 +82,7 @@ endtask
 task t_reset;
     begin
         r_SM<=OPCODE_REQUEST;
-        r_PC<=12'h0;
+        r_PC<=12'h1;
     end // Case FFFF
 endtask
 
@@ -96,8 +96,8 @@ task t_set_interupt_regs;
         r_interupt_number=r_register[r_reg_1][3:0];
         r_interupt_table[r_interupt_number]<=r_register[r_reg_2];
         r_SM<=OPCODE_REQUEST;
-        r_PC<=r_PC+1;
-    end // Case FFFF
+        r_PC<=r_PC+2;
+    end 
 endtask
 
 

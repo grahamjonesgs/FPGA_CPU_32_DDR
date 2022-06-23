@@ -9,8 +9,46 @@ task t_test_message;
         begin
             t_tx_message(8'd3);
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+1;
+            r_PC<=r_PC+2;
         end
+    end
+endtask
+
+// Print to serial character from memory location
+// On completion
+// Increament PC 3
+// Increament r_SM_msg
+task t_tx_char_from_mem_value;
+    input [31:0] i_location;
+    begin
+        if(r_extra_clock==0)
+        begin
+            r_mem_addr<=i_location<<3;
+            r_mem_read_DV=1'b1;
+            r_extra_clock<=1'b1;
+        end // if first loop
+        else
+        begin
+            if(w_mem_ready&&!w_sending_msg)
+            begin
+                r_msg[7:0]<=return_ascii_from_hex(w_mem_read_data[127:124]); 
+                r_msg[15:8]<=return_ascii_from_hex(w_mem_read_data[123:120]); 
+                r_msg[23:16]<=return_ascii_from_hex(w_mem_read_data[119:116]); 
+                r_msg[31:24]<=return_ascii_from_hex(w_mem_read_data[115:112]); 
+                r_msg[39:32]<=return_ascii_from_hex(w_mem_read_data[111:108]); 
+                r_msg[47:40]<=return_ascii_from_hex(w_mem_read_data[107:104]); 
+                r_msg[55:48]<=return_ascii_from_hex(w_mem_read_data[103:100]); 
+                r_msg[63:56]<=return_ascii_from_hex(w_mem_read_data[99:96]); 
+                r_msg_length<=8'h8;
+                r_msg_send_DV<=1'b1; 
+                r_SM<=OPCODE_REQUEST;
+                r_mem_read_DV<=1'b0;
+                if (r_mem_read_DV)
+                begin
+                    r_PC<=r_PC+4;
+                end
+            end // if ready asserted, else will loop until ready
+        end  // if sebsequent loop
     end
 endtask
 
@@ -27,7 +65,7 @@ task t_tx_newline;
             r_msg_length<=8'h2;
             r_msg_send_DV<=1'b1; 
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+1;
+            r_PC<=r_PC+2;
         end
     end
 endtask
@@ -51,7 +89,7 @@ task t_tx_reg;
             r_msg_length<=8'h8;
             r_msg_send_DV<=1'b1; 
             r_SM<=OPCODE_REQUEST;
-            r_PC<=r_PC+1;
+            r_PC<=r_PC+2;
         end
     end
 endtask

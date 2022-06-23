@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Wed Jun 22 15:33:40 2022
+| Date         : Thu Jun 23 15:20:08 2022
 | Host         : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command      : report_methodology -file opt_report_methodology_0.rpt -pb opt_report_methodology_0.pb -rpx opt_report_methodology_0.rpx
 | Design       : FPGA_CPU_32_bits
@@ -23,11 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 150
+             Violations found: 152
 +-----------+----------+---------------------------------------------+------------+
 | Rule      | Severity | Description                                 | Violations |
 +-----------+----------+---------------------------------------------+------------+
 | LUTAR-1   | Warning  | LUT drives async reset alert                | 2          |
+| SYNTH-6   | Warning  | Timing of a RAM block might be sub-optimal  | 2          |
 | TIMING-10 | Warning  | Missing property on synchronizer            | 1          |
 | TIMING-15 | Warning  | Large hold violation                        | 69         |
 | TIMING-18 | Warning  | Missing input or output delay               | 54         |
@@ -62,6 +63,16 @@ Related violations: <none>
 LUTAR-1#2 Warning
 LUT drives async reset alert  
 LUT cell mig_7series_0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) mem_read_write/clk_wiz_0/inst/mmcm_adv_inst/RST. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+SYNTH-6#1 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance main_stack/RAM_reg_0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#2 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance main_stack/RAM_reg_1, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 TIMING-10#1 Warning

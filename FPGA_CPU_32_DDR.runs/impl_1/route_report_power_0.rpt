@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date             : Wed Jun 22 15:35:12 2022
+| Date             : Thu Jun 23 15:21:38 2022
 | Host             : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command          : report_power -file route_report_power_0.rpt -pb route_report_power_summary_0.pb -rpx route_report_power_0.rpx
 | Design           : FPGA_CPU_32_bits
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.087        |
+| Total On-Chip Power (W)  | 1.086        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.979        |
+| Dynamic (W)              | 0.978        |
 | Device Static (W)        | 0.108        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 80.0         |
@@ -52,24 +52,24 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.019 |       23 |       --- |             --- |
-| Slice Logic              |     0.007 |    13366 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     6334 |     63400 |            9.99 |
-|   CARRY4                 |    <0.001 |      285 |     15850 |            1.80 |
-|   Register               |    <0.001 |     4602 |    126800 |            3.63 |
+| Clocks                   |     0.020 |       23 |       --- |             --- |
+| Slice Logic              |     0.007 |    13370 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     6331 |     63400 |            9.99 |
+|   CARRY4                 |    <0.001 |      309 |     15850 |            1.95 |
+|   Register               |    <0.001 |     4599 |    126800 |            3.63 |
 |   LUT as Distributed RAM |    <0.001 |      378 |     19000 |            1.99 |
-|   F7/F8 Muxes            |    <0.001 |      140 |     63400 |            0.22 |
+|   F7/F8 Muxes            |    <0.001 |      123 |     63400 |            0.19 |
 |   LUT as Shift Register  |    <0.001 |       16 |     19000 |            0.08 |
 |   Others                 |     0.000 |      122 |       --- |             --- |
-| Signals                  |     0.010 |    10954 |       --- |             --- |
+| Signals                  |     0.011 |    11121 |       --- |             --- |
 | Block RAM                |     0.022 |        8 |       135 |            5.93 |
 | MMCM                     |     0.222 |        2 |         6 |           33.33 |
 | PLL                      |     0.090 |        1 |         6 |           16.67 |
-| I/O                      |     0.535 |      109 |       210 |           51.90 |
+| I/O                      |     0.532 |      109 |       210 |           51.90 |
 | PHASER                   |     0.070 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
 | Static Power             |     0.108 |          |           |                 |
-| Total                    |     1.087 |          |           |                 |
+| Total                    |     1.086 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,9 +79,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.099 |       0.081 |      0.018 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.100 |       0.082 |      0.018 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.269 |       0.251 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.012 |       0.008 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.011 |       0.007 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.236 |       0.232 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -168,11 +168,11 @@ Table of Contents
 +---------------------------------------------+-----------+
 | Name                                        | Power (W) |
 +---------------------------------------------+-----------+
-| FPGA_CPU_32_bits                            |     0.979 |
+| FPGA_CPU_32_bits                            |     0.978 |
 |   mem_read_write/clk_wiz_0                  |     0.107 |
 |     inst                                    |     0.107 |
-|   mem_read_write/ddr2_control/mig_7series_0 |     0.801 |
-|     u_mig_7series_0_mig                     |     0.800 |
+|   mem_read_write/ddr2_control/mig_7series_0 |     0.802 |
+|     u_mig_7series_0_mig                     |     0.801 |
 |       temp_mon_enabled.u_tempmon            |     0.006 |
 |       u_ddr2_infrastructure                 |     0.206 |
 |       u_memc_ui_top_std                     |     0.588 |
