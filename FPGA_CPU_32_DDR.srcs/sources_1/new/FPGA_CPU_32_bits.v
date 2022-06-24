@@ -240,9 +240,9 @@ rams_sp_nc rams_sp_nc1 (
                .i_clk(i_Clk),
                .i_opcode_read_addr(r_PC),
                .i_mem_read_addr(r_mem_read_addr),
-             //  .o_dout_opcode(w_opcode),
+               .o_dout_opcode(w_opcode),
                .o_dout_mem(w_mem),
-             //  .o_dout_var1(w_var1),
+               .o_dout_var1(w_var1),
                .o_dout_var2(w_var2),
                .i_write_addr(o_ram_write_addr),
                .i_write_value(o_ram_write_value),
@@ -271,7 +271,7 @@ RGB_LED RGB_LED (
         );
 
 
-/*ila_0  myila(.clk(i_Clk),
+ila_0  myila(.clk(i_Clk),
              .probe0(w_opcode),
              .probe1(r_mem_read_addr),
              .probe2(r_PC),
@@ -285,12 +285,12 @@ RGB_LED RGB_LED (
              .probe10(w_mem_ready),
              .probe11(w_var1),
              .probe12(w_mem_read_data),
-             .probe13(1'b0),
+             .probe13(i_stack_error),
              .probe14(1'b0),
              .probe15(1'b0)
 
 
-            );*/
+            );
 
 `include "timing_tasks.vh"
     `include "LCD_tasks.vh"
@@ -595,20 +595,21 @@ begin
                     r_SM<=HCF_1; // Halt and catch fire error 1
                     r_error_code<=ERR_STACK;
                 end
-
-                if(r_timer_interupt&&r_interupt_table[0]!=32'h0)
+                else
                 begin
-                    r_stack_write_value=r_PC;   // push PC on stack
-                    r_stack_write_flag<=1'b1;   // to move stack pointer
-                    r_timer_interupt<=0;
-                    r_PC<=r_interupt_table[0];
+                    if(r_timer_interupt&&r_interupt_table[0]!=32'h0)
+                    begin
+                        r_stack_write_value=r_PC;   // push PC on stack
+                        r_stack_write_flag<=1'b1;   // to move stack pointer
+                        r_timer_interupt<=0;
+                        r_PC<=r_interupt_table[0];
+                    end
+
+                    r_mem_addr<=r_PC<<3;
+                    r_mem_read_DV=1'b1;
+
+                    r_SM<=OPCODE_FETCH;
                 end
-
-                r_mem_addr<=r_PC<<3;
-                r_mem_read_DV=1'b1;
-
-                r_SM<=OPCODE_FETCH;
-
             end
 
             OPCODE_FETCH:
