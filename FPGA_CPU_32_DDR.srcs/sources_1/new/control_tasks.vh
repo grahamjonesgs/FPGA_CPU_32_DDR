@@ -29,7 +29,7 @@ task t_cond_call;
     begin
         if(i_condition)
         begin
-            r_stack_write_value=r_PC+3;   // push PC on stack
+            r_stack_write_value=r_PC+2;   // push PC on stack
             r_stack_write_flag<=1'b1;   // to move stack pointer
             r_SM<=OPCODE_REQUEST;
             r_PC<=i_value;
