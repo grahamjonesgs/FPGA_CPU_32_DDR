@@ -123,7 +123,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param tcl.collectionResultDisplayLimit 0
   set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 1
 OPTRACE "create in-memory project" START { }
@@ -136,13 +135,12 @@ OPTRACE "set parameters" START { }
   set_property parent.project_path /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.xpr [current_project]
   set_property ip_output_repo /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.dcp
   read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
   read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0.xci
-  read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc
 OPTRACE "read constraints: implementation" END { }
@@ -290,7 +288,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
   catch { write_mem_info -force -no_partial_mmi FPGA_CPU_32_bits.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }

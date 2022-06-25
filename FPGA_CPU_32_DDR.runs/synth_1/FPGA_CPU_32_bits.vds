@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Jun 24 13:45:17 2022
-# Process ID: 77407
+# Start of session at: Sat Jun 25 20:02:29 2022
+# Process ID: 146886
 # Current directory: /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1
 # Command line: vivado -log FPGA_CPU_32_bits.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FPGA_CPU_32_bits.tcl
 # Log file: /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.vds
@@ -11,7 +11,7 @@
 # Running On: graham-Parallels-Virtual-Platform, OS: Linux, CPU Frequency: 2304.000 MHz, CPU Physical cores: 6, Host memory: 16773 MB
 #-----------------------------------------------------------
 source FPGA_CPU_32_bits.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2610.770 ; gain = 7.961 ; free physical = 7110 ; free virtual = 12804
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2609.766 ; gain = 6.961 ; free physical = 6250 ; free virtual = 12498
 Command: read_checkpoint -auto_incremental -incremental /home/graham/Documents/LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/utils_1/imports/synth_1/FPGA_CPU_32_bits.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/graham/Documents/LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/utils_1/imports/synth_1/FPGA_CPU_32_bits.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -24,17 +24,17 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 77517
+INFO: [Synth 8-7075] Helper process launched with PID 146982
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 5256 ; free virtual = 10952
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 4446 ; free virtual = 10689
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'FPGA_CPU_32_bits' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:24]
 INFO: [Synth 8-6157] synthesizing module 'mem_read_write' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-77407-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-77407-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-146886-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-146886-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'ddr2_control' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/ddr2_control.v:23]
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-77407-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-77407-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-146886-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-146886-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'ddr2_control' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/ddr2_control.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'mem_read_write' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:23]
 INFO: [Synth 8-6157] synthesizing module 'uart_send_msg' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_send_msg.v:1]
@@ -55,37 +55,29 @@ INFO: [Synth 8-6157] synthesizing module 'stack' [/home/graham/src/FPGA_CPU_32_D
 INFO: [Synth 8-6155] done synthesizing module 'stack' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/stack.v:4]
 INFO: [Synth 8-6157] synthesizing module 'RGB_LED' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/RGB_LED.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'RGB_LED' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/RGB_LED.v:1]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:274]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-77407-graham-Parallels-Virtual-Platform/realtime/ila_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-77407-graham-Parallels-Virtual-Platform/realtime/ila_0_stub.v:5]
-WARNING: [Synth 8-689] width (27) of port connection 'probe9' does not match port width (1) of module 'ila_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:284]
-WARNING: [Synth 8-689] width (32) of port connection 'probe11' does not match port width (1) of module 'ila_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:286]
-WARNING: [Synth 8-689] width (128) of port connection 'probe12' does not match port width (1) of module 'ila_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:287]
 INFO: [Synth 8-226] default block is never used [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:482]
 INFO: [Synth 8-226] default block is never used [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/functions.vh:29]
 INFO: [Synth 8-6155] done synthesizing module 'FPGA_CPU_32_bits' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:24]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'myila'. This will prevent further optimization [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:274]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'mem_read_write'. This will prevent further optimization [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:168]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'main_stack'. This will prevent further optimization [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:255]
 WARNING: [Synth 8-6014] Unused sequential element r_SP_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:464]
 WARNING: [Synth 8-6014] Unused sequential element r_stack_base_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:465]
-WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[3] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:281]
-WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[2] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:281]
-WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[1] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:281]
+WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[3] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:566]
+WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[2] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:566]
+WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[1] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:566]
+WARNING: [Synth 8-6014] Unused sequential element r_mem_read_addr_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:629]
 WARNING: [Synth 8-7129] Port i_load_H in module FPGA_CPU_32_bits is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 6246 ; free virtual = 11943
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 5452 ; free virtual = 11697
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 6249 ; free virtual = 11946
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 5452 ; free virtual = 11697
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 6249 ; free virtual = 11946
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 5452 ; free virtual = 11697
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.69 ; elapsed = 00:00:00.74 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 6206 ; free virtual = 11903
+Netlist sorting complete. Time (s): cpu = 00:00:00.66 ; elapsed = 00:00:00.69 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 5401 ; free virtual = 11651
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -94,8 +86,6 @@ Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1
 Finished Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'mem_read_write/clk_wiz_0'
 Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mem_read_write/ddr2_control/mig_7series_0'
 Finished Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mem_read_write/ddr2_control/mig_7series_0'
-Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/ila_0_1/ila_0/ila_0_in_context.xdc] for cell 'myila'
-Finished Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/ila_0_1/ila_0/ila_0_in_context.xdc] for cell 'myila'
 Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc]
 Finished Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/FPGA_CPU_32_bits_propImpl.xdc].
@@ -104,22 +94,22 @@ Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/
 Finished Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2868.238 ; gain = 0.000 ; free physical = 5894 ; free virtual = 11591
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5067 ; free virtual = 11320
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2868.238 ; gain = 0.000 ; free physical = 5896 ; free virtual = 11593
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5067 ; free virtual = 11320
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 6214 ; free virtual = 11912
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5442 ; free virtual = 11687
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 6214 ; free virtual = 11912
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5442 ; free virtual = 11687
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -218,13 +208,12 @@ Applied set_property IO_BUFFER_TYPE = NONE for ddr2_we_n. (constraint file  /hom
 Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_we_n. (constraint file  /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/mig_7series_0_in_context.xdc, line 93).
 Applied set_property KEEP_HIERARCHY = SOFT for mem_read_write/clk_wiz_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for mem_read_write/ddr2_control/mig_7series_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for myila. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 6214 ; free virtual = 11912
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5442 ; free virtual = 11687
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'r_LED_Bytes_reg' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/LED_Display_Controller.v:31]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 6193 ; free virtual = 11893
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5398 ; free virtual = 11649
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -249,9 +238,9 @@ Detailed RTL Component Info :
 +---Registers : 
 	             2048 Bit    Registers := 1     
 	              128 Bit    Registers := 3     
-	               32 Bit    Registers := 29    
+	               32 Bit    Registers := 28    
 	               27 Bit    Registers := 2     
-	               16 Bit    Registers := 9     
+	               16 Bit    Registers := 7     
 	               12 Bit    Registers := 2     
 	               10 Bit    Registers := 2     
 	                8 Bit    Registers := 265   
@@ -263,61 +252,61 @@ Detailed RTL Component Info :
 +---RAMs : 
 	             128K Bit	(4097 X 32 bit)          RAMs := 1     
 +---Muxes : 
+	  79 Input 2048 Bit        Muxes := 2     
 	  16 Input 2048 Bit        Muxes := 1     
 	   2 Input 2048 Bit        Muxes := 4     
-	  77 Input 2048 Bit        Muxes := 2     
 	   4 Input 2048 Bit        Muxes := 1     
 	   2 Input  168 Bit        Muxes := 1     
-	  77 Input  128 Bit        Muxes := 1     
+	  79 Input  128 Bit        Muxes := 1     
 	   2 Input  112 Bit        Muxes := 2     
 	   2 Input   64 Bit        Muxes := 2     
-	   2 Input   32 Bit        Muxes := 128   
-	  77 Input   32 Bit        Muxes := 39    
-	   4 Input   32 Bit        Muxes := 33    
-	   3 Input   32 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 97    
+	  79 Input   32 Bit        Muxes := 38    
 	   5 Input   32 Bit        Muxes := 1     
-	   2 Input   27 Bit        Muxes := 9     
-	   5 Input   27 Bit        Muxes := 1     
-	  77 Input   27 Bit        Muxes := 1     
-	   2 Input   16 Bit        Muxes := 37    
-	  77 Input   16 Bit        Muxes := 3     
+	   4 Input   32 Bit        Muxes := 32    
+	   3 Input   32 Bit        Muxes := 1     
+	  16 Input   27 Bit        Muxes := 1     
+	  79 Input   27 Bit        Muxes := 1     
+	  79 Input   16 Bit        Muxes := 2     
+	   3 Input   16 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 22    
 	  16 Input   16 Bit        Muxes := 2     
-	   3 Input   16 Bit        Muxes := 3     
+	   5 Input   16 Bit        Muxes := 1     
 	   6 Input   16 Bit        Muxes := 1     
 	   2 Input   13 Bit        Muxes := 1     
-	  77 Input   12 Bit        Muxes := 2     
-	   3 Input   12 Bit        Muxes := 1     
 	   2 Input   12 Bit        Muxes := 6     
+	   3 Input   12 Bit        Muxes := 1     
+	  79 Input   12 Bit        Muxes := 2     
 	   4 Input   12 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 2     
 	   2 Input    9 Bit        Muxes := 4     
-	   2 Input    8 Bit        Muxes := 6     
+	  79 Input    8 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 7     
 	   8 Input    8 Bit        Muxes := 1     
 	   5 Input    8 Bit        Muxes := 1     
-	  77 Input    8 Bit        Muxes := 2     
 	   6 Input    8 Bit        Muxes := 1     
 	   4 Input    8 Bit        Muxes := 2     
-	   2 Input    7 Bit        Muxes := 2     
-	   5 Input    7 Bit        Muxes := 1     
 	   3 Input    7 Bit        Muxes := 1     
+	   5 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 2     
 	   2 Input    5 Bit        Muxes := 2     
 	  16 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 3     
 	  17 Input    4 Bit        Muxes := 1     
+	  79 Input    4 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 1     
+	  16 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 9     
-	  16 Input    3 Bit        Muxes := 2     
 	   4 Input    3 Bit        Muxes := 1     
 	   8 Input    3 Bit        Muxes := 1     
-	  16 Input    2 Bit        Muxes := 7     
-	   5 Input    2 Bit        Muxes := 1     
+	  16 Input    2 Bit        Muxes := 5     
 	   3 Input    2 Bit        Muxes := 3     
 	   4 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 168   
+	   2 Input    1 Bit        Muxes := 184   
 	   8 Input    1 Bit        Muxes := 1     
-	  77 Input    1 Bit        Muxes := 32    
-	  16 Input    1 Bit        Muxes := 10    
+	  79 Input    1 Bit        Muxes := 38    
+	  16 Input    1 Bit        Muxes := 14    
 	   5 Input    1 Bit        Muxes := 7     
 	   4 Input    1 Bit        Muxes := 13    
 	   6 Input    1 Bit        Muxes := 8     
@@ -337,213 +326,10 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'r_error_code_reg[5]' (FDRE) to 'r_error_code_reg[3]'
-INFO: [Synth 8-3886] merging instance 'r_error_code_reg[4]' (FDRE) to 'r_error_code_reg[3]'
-INFO: [Synth 8-3886] merging instance 'r_error_code_reg[3]' (FDRE) to 'r_error_code_reg[6]'
-INFO: [Synth 8-3886] merging instance 'r_error_code_reg[6]' (FDRE) to 'r_error_code_reg[7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_error_code_reg[7] )
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[13]' (FDE) to 'r_seven_seg_value1_reg[21]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[5]' (FDE) to 'r_seven_seg_value2_reg[29]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[13]' (FDE) to 'r_seven_seg_value2_reg[29]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[21]' (FDE) to 'r_seven_seg_value2_reg[29]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[12]' (FDE) to 'r_seven_seg_value1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[28]' (FDE) to 'r_seven_seg_value1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[4]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[12]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[20]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[28]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[14]' (FDE) to 'r_seven_seg_value1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[22]' (FDE) to 'r_seven_seg_value1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[30]' (FDE) to 'r_seven_seg_value1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[6]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[14]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[22]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[30]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[15]' (FDE) to 'r_seven_seg_value1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[23]' (FDE) to 'r_seven_seg_value1_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_seven_seg_value1_reg[31] )
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[7]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[15]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value2_reg[23]' (FDE) to 'r_seven_seg_value2_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_seven_seg_value2_reg[31] )
-INFO: [Synth 8-3886] merging instance 'r_timeout_max_reg[0]' (FDE) to 'r_timeout_max_reg[7]'
-INFO: [Synth 8-3886] merging instance 'r_timeout_max_reg[1]' (FDE) to 'r_timeout_max_reg[7]'
-INFO: [Synth 8-3886] merging instance 'r_timeout_max_reg[2]' (FDE) to 'r_timeout_max_reg[7]'
-INFO: [Synth 8-3886] merging instance 'r_timeout_max_reg[3]' (FDE) to 'r_timeout_max_reg[7]'
-INFO: [Synth 8-3886] merging instance 'r_timeout_max_reg[4]' (FDE) to 'r_timeout_max_reg[7]'
-INFO: [Synth 8-3886] merging instance 'r_timeout_max_reg[5]' (FDE) to 'r_timeout_max_reg[7]'
-INFO: [Synth 8-3886] merging instance 'r_timeout_max_reg[6]' (FDE) to 'r_timeout_max_reg[7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_timeout_max_reg[7] )
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[31]' (FDE) to 'r_seven_seg_value1_reg[7]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[7]' (FDE) to 'r_seven_seg_value1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'r_seven_seg_value1_reg[6]' (FDE) to 'r_seven_seg_value1_reg[4]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_seven_seg_value1_reg[4] )
-INFO: [Synth 8-3886] merging instance 'Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[7]' (LD) to 'Seven_seg_LED_Display_Controller1/r_LED_Bytes_reg[6]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (Seven_seg_LED_Display_Controller1/\r_LED_Bytes_reg[6] )
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-3332] Sequential element (r_LED_Bytes_reg[6]) is unused and will be removed from module Seven_seg_LED_Display_Controller.
-INFO: [Synth 8-3886] merging instance 'o_TX_LCD_Count_reg[1]' (FDRE) to 'o_TX_LCD_Count_reg[2]'
-INFO: [Synth 8-3886] merging instance 'o_TX_LCD_Count_reg[2]' (FDRE) to 'o_TX_LCD_Count_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\o_TX_LCD_Count_reg[3] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\o_TX_LCD_Count_reg[0] )
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[167]' (FDE) to 'r_msg_reg[159]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[159]' (FDE) to 'r_msg_reg[151]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[151]' (FDE) to 'r_msg_reg[166]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[143]' (FDE) to 'r_msg_reg[135]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[135]' (FDE) to 'r_msg_reg[127]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[127]' (FDE) to 'r_msg_reg[119]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[119]' (FDE) to 'r_msg_reg[141]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[111]' (FDE) to 'r_msg_reg[103]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[103]' (FDE) to 'r_msg_reg[95]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[95]' (FDE) to 'r_msg_reg[87]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[87]' (FDE) to 'r_msg_reg[79]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[79]' (FDE) to 'r_msg_reg[71]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[71]' (FDE) to 'r_msg_reg[108]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[63]' (FDE) to 'r_msg_reg[55]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[55]' (FDE) to 'r_msg_reg[47]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[47]' (FDE) to 'r_msg_reg[39]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[39]' (FDE) to 'r_msg_reg[31]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[31]' (FDE) to 'r_msg_reg[23]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_msg_reg[23] )
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[15]' (FDE) to 'r_msg_reg[7]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[166]' (FDE) to 'r_msg_reg[158]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[158]' (FDE) to 'r_msg_reg[165]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[150]' (FDE) to 'r_msg_reg[163]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[142]' (FDE) to 'r_msg_reg[134]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[134]' (FDE) to 'r_msg_reg[125]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[126]' (FDE) to 'r_msg_reg[139]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[118]' (FDE) to 'r_msg_reg[114]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[110]' (FDE) to 'r_msg_reg[76]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[102]' (FDE) to 'r_msg_reg[109]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[94]' (FDE) to 'r_msg_reg[86]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[86]' (FDE) to 'r_msg_reg[68]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[78]' (FDE) to 'r_msg_reg[70]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[70]' (FDE) to 'r_msg_reg[93]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[165]' (FDE) to 'r_msg_reg[157]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[157]' (FDE) to 'r_msg_reg[149]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[149]' (FDE) to 'r_msg_reg[164]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[141]' (FDE) to 'r_msg_reg[133]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[133]' (FDE) to 'r_msg_reg[132]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[125]' (FDE) to 'r_msg_reg[117]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[117]' (FDE) to 'r_msg_reg[140]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[109]' (FDE) to 'r_msg_reg[101]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[93]' (FDE) to 'r_msg_reg[85]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[85]' (FDE) to 'r_msg_reg[77]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[77]' (FDE) to 'r_msg_reg[69]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[69]' (FDE) to 'r_msg_reg[82]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[164]' (FDE) to 'r_msg_reg[156]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[156]' (FDE) to 'r_msg_reg[148]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[148]' (FDE) to 'r_msg_reg[147]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[140]' (FDE) to 'r_msg_reg[137]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[132]' (FDE) to 'r_msg_reg[124]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[124]' (FDE) to 'r_msg_reg[116]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[116]' (FDE) to 'r_msg_reg[130]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[108]' (FDE) to 'r_msg_reg[100]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[100]' (FDE) to 'r_msg_reg[84]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[92]' (FDE) to 'r_msg_reg[75]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[84]' (FDE) to 'r_msg_reg[91]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[76]' (FDE) to 'r_msg_reg[83]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[68]' (FDE) to 'r_msg_reg[90]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[163]' (FDE) to 'r_msg_reg[155]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[155]' (FDE) to 'r_msg_reg[162]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[147]' (FDE) to 'r_msg_reg[154]'
-INFO: [Synth 8-3886] merging instance 'r_msg_reg[139]' (FDE) to 'r_msg_reg[131]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_msg_reg[122] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_msg_reg[89] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_msg_reg[152] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[255][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[254][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[253][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[252][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[251][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[250][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[249][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[248][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[247][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[246][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[245][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[244][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[243][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[242][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[241][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[240][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[239][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[238][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[237][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[236][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[235][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[234][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[233][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[232][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[231][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[230][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[229][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[228][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[227][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[226][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[225][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[224][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[223][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[222][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[221][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[220][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[219][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[218][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[217][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[216][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[215][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[214][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[213][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[212][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[211][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[210][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[209][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[208][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[207][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[206][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[205][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[204][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[203][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[202][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[201][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[200][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[199][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[198][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[197][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[196][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[195][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[194][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[193][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[192][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[191][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[190][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[189][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[188][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[187][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[186][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[185][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[184][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[183][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[182][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[181][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[180][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[179][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[178][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[177][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[176][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[175][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[174][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[173][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[172][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[171][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[170][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[169][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_send_msg1/\r_msg_reg[168][7] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:01:30 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 2161 ; free virtual = 7891
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:32 ; elapsed = 00:01:36 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5369 ; free virtual = 11638
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -558,11 +344,11 @@ ROM: Preliminary Mapping Report
 
 
 Block RAM: Preliminary Mapping Report (see note below)
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|main_stack  | RAM_reg    | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|i_0/main_stack | RAM_reg    | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 ---------------------------------------------------------------------------------
@@ -572,18 +358,18 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:01:36 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 2043 ; free virtual = 7785
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:37 ; elapsed = 00:01:40 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5274 ; free virtual = 11544
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Final Mapping Report
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|main_stack  | RAM_reg    | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|i_0/main_stack | RAM_reg    | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -591,7 +377,6 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
@@ -601,7 +386,7 @@ INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_5 (implement
 INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:57 ; elapsed = 00:01:42 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 2013 ; free virtual = 7757
+Finished Technology Mapping : Time (s): cpu = 00:01:41 ; elapsed = 00:01:45 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5259 ; free virtual = 11529
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -619,19 +404,19 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:02 ; elapsed = 00:01:46 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 2017 ; free virtual = 7761
+Finished IO Insertion : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5260 ; free virtual = 11529
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:02 ; elapsed = 00:01:46 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 2017 ; free virtual = 7761
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5260 ; free virtual = 11529
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:01:46 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 2012 ; free virtual = 7756
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5260 ; free virtual = 11529
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -641,9 +426,8 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |ila_0         |         1|
-|2     |mig_7series_0 |         1|
-|3     |clk_wiz_0     |         1|
+|1     |mig_7series_0 |         1|
+|2     |clk_wiz_0     |         1|
 +------+--------------+----------+
 
 Report Cell Usage: 
@@ -651,52 +435,49 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |clk_wiz     |     1|
-|2     |ila         |     1|
-|3     |mig_7series |     1|
-|4     |BUFG        |     1|
-|5     |CARRY4      |   178|
-|6     |LUT1        |   166|
-|7     |LUT2        |   532|
-|8     |LUT3        |   504|
-|9     |LUT4        |   517|
-|10    |LUT5        |   696|
-|11    |LUT6        |  2660|
-|12    |MUXF7       |   157|
-|13    |MUXF8       |    45|
-|14    |RAMB36E1    |     8|
-|15    |FDCE        |    48|
-|16    |FDPE        |     5|
-|17    |FDRE        |  1614|
-|18    |FDSE        |    20|
-|19    |LD          |     6|
-|20    |IBUF        |    19|
-|21    |OBUF        |    44|
+|2     |mig_7series |     1|
+|3     |BUFG        |     1|
+|4     |CARRY4      |   178|
+|5     |LUT1        |   196|
+|6     |LUT2        |   479|
+|7     |LUT3        |   249|
+|8     |LUT4        |   285|
+|9     |LUT5        |   554|
+|10    |LUT6        |  2030|
+|11    |MUXF7       |    82|
+|12    |MUXF8       |    23|
+|13    |RAMB36E1    |     8|
+|14    |FDCE        |    48|
+|15    |FDPE        |     5|
+|16    |FDRE        |  1475|
+|17    |FDSE        |    48|
+|18    |LD          |     6|
+|19    |IBUF        |    19|
+|20    |OBUF        |    44|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:02 ; elapsed = 00:01:46 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 2009 ; free virtual = 7753
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5260 ; free virtual = 11529
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:01:44 . Memory (MB): peak = 2868.238 ; gain = 0.000 ; free physical = 6197 ; free virtual = 11940
-Synthesis Optimization Complete : Time (s): cpu = 00:01:07 ; elapsed = 00:01:51 . Memory (MB): peak = 2868.238 ; gain = 257.469 ; free physical = 6200 ; free virtual = 11939
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:39 ; elapsed = 00:01:43 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5323 ; free virtual = 11592
+Synthesis Optimization Complete : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5323 ; free virtual = 11592
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2868.238 ; gain = 0.000 ; free physical = 6195 ; free virtual = 11943
-INFO: [Netlist 29-17] Analyzing 394 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5413 ; free virtual = 11683
+INFO: [Netlist 29-17] Analyzing 297 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'FPGA_CPU_32_bits' is not ideal for floorplanning, since the cellview 'FPGA_CPU_32_bits' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2884.246 ; gain = 0.000 ; free physical = 6150 ; free virtual = 11893
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5369 ; free virtual = 11638
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 6 instances were transformed.
   LD => LDCE: 6 instances
 
-Synth Design complete, checksum: 42490814
+Synth Design complete, checksum: acc22848
 INFO: [Common 17-83] Releasing license: Synthesis
-266 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+57 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:56 . Memory (MB): peak = 2884.246 ; gain = 273.477 ; free physical = 6367 ; free virtual = 12110
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
+synth_design: Time (s): cpu = 00:01:55 ; elapsed = 00:01:54 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5579 ; free virtual = 11848
 INFO: [Common 17-1381] The checkpoint '/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FPGA_CPU_32_bits_utilization_synth.rpt -pb FPGA_CPU_32_bits_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 13:47:26 2022...
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 25 20:04:35 2022...

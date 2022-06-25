@@ -271,7 +271,7 @@ RGB_LED RGB_LED (
         );
 
 
-ila_0  myila(.clk(i_Clk),
+/*ila_0  myila(.clk(i_Clk),
              .probe0(w_opcode),
              .probe1(r_mem_read_addr),
              .probe2(r_PC),
@@ -290,7 +290,7 @@ ila_0  myila(.clk(i_Clk),
              .probe15(1'b0)
 
 
-            );
+            ); */
 
 `include "timing_tasks.vh"
     `include "LCD_tasks.vh"

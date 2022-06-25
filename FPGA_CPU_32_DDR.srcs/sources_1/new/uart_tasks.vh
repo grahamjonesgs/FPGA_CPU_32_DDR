@@ -14,6 +14,73 @@ task t_test_message;
     end
 endtask
 
+// Print to serial values from register location
+// On completion
+// Increament PC 3
+// Increament r_SM_msg
+task t_tx_char_from_reg_value;
+    begin
+        if(r_extra_clock==0)
+        begin
+            r_mem_addr<=r_register[r_reg_2]<<3;
+            r_mem_read_DV=1'b1;
+            r_extra_clock<=1'b1;
+        end // if first loop
+        else
+        begin
+            if(w_mem_ready&&!w_sending_msg)
+            begin
+                r_msg[7:0]<=w_mem_read_data[127:120]; 
+                r_msg_length<=8'h1;
+                r_msg_send_DV<=1'b1; 
+                r_SM<=OPCODE_REQUEST;
+                r_mem_read_DV<=1'b0;
+                if (r_mem_read_DV)
+                begin
+                    r_PC<=r_PC+1;
+                end
+            end // if ready asserted, else will loop until ready
+        end  // if sebsequent loop
+    end
+endtask
+
+// Print to serial values from register location
+// On completion
+// Increament PC 3
+// Increament r_SM_msg
+task t_tx_value_from_reg_value;
+    begin
+        if(r_extra_clock==0)
+        begin
+            r_mem_addr<=r_register[r_reg_2]<<3;
+            r_mem_read_DV=1'b1;
+            r_extra_clock<=1'b1;
+        end // if first loop
+        else
+        begin
+            if(w_mem_ready&&!w_sending_msg)
+            begin
+                r_msg[7:0]<=return_ascii_from_hex(w_mem_read_data[127:124]); 
+                r_msg[15:8]<=return_ascii_from_hex(w_mem_read_data[123:120]); 
+                r_msg[23:16]<=return_ascii_from_hex(w_mem_read_data[119:116]); 
+                r_msg[31:24]<=return_ascii_from_hex(w_mem_read_data[115:112]); 
+                r_msg[39:32]<=return_ascii_from_hex(w_mem_read_data[111:108]); 
+                r_msg[47:40]<=return_ascii_from_hex(w_mem_read_data[107:104]); 
+                r_msg[55:48]<=return_ascii_from_hex(w_mem_read_data[103:100]); 
+                r_msg[63:56]<=return_ascii_from_hex(w_mem_read_data[99:96]); 
+                r_msg_length<=8'h8;
+                r_msg_send_DV<=1'b1; 
+                r_SM<=OPCODE_REQUEST;
+                r_mem_read_DV<=1'b0;
+                if (r_mem_read_DV)
+                begin
+                    r_PC<=r_PC+1;
+                end
+            end // if ready asserted, else will loop until ready
+        end  // if sebsequent loop
+    end
+endtask
+
 // Print to serial character from memory location
 // On completion
 // Increament PC 3
@@ -119,7 +186,7 @@ task t_tx_message;
                 r_msg[127:120]<=8'h4B;
                 r_msg[135:128]<=8'h0A;
                 r_msg[143:136]<=8'h0D;
-                r_msg_length<=8'h12;
+                r_msg_length<=18;
             end
             2: // Load Error, bad CRC
             begin
@@ -144,7 +211,7 @@ task t_tx_message;
                 r_msg[151:144]<=8'h43;
                 r_msg[159:152]<=8'h0A;
                 r_msg[167:160]<=8'h0D;
-                r_msg_length<=8'h15;
+                r_msg_length<=20;
             end
             3: // Test message
             begin
@@ -162,7 +229,7 @@ task t_tx_message;
                 r_msg[95:88]<=8'h65;
                 r_msg[103:96]<=8'h0A;
                 r_msg[111:104]<=8'h0D;
-                r_msg_length<=8'h0E;
+                r_msg_length<=14;
             end
             3: // Segmentatiion error. Attempt to execute data.
             begin
