@@ -159,6 +159,7 @@ wire [127:0] w_mem_read_data;
 wire        w_mem_ready;
 reg [15:0]  r_opcode_mem;
 reg [31:0]  r_var1_mem;
+reg [31:0]  r_var2_mem;
 
 wire w_reset_H;
 
@@ -251,6 +252,7 @@ rams_sp_nc rams_sp_nc1 (
  */        
 assign w_opcode=r_opcode_mem;
 assign w_var1=r_var1_mem;
+assign w_var2=r_var2_mem;
 
 stack main_stack (
           .clk(i_Clk),
@@ -642,7 +644,7 @@ begin
                 begin
                     r_var1_mem<=w_mem_read_data[127:96]; // the memory location, allows read of code as well as data
                     r_SM<=OPCODE_EXECUTE;
-                    //r_mem_addr<=(r_PC+2)<<3;
+                    r_mem_addr<=(r_PC+2)<<3;
                     r_mem_read_DV=1'b0;
                 end // if ready asserted, else will loop until ready
             end
@@ -660,7 +662,7 @@ begin
             begin
                 if(w_mem_ready)
                 begin
-                    r_var1_mem[15:0]<=w_mem_read_data[111:96]; // the memory location, allows read of code as well as data
+                    r_var1_mem<=w_mem_read_data[127:96]; // the memory location, allows read of code as well as data
                     r_SM<=OPCODE_EXECUTE;
                     r_mem_read_DV<=1'b0;
                 end // if ready asserted, else will loop until ready

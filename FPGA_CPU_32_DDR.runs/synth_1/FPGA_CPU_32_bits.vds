@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sat Jun 25 20:02:29 2022
-# Process ID: 146886
+# Start of session at: Sun Jun 26 11:40:16 2022
+# Process ID: 25779
 # Current directory: /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1
 # Command line: vivado -log FPGA_CPU_32_bits.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FPGA_CPU_32_bits.tcl
 # Log file: /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.vds
@@ -11,7 +11,7 @@
 # Running On: graham-Parallels-Virtual-Platform, OS: Linux, CPU Frequency: 2304.000 MHz, CPU Physical cores: 6, Host memory: 16773 MB
 #-----------------------------------------------------------
 source FPGA_CPU_32_bits.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2609.766 ; gain = 6.961 ; free physical = 6250 ; free virtual = 12498
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2608.766 ; gain = 5.961 ; free physical = 8524 ; free virtual = 13671
 Command: read_checkpoint -auto_incremental -incremental /home/graham/Documents/LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/utils_1/imports/synth_1/FPGA_CPU_32_bits.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/graham/Documents/LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/utils_1/imports/synth_1/FPGA_CPU_32_bits.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -24,17 +24,17 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 146982
+INFO: [Synth 8-7075] Helper process launched with PID 25885
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 4446 ; free virtual = 10689
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2608.766 ; gain = 0.000 ; free physical = 6711 ; free virtual = 11858
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'FPGA_CPU_32_bits' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:24]
 INFO: [Synth 8-6157] synthesizing module 'mem_read_write' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-146886-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-146886-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-25779-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-25779-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'ddr2_control' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/ddr2_control.v:23]
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-146886-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-146886-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-25779-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-25779-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'ddr2_control' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/ddr2_control.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'mem_read_write' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:23]
 INFO: [Synth 8-6157] synthesizing module 'uart_send_msg' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_send_msg.v:1]
@@ -55,29 +55,29 @@ INFO: [Synth 8-6157] synthesizing module 'stack' [/home/graham/src/FPGA_CPU_32_D
 INFO: [Synth 8-6155] done synthesizing module 'stack' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/stack.v:4]
 INFO: [Synth 8-6157] synthesizing module 'RGB_LED' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/RGB_LED.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'RGB_LED' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/RGB_LED.v:1]
-INFO: [Synth 8-226] default block is never used [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:482]
+INFO: [Synth 8-226] default block is never used [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:484]
 INFO: [Synth 8-226] default block is never used [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/functions.vh:29]
 INFO: [Synth 8-6155] done synthesizing module 'FPGA_CPU_32_bits' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:24]
-WARNING: [Synth 8-6014] Unused sequential element r_SP_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:464]
-WARNING: [Synth 8-6014] Unused sequential element r_stack_base_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:465]
-WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[3] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:566]
-WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[2] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:566]
-WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[1] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:566]
-WARNING: [Synth 8-6014] Unused sequential element r_mem_read_addr_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:629]
+WARNING: [Synth 8-6014] Unused sequential element r_SP_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:466]
+WARNING: [Synth 8-6014] Unused sequential element r_stack_base_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:467]
+WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[3] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:568]
+WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[2] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:568]
+WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[1] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:568]
+WARNING: [Synth 8-6014] Unused sequential element r_mem_read_addr_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:631]
 WARNING: [Synth 8-7129] Port i_load_H in module FPGA_CPU_32_bits is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 5452 ; free virtual = 11697
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2608.766 ; gain = 0.000 ; free physical = 7714 ; free virtual = 12864
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 5452 ; free virtual = 11697
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2608.766 ; gain = 0.000 ; free physical = 7714 ; free virtual = 12863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 5452 ; free virtual = 11697
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2608.766 ; gain = 0.000 ; free physical = 7714 ; free virtual = 12863
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.66 ; elapsed = 00:00:00.69 . Memory (MB): peak = 2609.766 ; gain = 0.000 ; free physical = 5401 ; free virtual = 11651
+Netlist sorting complete. Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.65 . Memory (MB): peak = 2608.766 ; gain = 0.000 ; free physical = 7675 ; free virtual = 12825
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -94,22 +94,22 @@ Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/
 Finished Parsing XDC File [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5067 ; free virtual = 11320
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 7361 ; free virtual = 12511
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5067 ; free virtual = 11320
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 7361 ; free virtual = 12511
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5442 ; free virtual = 11687
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7715 ; free virtual = 12865
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5442 ; free virtual = 11687
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7715 ; free virtual = 12865
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -209,11 +209,11 @@ Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_we_n. (constraint file  /
 Applied set_property KEEP_HIERARCHY = SOFT for mem_read_write/clk_wiz_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for mem_read_write/ddr2_control/mig_7series_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5442 ; free virtual = 11687
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7715 ; free virtual = 12865
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'r_LED_Bytes_reg' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/LED_Display_Controller.v:31]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5398 ; free virtual = 11649
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7679 ; free virtual = 12831
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -223,7 +223,7 @@ Detailed RTL Component Info :
 	   2 Input   33 Bit       Adders := 4     
 	   3 Input   33 Bit       Adders := 2     
 	   2 Input   32 Bit       Adders := 6     
-	   2 Input   27 Bit       Adders := 1     
+	   2 Input   27 Bit       Adders := 2     
 	   3 Input   16 Bit       Adders := 2     
 	   2 Input   16 Bit       Adders := 1     
 	   2 Input   13 Bit       Adders := 2     
@@ -252,65 +252,64 @@ Detailed RTL Component Info :
 +---RAMs : 
 	             128K Bit	(4097 X 32 bit)          RAMs := 1     
 +---Muxes : 
-	  79 Input 2048 Bit        Muxes := 2     
 	  16 Input 2048 Bit        Muxes := 1     
 	   2 Input 2048 Bit        Muxes := 4     
 	   4 Input 2048 Bit        Muxes := 1     
+	  79 Input 2048 Bit        Muxes := 2     
 	   2 Input  168 Bit        Muxes := 1     
 	  79 Input  128 Bit        Muxes := 1     
 	   2 Input  112 Bit        Muxes := 2     
 	   2 Input   64 Bit        Muxes := 2     
-	   2 Input   32 Bit        Muxes := 97    
 	  79 Input   32 Bit        Muxes := 38    
-	   5 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 94    
 	   4 Input   32 Bit        Muxes := 32    
-	   3 Input   32 Bit        Muxes := 1     
-	  16 Input   27 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 1     
 	  79 Input   27 Bit        Muxes := 1     
-	  79 Input   16 Bit        Muxes := 2     
-	   3 Input   16 Bit        Muxes := 2     
+	  16 Input   27 Bit        Muxes := 1     
 	   2 Input   16 Bit        Muxes := 22    
+	  79 Input   16 Bit        Muxes := 2     
+	   6 Input   16 Bit        Muxes := 1     
 	  16 Input   16 Bit        Muxes := 2     
 	   5 Input   16 Bit        Muxes := 1     
-	   6 Input   16 Bit        Muxes := 1     
+	   3 Input   16 Bit        Muxes := 2     
 	   2 Input   13 Bit        Muxes := 1     
-	   2 Input   12 Bit        Muxes := 6     
-	   3 Input   12 Bit        Muxes := 1     
 	  79 Input   12 Bit        Muxes := 2     
 	   4 Input   12 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 6     
+	   3 Input   12 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 2     
 	   2 Input    9 Bit        Muxes := 4     
-	  79 Input    8 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 7     
-	   8 Input    8 Bit        Muxes := 1     
-	   5 Input    8 Bit        Muxes := 1     
-	   6 Input    8 Bit        Muxes := 1     
 	   4 Input    8 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 7     
+	  79 Input    8 Bit        Muxes := 2     
+	   6 Input    8 Bit        Muxes := 1     
+	   5 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 1     
 	   3 Input    7 Bit        Muxes := 1     
 	   5 Input    7 Bit        Muxes := 1     
 	   2 Input    7 Bit        Muxes := 2     
 	   2 Input    5 Bit        Muxes := 2     
+	  79 Input    4 Bit        Muxes := 1     
 	  16 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 3     
 	  17 Input    4 Bit        Muxes := 1     
-	  79 Input    4 Bit        Muxes := 1     
-	   4 Input    4 Bit        Muxes := 1     
-	  16 Input    3 Bit        Muxes := 1     
+	   8 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 9     
 	   4 Input    3 Bit        Muxes := 1     
-	   8 Input    3 Bit        Muxes := 1     
-	  16 Input    2 Bit        Muxes := 5     
-	   3 Input    2 Bit        Muxes := 3     
-	   4 Input    2 Bit        Muxes := 2     
+	  16 Input    3 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 184   
-	   8 Input    1 Bit        Muxes := 1     
-	  79 Input    1 Bit        Muxes := 38    
-	  16 Input    1 Bit        Muxes := 14    
-	   5 Input    1 Bit        Muxes := 7     
-	   4 Input    1 Bit        Muxes := 13    
-	   6 Input    1 Bit        Muxes := 8     
+	   3 Input    2 Bit        Muxes := 3     
+	  16 Input    2 Bit        Muxes := 4     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 185   
 	   7 Input    1 Bit        Muxes := 9     
+	   5 Input    1 Bit        Muxes := 7     
+	   6 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 13    
+	  16 Input    1 Bit        Muxes := 14    
+	  79 Input    1 Bit        Muxes := 38    
+	   8 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -329,7 +328,7 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-3332] Sequential element (r_LED_Bytes_reg[6]) is unused and will be removed from module Seven_seg_LED_Display_Controller.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:32 ; elapsed = 00:01:36 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5369 ; free virtual = 11638
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7638 ; free virtual = 12817
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -344,11 +343,11 @@ ROM: Preliminary Mapping Report
 
 
 Block RAM: Preliminary Mapping Report (see note below)
-+---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name    | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|i_0/main_stack | RAM_reg    | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
-+---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name      | RTL Object         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|FPGA_CPU_32_bits | main_stack/RAM_reg | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
++-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 ---------------------------------------------------------------------------------
@@ -358,18 +357,18 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:37 ; elapsed = 00:01:40 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5274 ; free virtual = 11544
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:13 ; elapsed = 00:01:16 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7538 ; free virtual = 12717
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Final Mapping Report
-+---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name    | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|i_0/main_stack | RAM_reg    | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
-+---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name      | RTL Object         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|FPGA_CPU_32_bits | main_stack/RAM_reg | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
++-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -386,7 +385,7 @@ INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_5 (implement
 INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:41 ; elapsed = 00:01:45 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5259 ; free virtual = 11529
+Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:20 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7527 ; free virtual = 12705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -404,19 +403,19 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5260 ; free virtual = 11529
+Finished IO Insertion : Time (s): cpu = 00:01:21 ; elapsed = 00:01:25 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7527 ; free virtual = 12705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5260 ; free virtual = 11529
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:21 ; elapsed = 00:01:25 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7527 ; free virtual = 12705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5260 ; free virtual = 11529
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:21 ; elapsed = 00:01:25 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7527 ; free virtual = 12705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -437,47 +436,47 @@ Report Cell Usage:
 |1     |clk_wiz     |     1|
 |2     |mig_7series |     1|
 |3     |BUFG        |     1|
-|4     |CARRY4      |   178|
-|5     |LUT1        |   196|
+|4     |CARRY4      |   184|
+|5     |LUT1        |   120|
 |6     |LUT2        |   479|
-|7     |LUT3        |   249|
-|8     |LUT4        |   285|
-|9     |LUT5        |   554|
-|10    |LUT6        |  2030|
+|7     |LUT3        |   280|
+|8     |LUT4        |   225|
+|9     |LUT5        |   521|
+|10    |LUT6        |  2016|
 |11    |MUXF7       |    82|
-|12    |MUXF8       |    23|
+|12    |MUXF8       |    28|
 |13    |RAMB36E1    |     8|
 |14    |FDCE        |    48|
 |15    |FDPE        |     5|
-|16    |FDRE        |  1475|
-|17    |FDSE        |    48|
+|16    |FDRE        |  1488|
+|17    |FDSE        |    45|
 |18    |LD          |     6|
 |19    |IBUF        |    19|
 |20    |OBUF        |    44|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5260 ; free virtual = 11529
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:21 ; elapsed = 00:01:25 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7527 ; free virtual = 12705
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:39 ; elapsed = 00:01:43 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5323 ; free virtual = 11592
-Synthesis Optimization Complete : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5323 ; free virtual = 11592
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 7579 ; free virtual = 12758
+Synthesis Optimization Complete : Time (s): cpu = 00:01:22 ; elapsed = 00:01:25 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7579 ; free virtual = 12758
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5413 ; free virtual = 11683
-INFO: [Netlist 29-17] Analyzing 297 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 7669 ; free virtual = 12848
+INFO: [Netlist 29-17] Analyzing 308 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'FPGA_CPU_32_bits' is not ideal for floorplanning, since the cellview 'FPGA_CPU_32_bits' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 5369 ; free virtual = 11638
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2855.328 ; gain = 0.000 ; free physical = 7625 ; free virtual = 12803
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 6 instances were transformed.
   LD => LDCE: 6 instances
 
-Synth Design complete, checksum: acc22848
+Synth Design complete, checksum: 38901d
 INFO: [Common 17-83] Releasing license: Synthesis
 57 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:55 ; elapsed = 00:01:54 . Memory (MB): peak = 2855.328 ; gain = 245.562 ; free physical = 5579 ; free virtual = 11848
+synth_design: Time (s): cpu = 00:01:32 ; elapsed = 00:01:30 . Memory (MB): peak = 2855.328 ; gain = 246.562 ; free physical = 7839 ; free virtual = 13017
 INFO: [Common 17-1381] The checkpoint '/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FPGA_CPU_32_bits_utilization_synth.rpt -pb FPGA_CPU_32_bits_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jun 25 20:04:35 2022...
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 26 11:41:57 2022...
