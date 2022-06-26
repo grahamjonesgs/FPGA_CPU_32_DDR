@@ -163,6 +163,8 @@ reg [31:0]  r_var2_mem;
 
 wire w_reset_H;
 
+reg         r_boot_flash;
+
 assign w_reset_H=!CPU_RESETN;
 
 
@@ -337,6 +339,7 @@ begin
     r_mem_write_DV<=0;
     r_mem_read_DV<=0;
     r_msg=2047'b0;
+    r_boot_flash=0;
 end
 
 always @(posedge i_Clk)
@@ -416,18 +419,20 @@ begin
 
                 if (r_timer_interupt_counter_sec==0)
                 begin
-                    case(o_led[0])
+                    case(r_boot_flash)
                         0:
                         begin
                             r_RGB_LED_1<=12'h010;
                             r_RGB_LED_2<=12'h100;
-                            o_led[0]<=1;
+                            //o_led[0]<=1;
+                            r_boot_flash<=1;
                         end
                         default:
                         begin
                             r_RGB_LED_1<=12'h100;
                             r_RGB_LED_2<=12'h010;
-                            o_led[0]<=0;
+                            //o_led[0]<=0;
+                            r_boot_flash<=0;
                         end
                     endcase
                 end

@@ -1,5 +1,4 @@
 xpm_cdc.sv,systemverilog,xpm,../../../../../../../../opt/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,
-xpm_memory.sv,systemverilog,xpm,../../../../../../../../opt/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,
 xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../../opt/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_VCOMP.vhd,
 mig_7series_v4_2_infrastructure.v,verilog,xil_defaultlib,../../../../FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v,
 mig_7series_v4_2_clk_ibuf.v,verilog,xil_defaultlib,../../../../FPGA_CPU_32_DDR.gen/sources_1/ip/mig_7series_0_1/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_clk_ibuf.v,
