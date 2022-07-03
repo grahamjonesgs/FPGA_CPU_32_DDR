@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Sun Jun 26 21:08:43 2022
+| Date         : Sun Jul  3 15:17:00 2022
 | Host         : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command      : report_utilization -file FPGA_CPU_32_bits_utilization_synth.rpt -pb FPGA_CPU_32_bits_utilization_synth.pb
 | Design       : FPGA_CPU_32_bits
@@ -31,14 +31,14 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 3231 |     0 |          0 |     63400 |  5.10 |
-|   LUT as Logic          | 3231 |     0 |          0 |     63400 |  5.10 |
+| Slice LUTs*             | 3829 |     0 |          0 |     63400 |  6.04 |
+|   LUT as Logic          | 3829 |     0 |          0 |     63400 |  6.04 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         | 1580 |     0 |          0 |    126800 |  1.25 |
-|   Register as Flip Flop | 1574 |     0 |          0 |    126800 |  1.24 |
+| Slice Registers         | 3220 |     0 |          0 |    126800 |  2.54 |
+|   Register as Flip Flop | 3214 |     0 |          0 |    126800 |  2.53 |
 |   Register as Latch     |    6 |     0 |          0 |    126800 | <0.01 |
-| F7 Muxes                |   79 |     0 |          0 |     31700 |  0.25 |
-| F8 Muxes                |   33 |     0 |          0 |     15850 |  0.21 |
+| F7 Muxes                |  187 |     0 |          0 |     31700 |  0.59 |
+| F8 Muxes                |   14 |     0 |          0 |     15850 |  0.09 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -55,10 +55,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 5     |          Yes |           - |          Set |
+| 6     |          Yes |           - |          Set |
 | 54    |          Yes |           - |        Reset |
-| 26    |          Yes |         Set |            - |
-| 1495  |          Yes |       Reset |            - |
+| 17    |          Yes |         Set |            - |
+| 3143  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,23 +148,23 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 2091 |                 LUT |
-| FDRE     | 1495 |        Flop & Latch |
-| LUT2     |  507 |                 LUT |
-| LUT5     |  462 |                 LUT |
-| LUT4     |  260 |                 LUT |
-| LUT3     |  260 |                 LUT |
-| CARRY4   |  184 |          CarryLogic |
-| LUT1     |  163 |                 LUT |
-| MUXF7    |   79 |               MuxFx |
+| FDRE     | 3143 |        Flop & Latch |
+| LUT6     | 2439 |                 LUT |
+| LUT5     |  535 |                 LUT |
+| LUT3     |  485 |                 LUT |
+| LUT2     |  415 |                 LUT |
+| LUT4     |  219 |                 LUT |
+| CARRY4   |  192 |          CarryLogic |
+| MUXF7    |  187 |               MuxFx |
+| LUT1     |  100 |                 LUT |
 | FDCE     |   48 |        Flop & Latch |
 | OBUF     |   44 |                  IO |
-| MUXF8    |   33 |               MuxFx |
-| FDSE     |   26 |        Flop & Latch |
 | IBUF     |   19 |                  IO |
+| FDSE     |   17 |        Flop & Latch |
+| MUXF8    |   14 |               MuxFx |
 | RAMB36E1 |    8 |        Block Memory |
 | LDCE     |    6 |        Flop & Latch |
-| FDPE     |    5 |        Flop & Latch |
+| FDPE     |    6 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -176,6 +176,7 @@ Table of Contents
 |    Ref Name   | Used |
 +---------------+------+
 | mig_7series_0 |    1 |
+| ila_0         |    1 |
 | clk_wiz_0     |    1 |
 +---------------+------+
 

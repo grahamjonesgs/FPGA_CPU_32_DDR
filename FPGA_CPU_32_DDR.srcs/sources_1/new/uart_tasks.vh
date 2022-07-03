@@ -22,7 +22,7 @@ task t_tx_char_from_reg_value;
     begin
         if(r_extra_clock==0)
         begin
-            r_mem_addr<=r_register[r_reg_2]<<3;
+            r_mem_addr<=r_register[r_reg_2];
             r_mem_read_DV=1'b1;
             r_extra_clock<=1'b1;
         end // if first loop
@@ -52,7 +52,7 @@ task t_tx_value_from_reg_value;
     begin
         if(r_extra_clock==0)
         begin
-            r_mem_addr<=r_register[r_reg_2]<<3;
+            r_mem_addr<=r_register[r_reg_2];
             r_mem_read_DV=1'b1;
             r_extra_clock<=1'b1;
         end // if first loop
@@ -90,7 +90,7 @@ task t_tx_char_from_mem_value;
     begin
         if(r_extra_clock==0)
         begin
-            r_mem_addr<=i_location<<3;
+            r_mem_addr<=i_location;
             r_mem_read_DV=1'b1;
             r_extra_clock<=1'b1;
         end // if first loop

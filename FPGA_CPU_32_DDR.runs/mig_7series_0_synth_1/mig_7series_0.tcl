@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "mig_7series_0_synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 1
 set_msg_config  -string {{HW Target shutdown}}  -suppress 
 set_param project.vivado.isBlockSynthRun true

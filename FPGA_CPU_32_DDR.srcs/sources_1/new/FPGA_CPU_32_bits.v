@@ -153,7 +153,7 @@ reg [63:0]  r_timer_interupt_counter_sec;
 // Memory
 reg         r_mem_write_DV;
 reg         r_mem_read_DV;
-reg [26:0]  r_mem_addr;
+reg [23:0]  r_mem_addr;
 reg [127:0]  r_mem_write_data;
 wire [127:0] w_mem_read_data;
 wire        w_mem_ready;
@@ -164,6 +164,12 @@ reg [31:0]  r_var2_mem;
 wire w_reset_H;
 
 reg         r_boot_flash;
+
+
+// Temp for cache testing
+wire w_temp_cache_hit;
+wire [127:0] w_temp_cache_value;
+
 
 assign w_reset_H=!CPU_RESETN;
 
@@ -191,7 +197,10 @@ mem_read_write mem_read_write (
                    .i_mem_addr(r_mem_addr),
                    .i_mem_write_data(r_mem_write_data),
                    .o_mem_read_data(w_mem_read_data),
-                   .o_mem_ready(w_mem_ready)
+                   .o_mem_ready(w_mem_ready),
+                   .i_cache_enable(i_switch[0]),
+                   .o_temp_cache_hit(w_temp_cache_hit),
+                   .o_temp_cache_value(w_temp_cache_value)
                );
 
 
@@ -277,22 +286,21 @@ RGB_LED RGB_LED (
 
 /*ila_0  myila(.clk(i_Clk),
              .probe0(w_opcode),
-             .probe1(r_mem_read_addr),
+             .probe1(0),
              .probe2(r_PC),
              .probe3(r_SM),
              .probe4(r_var1_mem),
-             .probe5(r_timer_interupt),
-             .probe6(r_interupt_table[0]),
-             .probe7(r_mem_write_DV),
+             .probe5(0),
+             .probe6(0),
+             .probe7(0),
              .probe8(r_mem_read_DV),
              .probe9(r_mem_addr),
              .probe10(w_mem_ready),
              .probe11(w_var1),
              .probe12(w_mem_read_data),
-             .probe13(i_stack_error),
-             .probe14(1'b0),
-             .probe15(1'b0)
-
+             .probe13(w_temp_cache_hit),
+             .probe14(w_temp_cache_value),
+             .probe15(0)
 
             ); */
 
@@ -523,7 +531,7 @@ begin
                                 //o_ram_write_DV<=1'b1;
 
                                 // XXXXXXXXXXXXXXXXXXXXXX Also write data to DDR
-                                r_mem_addr<=r_ram_next_write_addr<<3;
+                                r_mem_addr<=r_ram_next_write_addr;
                                // r_mem_write_data<={16'b0,o_ram_write_value,96'b0};
                                 r_mem_write_data<={o_ram_write_value,96'b0};
                                 r_mem_write_DV<=1'b1;
@@ -587,6 +595,8 @@ begin
 
             OPCODE_REQUEST:
             begin
+            o_led[0]=i_switch[0];
+            
                 r_stack_write_flag<=2'h0;
                 r_stack_read_flag<=2'h0;
                 r_msg_send_DV<=1'b0;
@@ -612,10 +622,9 @@ begin
                         r_PC<=r_interupt_table[0];
                     end
 
-                    r_mem_addr<=r_PC<<3;
-                    r_mem_read_DV=1'b1;
-
-                    r_SM<=OPCODE_FETCH;
+                r_mem_addr<=r_PC;
+                r_mem_read_DV=1'b1;
+                r_SM<=OPCODE_FETCH;
                 end
             end
 
@@ -633,15 +642,15 @@ begin
             begin
                 r_reg_2=w_opcode[3:0];
                 r_reg_1=w_opcode[7:4];
-                r_mem_read_addr<=w_var1;  // In case we need to read the memory
+            //    r_mem_read_addr<=w_var1;  // In case we need to read the memory
 
                 r_SM<=VAR1_FETCH;
 
-                r_mem_addr<=(r_PC+1)<<3;
+                r_mem_addr<=(r_PC+1);
                 r_mem_read_DV=1'b1;
 
-
             end
+
 
             VAR1_FETCH:
             begin
@@ -649,13 +658,14 @@ begin
                 begin
                     r_var1_mem<=w_mem_read_data[127:96]; // the memory location, allows read of code as well as data
                     r_SM<=OPCODE_EXECUTE;
-                    r_mem_addr<=(r_PC+2)<<3;
                     r_mem_read_DV=1'b0;
+                   // r_mem_addr<=(r_PC+2);
+                   // r_mem_read_DV=1'b0;
                 end // if ready asserted, else will loop until ready
             end
 
 
-            VAR1_FETCH2:
+   /*         VAR1_FETCH2:
             begin
                 r_mem_read_DV=1'b1;
                 r_SM<=VAR1_FETCH3;
@@ -671,7 +681,7 @@ begin
                     r_SM<=OPCODE_EXECUTE;
                     r_mem_read_DV<=1'b0;
                 end // if ready asserted, else will loop until ready
-            end
+            end */
 
 
 

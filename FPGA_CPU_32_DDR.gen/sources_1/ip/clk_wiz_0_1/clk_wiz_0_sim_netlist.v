@@ -1,10 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-// Date        : Tue Jun 21 19:13:21 2022
+// Date        : Wed Jun 29 14:14:25 2022
 // Host        : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
-// Command     : write_verilog -force -mode funcsim -rename_top clk_wiz_0 -prefix
-//               clk_wiz_0_ clk_wiz_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_sim_netlist.v
 // Design      : clk_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,27 +16,33 @@
 module clk_wiz_0
    (clk_200,
     resetn,
+    locked,
     i_Clk);
   output clk_200;
   input resetn;
+  output locked;
   input i_Clk;
 
   wire clk_200;
   wire i_Clk;
+  wire locked;
   wire resetn;
 
-  clk_wiz_0_clk_wiz_0_clk_wiz inst
+  clk_wiz_0_clk_wiz inst
        (.clk_200(clk_200),
         .i_Clk(i_Clk),
+        .locked(locked),
         .resetn(resetn));
 endmodule
 
-module clk_wiz_0_clk_wiz_0_clk_wiz
+module clk_wiz_0_clk_wiz
    (clk_200,
     resetn,
+    locked,
     i_Clk);
   output clk_200;
   input resetn;
+  output locked;
   input i_Clk;
 
   wire clk_200;
@@ -44,6 +50,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   wire clkfbout_buf_clk_wiz_0;
   wire clkfbout_clk_wiz_0;
   wire i_Clk;
+  wire locked;
   wire reset_high;
   wire resetn;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
@@ -60,7 +67,6 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   wire NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED;
   wire NLW_mmcm_adv_inst_DRDY_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_LOCKED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_PSDONE_UNCONNECTED;
   wire [15:0]NLW_mmcm_adv_inst_DO_UNCONNECTED;
 
@@ -149,7 +155,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .DO(NLW_mmcm_adv_inst_DO_UNCONNECTED[15:0]),
         .DRDY(NLW_mmcm_adv_inst_DRDY_UNCONNECTED),
         .DWE(1'b0),
-        .LOCKED(NLW_mmcm_adv_inst_LOCKED_UNCONNECTED),
+        .LOCKED(locked),
         .PSCLK(1'b0),
         .PSDONE(NLW_mmcm_adv_inst_PSDONE_UNCONNECTED),
         .PSEN(1'b0),

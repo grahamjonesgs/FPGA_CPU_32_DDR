@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -string {{HW Target shutdown}}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -123,6 +124,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param tcl.collectionResultDisplayLimit 0
   set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 1
 OPTRACE "create in-memory project" START { }
@@ -135,10 +137,11 @@ OPTRACE "set parameters" START { }
   set_property parent.project_path /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.xpr [current_project]
   set_property ip_output_repo /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES XPM_CDC [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.dcp
+  read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/ila_0_1/ila_0.xci
   read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
   read_ip -quiet /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/ip/mig_7series_0_1/mig_7series_0.xci
 OPTRACE "read constraints: implementation" START { }
@@ -173,7 +176,7 @@ set rc [catch {
 OPTRACE "read constraints: opt_design" START { }
 OPTRACE "read constraints: opt_design" END { }
 OPTRACE "opt_design" START { }
-  opt_design -directive RuntimeOptimized
+  opt_design 
 OPTRACE "opt_design" END { }
 OPTRACE "read constraints: opt_design_post" START { }
 OPTRACE "read constraints: opt_design_post" END { }
@@ -184,7 +187,8 @@ OPTRACE "opt_design reports" START { REPORT }
   create_report "impl_1_opt_report_drc_0" "report_drc -file opt_report_drc_0.rpt -pb opt_report_drc_0.pb -rpx opt_report_drc_0.rpx"
   create_report "impl_1_opt_report_utilization_0" "report_utilization -file opt_report_utilization_0.rpt -pb opt_report_utilization_0.pb"
   create_report "impl_1_opt_report_methodology_0" "report_methodology -file opt_report_methodology_0.rpt -pb opt_report_methodology_0.pb -rpx opt_report_methodology_0.rpx"
-  create_report "impl_1_opt_report_timing_summary_0" "report_timing_summary -max_paths 10 -file opt_report_timing_summary_0.rpt -pb opt_report_timing_summary_0.pb -rpx opt_report_timing_summary_0.rpx"
+  create_report "impl_1_opt_report_timing_summary_0" "report_timing_summary -max_paths 10 -report_unconstrained -file opt_report_timing_summary_0.rpt -pb opt_report_timing_summary_0.pb -rpx opt_report_timing_summary_0.rpx"
+  create_report "impl_1_opt_report_qor_assessment_0" "report_qor_assessment -max_paths 100 -file opt_report_qor_assessment_0.rpt"
 OPTRACE "opt_design reports" END { }
   close_msg_db -file opt_design.pb
 } RESULT]
@@ -204,17 +208,13 @@ set rc [catch {
   create_msg_db place_design.pb
 OPTRACE "read constraints: place_design" START { }
 OPTRACE "read constraints: place_design" END { }
-OPTRACE "read incremental checkpoint" START { }
-  read_checkpoint -auto_incremental  -incremental /home/graham/Documents/LCD_SPI_controller_16_bit/LCD_SPI_controller_16_bit.srcs/utils_1/imports/impl_1/FPGA_CPU_32_bits_routed.dcp
-  catch { report_incremental_reuse -file FPGA_CPU_32_bits_incremental_reuse_pre_placed.rpt }
-OPTRACE "read incremental checkpoint" END { }
   if { [llength [get_debug_cores -quiet] ] > 0 }  { 
 OPTRACE "implement_debug_core" START { }
     implement_debug_core 
 OPTRACE "implement_debug_core" END { }
   } 
 OPTRACE "place_design" START { }
-  place_design -directive RuntimeOptimized
+  place_design -directive ExtraPostPlacementOpt
 OPTRACE "place_design" END { }
 OPTRACE "read constraints: place_design_post" START { }
 OPTRACE "read constraints: place_design_post" END { }
@@ -224,7 +224,8 @@ OPTRACE "Place Design: write_checkpoint" END { }
 OPTRACE "place_design reports" START { REPORT }
   create_report "impl_1_place_report_io_0" "report_io -file place_report_io_0.rpt"
   create_report "impl_1_place_report_incremental_reuse_0" "report_incremental_reuse -file place_report_incremental_reuse_0.rpt"
-  create_report "impl_1_place_report_timing_summary_0" "report_timing_summary -max_paths 10 -file place_report_timing_summary_0.rpt -pb place_report_timing_summary_0.pb -rpx place_report_timing_summary_0.rpx"
+  create_report "impl_1_place_report_timing_summary_0" "report_timing_summary -max_paths 10 -report_unconstrained -file place_report_timing_summary_0.rpt -pb place_report_timing_summary_0.pb -rpx place_report_timing_summary_0.rpx"
+  create_report "impl_1_place_report_qor_assessment_0" "report_qor_assessment -max_paths 100 -file place_report_qor_assessment_0.rpt"
 OPTRACE "place_design reports" END { }
   close_msg_db -file place_design.pb
 } RESULT]
@@ -237,6 +238,36 @@ if {$rc} {
 }
 
 OPTRACE "Phase: Place Design" END { }
+OPTRACE "Phase: Physical Opt Design" START { ROLLUP_AUTO }
+start_step phys_opt_design
+set ACTIVE_STEP phys_opt_design
+set rc [catch {
+  create_msg_db phys_opt_design.pb
+OPTRACE "read constraints: phys_opt_design" START { }
+OPTRACE "read constraints: phys_opt_design" END { }
+OPTRACE "phys_opt_design" START { }
+  phys_opt_design -directive AlternateFlowWithRetiming
+OPTRACE "phys_opt_design" END { }
+OPTRACE "read constraints: phys_opt_design_post" START { }
+OPTRACE "read constraints: phys_opt_design_post" END { }
+OPTRACE "Post-Place Phys Opt Design: write_checkpoint" START { CHECKPOINT }
+  write_checkpoint -force FPGA_CPU_32_bits_physopt.dcp
+OPTRACE "Post-Place Phys Opt Design: write_checkpoint" END { }
+OPTRACE "phys_opt_design report" START { REPORT }
+  create_report "impl_1_phys_opt_report_timing_summary_0" "report_timing_summary -max_paths 10 -report_unconstrained -file phys_opt_report_timing_summary_0.rpt -pb phys_opt_report_timing_summary_0.pb -rpx phys_opt_report_timing_summary_0.rpx"
+  create_report "impl_1_phys_opt_report_design_analysis_0" "report_design_analysis -congestion -timing -logic_level_distribution -max_paths 100 -file phys_opt_report_design_analysis_0.rpt"
+OPTRACE "phys_opt_design report" END { }
+  close_msg_db -file phys_opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed phys_opt_design
+  return -code error $RESULT
+} else {
+  end_step phys_opt_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "Phase: Physical Opt Design" END { }
 OPTRACE "Phase: Route Design" START { ROLLUP_AUTO }
 start_step route_design
 set ACTIVE_STEP route_design
@@ -245,7 +276,7 @@ set rc [catch {
 OPTRACE "read constraints: route_design" START { }
 OPTRACE "read constraints: route_design" END { }
 OPTRACE "route_design" START { }
-  route_design -directive RuntimeOptimized
+  route_design -directive Explore
 OPTRACE "route_design" END { }
 OPTRACE "read constraints: route_design_post" START { }
 OPTRACE "read constraints: route_design_post" END { }
@@ -258,7 +289,7 @@ OPTRACE "route_design reports" START { REPORT }
   create_report "impl_1_route_report_drc_0" "report_drc -file route_report_drc_0.rpt -pb route_report_drc_0.pb -rpx route_report_drc_0.rpx"
   create_report "impl_1_route_report_power_0" "report_power -file route_report_power_0.rpt -pb route_report_power_summary_0.pb -rpx route_report_power_0.rpx"
   create_report "impl_1_route_report_route_status_0" "report_route_status -file route_report_route_status_0.rpt -pb route_report_route_status_0.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -warn_on_violation -file route_report_timing_summary_0.rpt -pb route_report_timing_summary_0.pb -rpx route_report_timing_summary_0.rpx"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -report_unconstrained -warn_on_violation -file route_report_timing_summary_0.rpt -pb route_report_timing_summary_0.pb -rpx route_report_timing_summary_0.rpx"
   create_report "impl_1_route_report_design_analysis_0" "report_design_analysis -congestion -timing -logic_level_distribution -max_paths 100 -file route_report_design_analysis_0.rpt"
   create_report "impl_1_route_report_qor_suggestions_0" "report_qor_suggestions -max_paths 100 -file route_report_qor_suggestions_0.rpt"
   create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file route_report_incremental_reuse_0.rpt"
@@ -288,11 +319,11 @@ set rc [catch {
   create_msg_db write_bitstream.pb
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
-  set_property XPM_LIBRARIES XPM_CDC [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force -no_partial_mmi FPGA_CPU_32_bits.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
-  write_bitstream -force FPGA_CPU_32_bits.bit -bin_file
+  write_bitstream -force FPGA_CPU_32_bits.bit 
 OPTRACE "write_bitstream" END { }
 OPTRACE "write_bitstream misc" START { }
 OPTRACE "read constraints: write_bitstream_post" START { }

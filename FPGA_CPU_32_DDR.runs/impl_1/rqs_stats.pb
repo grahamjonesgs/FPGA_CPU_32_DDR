@@ -1,2 +1,2 @@
 
-3 New Suggestions Available
+4 New Suggestions Available

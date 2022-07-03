@@ -1,3 +1,15 @@
+2022.1:
+ * Version 6.2 (Rev. 12)
+ * No changes
+
+2021.2.2:
+ * Version 6.2 (Rev. 12)
+ * No changes
+
+2021.2.1:
+ * Version 6.2 (Rev. 12)
+ * No changes
+
 2021.2:
  * Version 6.2 (Rev. 12)
  * General: Updated the Example design XDC files for pin locs
@@ -198,7 +210,7 @@
  * Version 2.0
  * Native Vivado Release
 
-(c) Copyright 2000 - 2021 Xilinx, Inc. All rights reserved.
+(c) Copyright 2000 - 2022 Xilinx, Inc. All rights reserved.
 
 This file contains confidential and proprietary information
 of Xilinx, Inc. and is protected under U.S. and
