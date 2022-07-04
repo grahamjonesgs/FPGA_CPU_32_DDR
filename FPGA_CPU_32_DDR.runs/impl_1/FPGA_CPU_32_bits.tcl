@@ -115,7 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -string {{HW Target shutdown}}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -214,7 +213,7 @@ OPTRACE "implement_debug_core" START { }
 OPTRACE "implement_debug_core" END { }
   } 
 OPTRACE "place_design" START { }
-  place_design -directive ExtraPostPlacementOpt
+  place_design -directive ExtraTimingOpt
 OPTRACE "place_design" END { }
 OPTRACE "read constraints: place_design_post" START { }
 OPTRACE "read constraints: place_design_post" END { }
@@ -246,7 +245,7 @@ set rc [catch {
 OPTRACE "read constraints: phys_opt_design" START { }
 OPTRACE "read constraints: phys_opt_design" END { }
 OPTRACE "phys_opt_design" START { }
-  phys_opt_design -directive AlternateFlowWithRetiming
+  phys_opt_design -directive Explore
 OPTRACE "phys_opt_design" END { }
 OPTRACE "read constraints: phys_opt_design_post" START { }
 OPTRACE "read constraints: phys_opt_design_post" END { }
@@ -276,7 +275,7 @@ set rc [catch {
 OPTRACE "read constraints: route_design" START { }
 OPTRACE "read constraints: route_design" END { }
 OPTRACE "route_design" START { }
-  route_design -directive Explore
+  route_design -directive NoTimingRelaxation
 OPTRACE "route_design" END { }
 OPTRACE "read constraints: route_design_post" START { }
 OPTRACE "read constraints: route_design_post" END { }

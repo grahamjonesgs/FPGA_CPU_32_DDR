@@ -15621,7 +15621,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe10[153]"/>
+        <Option Id="MAP" value="probe10[27]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -15642,7 +15642,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe10[154]"/>
+        <Option Id="MAP" value="probe10[28]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -30090,7 +30090,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe3[26]"/>
+        <Option Id="MAP" value="probe4[14]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -30626,7 +30626,7 @@
         <net name="mem_read_write/&lt;const0>_99"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -30799,7 +30799,7 @@
         <net name="mem_read_write/cache_val[0]__0[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -30972,7 +30972,7 @@
         <net name="mem_read_write/cache_val[1]__0[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -31145,7 +31145,7 @@
         <net name="mem_read_write/cache_val[2]__0[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -31318,7 +31318,7 @@
         <net name="mem_read_write/cache_val[3]__0[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq129&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq129&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -31467,7 +31467,7 @@
         <net name="mem_read_write/cache_val[4]__0[24]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -31640,7 +31640,7 @@
         <net name="mem_read_write/cache_val[4]__0[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -31788,7 +31788,7 @@
         <net name="mem_read_write/cache_val[4]__0_1[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq25&apos;hXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq25&apos;hXXX_XXXX"/>
@@ -31833,7 +31833,7 @@
         <net name="mem_read_write/cache_val[4]__0_2[128]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
@@ -31877,7 +31877,7 @@
         <net name="mem_read_write/cache_val[4]__0_3[128]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq25&apos;hXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq25&apos;hXXX_XXXX"/>
@@ -31922,7 +31922,7 @@
         <net name="mem_read_write/cache_val[5]__0[128]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq129&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq129&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -32071,7 +32071,7 @@
         <net name="mem_read_write/cache_val[5]__0[24]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -32219,7 +32219,7 @@
         <net name="mem_read_write/cache_val[5]__0_1[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq25&apos;hXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq25&apos;hXXX_XXXX"/>
@@ -32264,7 +32264,7 @@
         <net name="mem_read_write/cache_val[5]__0_2[128]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
@@ -32308,7 +32308,7 @@
         <net name="mem_read_write/cache_val[5]__0_3[128]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq129&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq129&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -32457,7 +32457,7 @@
         <net name="mem_read_write/cache_val[7]__0[24]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
@@ -32501,7 +32501,7 @@
         <net name="mem_read_write/cache_val[7]__0_1[128]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -32674,7 +32674,7 @@
         <net name="mem_read_write/cache_val[7]__0_1[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
@@ -32718,7 +32718,7 @@
         <net name="mem_read_write/cache_val[7]__0_2[128]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq129&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq129&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -32867,7 +32867,7 @@
         <net name="mem_read_write/cache_val[8]__0[24]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq153&apos;hXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -33040,7 +33040,7 @@
         <net name="mem_read_write/cache_val[8]__0_1[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
@@ -33126,7 +33126,7 @@
         <net name="mem_read_write/i_cache_enable_1"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -33274,7 +33274,7 @@
         <net name="mem_read_write/i_ddr_mem_read_data[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
@@ -33641,7 +33641,7 @@
         <net name="mem_read_write/o_mem_read_data[96]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -33789,7 +33789,7 @@
         <net name="mem_read_write/o_mem_read_data[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
@@ -33978,7 +33978,7 @@
         <net name="mem_read_write/o_mem_ready"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -34126,6 +34126,154 @@
         <net name="mem_read_write/o_temp_cache_value[0]"/>
       </nets>
     </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe13[127:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[127]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[126]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[125]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[124]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[123]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[122]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[121]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[120]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[119]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[118]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[117]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[116]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[115]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[114]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[113]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[112]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[111]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[110]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[109]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[108]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[107]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[106]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[105]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[104]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[103]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[102]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[101]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[100]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[99]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[98]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[97]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[96]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[95]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[94]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[93]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[92]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[91]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[90]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[89]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[88]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[87]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[86]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[85]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[84]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[83]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[82]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[81]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[80]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[79]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[78]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[77]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[76]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[75]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[74]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[73]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[72]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[71]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[70]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[69]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[68]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[67]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[66]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[65]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[64]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[63]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[62]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[61]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[60]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[59]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[58]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[57]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[56]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[55]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[54]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[53]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[52]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[51]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[50]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[49]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[48]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[47]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[46]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[45]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[44]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[43]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[42]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[41]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[40]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[39]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[38]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[37]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[36]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[35]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[34]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[33]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[32]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[31]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[30]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[29]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[28]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[27]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[26]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[25]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[24]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[23]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[22]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[21]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[20]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[19]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[18]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[17]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[16]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[15]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[14]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[13]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[12]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[11]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[10]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[9]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[8]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[7]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[6]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[5]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[4]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[3]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[2]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[1]"/>
+        <net name="mem_read_write/o_temp_cache_value_reg_n_0_[0]"/>
+      </nets>
+    </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
@@ -34191,7 +34339,7 @@
         <net name="mem_read_write/r_cache_value[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq21&apos;hXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq21&apos;hXX_XXXX"/>
@@ -34232,7 +34380,7 @@
         <net name="mem_read_write/r_next_cache[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
@@ -34276,7 +34424,7 @@
         <net name="mem_read_write/r_next_cache[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq11&apos;hXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq11&apos;hXXX"/>
@@ -34316,7 +34464,7 @@
         <net name="mem_read_write/state[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
@@ -34346,7 +34494,7 @@
         <net name="mem_read_write/state[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq8&apos;h04"/>
@@ -34381,7 +34529,7 @@
         <net name="mem_read_write/state[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
@@ -34433,7 +34581,7 @@
         <net name="r_PC[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
@@ -34469,7 +34617,7 @@
         <net name="r_SM[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
@@ -34542,7 +34690,7 @@
         <net name="r_mem_addr[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
@@ -34607,7 +34755,7 @@
         <net name="r_mem_read_DV"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
@@ -34722,7 +34870,7 @@
         <net name="r_var1_mem[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
@@ -34774,7 +34922,7 @@
         <net name="r_var1_mem[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
@@ -34868,7 +35016,7 @@
         <net name="w_mem_read_data[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
@@ -35037,7 +35185,7 @@
         <net name="w_mem_ready"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
@@ -35094,7 +35242,7 @@
         <net name="w_temp_cache_hit"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq128&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>

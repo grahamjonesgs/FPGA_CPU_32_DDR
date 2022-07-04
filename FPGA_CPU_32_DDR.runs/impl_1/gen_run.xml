@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1656853999">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1656935460">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="FPGA_CPU_32_bits_postroute_physopted.rqs"/>
@@ -329,21 +329,21 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Performance_Retiming" Flow="Vivado Implementation 2022">
-      <Desc>Combines retiming in phys_opt_design with extra placement optimization and higher router delay cost.</Desc>
+    <StratHandle Name="Performance_ExtraTimingOpt" Flow="Vivado Implementation 2022">
+      <Desc>Includes alternate algorithms for timing-driven optimization</Desc>
     </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
     <Step Id="place_design">
-      <Option Id="Directive">7</Option>
+      <Option Id="Directive">8</Option>
     </Step>
     <Step Id="post_place_power_opt_design"/>
     <Step Id="phys_opt_design">
-      <Option Id="Directive">6</Option>
+      <Option Id="Directive">0</Option>
     </Step>
     <Step Id="route_design">
-      <Option Id="Directive">0</Option>
+      <Option Id="Directive">1</Option>
     </Step>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>

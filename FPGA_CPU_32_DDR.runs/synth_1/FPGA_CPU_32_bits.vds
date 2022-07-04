@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sun Jul  3 15:13:22 2022
-# Process ID: 2211661
+# Start of session at: Mon Jul  4 13:51:03 2022
+# Process ID: 42019
 # Current directory: /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1
 # Command line: vivado -log FPGA_CPU_32_bits.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FPGA_CPU_32_bits.tcl
 # Log file: /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.vds
@@ -11,39 +11,132 @@
 # Running On: graham-Parallels-Virtual-Platform, OS: Linux, CPU Frequency: 2304.000 MHz, CPU Physical cores: 6, Host memory: 16773 MB
 #-----------------------------------------------------------
 source FPGA_CPU_32_bits.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2610.770 ; gain = 7.961 ; free physical = 6282 ; free virtual = 10703
-Command: synth_design -top FPGA_CPU_32_bits -part xc7a100tcsg324-1
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2610.770 ; gain = 7.961 ; free physical = 6782 ; free virtual = 12025
+Command: synth_design -top FPGA_CPU_32_bits -part xc7a100tcsg324-1 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2211803
+INFO: [Synth 8-7075] Helper process launched with PID 42155
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 4426 ; free virtual = 8847
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 4946 ; free virtual = 10189
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'FPGA_CPU_32_bits' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:24]
 INFO: [Synth 8-6157] synthesizing module 'mem_read_write' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:23]
-WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[7]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:91]
-WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[6]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:91]
-WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[5]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:91]
-WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[4]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:91]
-WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[3]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:91]
-WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[2]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:91]
-WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[1]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:91]
-WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[0]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:91]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:103]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-2211661-graham-Parallels-Virtual-Platform/realtime/ila_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-2211661-graham-Parallels-Virtual-Platform/realtime/ila_0_stub.v:5]
-WARNING: [Synth 8-689] width (128) of port connection 'probe9' does not match port width (32) of module 'ila_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:113]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-2211661-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-2211661-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
-WARNING: [Synth 8-7071] port 'locked' of module 'clk_wiz_0' is unconnected for instance 'clk_wiz_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:297]
-WARNING: [Synth 8-7023] instance 'clk_wiz_0' of module 'clk_wiz_0' has 4 connections declared, but only 3 given [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:297]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[127]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[126]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[125]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[124]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[123]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[122]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[121]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[120]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[119]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[118]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[117]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[116]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[115]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[114]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[113]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[112]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[111]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[110]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[109]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[108]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[107]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[106]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[105]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[104]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[103]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[102]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[101]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[100]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[99]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[98]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[97]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[96]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[95]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[94]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[93]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[92]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[91]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[90]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[89]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[88]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[87]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[86]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[85]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[84]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[83]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[82]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[81]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[80]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[79]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[78]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[77]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[76]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[75]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[74]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[73]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[72]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[71]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[70]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[69]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[68]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[67]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[66]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[65]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[64]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[63]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[62]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[61]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[60]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[59]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[58]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[57]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[56]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[55]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[54]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[53]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[52]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[51]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[50]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[49]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[48]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[47]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[46]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[45]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[44]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[43]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[42]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[41]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[40]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[39]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[38]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[37]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[36]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[35]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[34]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[33]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[32]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[31]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[30]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[29]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'cache_val[28]' is not inferred as ram due to incorrect usage [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:90]
+INFO: [Common 17-14] Message 'Synth 8-7186' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:102]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-42019-graham-Parallels-Virtual-Platform/realtime/ila_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-42019-graham-Parallels-Virtual-Platform/realtime/ila_0_stub.v:5]
+WARNING: [Synth 8-689] width (128) of port connection 'probe9' does not match port width (32) of module 'ila_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:112]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-42019-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-42019-graham-Parallels-Virtual-Platform/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'locked' of module 'clk_wiz_0' is unconnected for instance 'clk_wiz_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:265]
+WARNING: [Synth 8-7023] instance 'clk_wiz_0' of module 'clk_wiz_0' has 4 connections declared, but only 3 given [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:265]
 INFO: [Synth 8-6157] synthesizing module 'ddr2_control' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/ddr2_control.v:23]
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-2211661-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-2211661-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-42019-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/.Xil/Vivado-42019-graham-Parallels-Virtual-Platform/realtime/mig_7series_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'ddr2_control' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/ddr2_control.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'mem_read_write' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:23]
 INFO: [Synth 8-6157] synthesizing module 'uart_send_msg' [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/uart_send_msg.v:1]
@@ -67,9 +160,9 @@ INFO: [Synth 8-6155] done synthesizing module 'RGB_LED' (0#1) [/home/graham/src/
 INFO: [Synth 8-226] default block is never used [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:497]
 INFO: [Synth 8-226] default block is never used [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/functions.vh:29]
 INFO: [Synth 8-6155] done synthesizing module 'FPGA_CPU_32_bits' (0#1) [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:24]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'myila'. This will prevent further optimization [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:103]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'myila'. This will prevent further optimization [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:102]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'mem_read_write'. This will prevent further optimization [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:177]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ddr2_control'. This will prevent further optimization [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:303]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ddr2_control'. This will prevent further optimization [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:271]
 WARNING: [Synth 8-6014] Unused sequential element r_SP_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:479]
 WARNING: [Synth 8-6014] Unused sequential element r_stack_base_reg was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:480]
 WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[3] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:581]
@@ -77,18 +170,18 @@ WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[2] was re
 WARNING: [Synth 8-6014] Unused sequential element r_interupt_table_reg[1] was removed.  [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/FPGA_CPU_32_bits.v:581]
 WARNING: [Synth 8-7129] Port i_load_H in module FPGA_CPU_32_bits is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 5428 ; free virtual = 9852
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 5904 ; free virtual = 11150
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 5428 ; free virtual = 9852
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2616.707 ; gain = 5.938 ; free physical = 5906 ; free virtual = 11152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 5428 ; free virtual = 9852
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2616.707 ; gain = 5.938 ; free physical = 5906 ; free virtual = 11152
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.67 ; elapsed = 00:00:00.69 . Memory (MB): peak = 2610.770 ; gain = 0.000 ; free physical = 5392 ; free virtual = 9816
+Netlist sorting complete. Time (s): cpu = 00:00:00.82 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2620.707 ; gain = 0.000 ; free physical = 5850 ; free virtual = 11095
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -105,20 +198,20 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/FPGA_CPU_32_bits_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2880.332 ; gain = 0.000 ; free physical = 5085 ; free virtual = 9508
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2987.051 ; gain = 0.000 ; free physical = 5508 ; free virtual = 10754
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2880.332 ; gain = 0.000 ; free physical = 5085 ; free virtual = 9508
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2987.051 ; gain = 0.000 ; free physical = 5508 ; free virtual = 10754
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2880.332 ; gain = 269.562 ; free physical = 5444 ; free virtual = 9868
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 5924 ; free virtual = 11170
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2880.332 ; gain = 269.562 ; free physical = 5444 ; free virtual = 9868
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 5924 ; free virtual = 11170
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -219,10 +312,9 @@ Applied set_property KEEP_HIERARCHY = SOFT for mem_read_write/myila. (constraint
 Applied set_property KEEP_HIERARCHY = SOFT for mem_read_write/clk_wiz_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for mem_read_write/ddr2_control/mig_7series_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2880.332 ; gain = 269.562 ; free physical = 5444 ; free virtual = 9868
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 5924 ; free virtual = 11170
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ddr2_control'
-WARNING: [Synth 8-3936] Found unconnected internal register 'cache_val_reg[7]' and it is trimmed from '153' to '128' bits. [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:204]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'mem_read_write'
 INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'uart_tx'
 INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'uart_send_msg'
@@ -230,14 +322,14 @@ INFO: [Synth 8-802] inferred FSM for state register 'r_SM_CS_reg' in module 'SPI
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE |                              000 |                             0000
-                    WAIT |                              001 |                             0001
-                   WRITE |                              010 |                             0010
-              WRITE_DONE |                              011 |                             0011
-                    READ |                              100 |                             0100
-               READ_DONE |                              101 |                             0101
+                    IDLE |                           000001 |                             0000
+                    WAIT |                           000010 |                             0001
+                   WRITE |                           000100 |                             0010
+              WRITE_DONE |                           001000 |                             0011
+                    READ |                           010000 |                             0100
+               READ_DONE |                           100000 |                             0101
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ddr2_control'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'ddr2_control'
 INFO: [Synth 8-6159] Found Keep on FSM register 'state_reg' in module 'mem_read_write', re-encoding will not be performed
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -248,9 +340,7 @@ INFO: [Synth 8-6159] Found Keep on FSM register 'state_reg' in module 'mem_read_
               WRITE_DONE |                      00000000011 |                      00000000011
                 PRE_READ |                      00000001011 |                      00000001011
                     READ |                      00000000100 |                      00000000100
-                   READ2 |                      00000001010 |                      00000001010
              READ_CACHE1 |                      00000000101 |                      00000000101
-            READ_CACHE1A |                      00000000110 |                      00000000110
              READ_CACHE2 |                      00000000111 |                      00000000111
                 PRE_WAIT |                      00000001100 |                      00000001100
                READ_DONE |                      00000001000 |                      00000001000
@@ -259,13 +349,13 @@ INFO: [Synth 8-6159] Found Keep on FSM register 'state_reg' in module 'mem_read_
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                  s_IDLE |                              000 |                              000
-          s_TX_START_BIT |                              001 |                              001
-          s_TX_DATA_BITS |                              010 |                              010
-           s_TX_STOP_BIT |                              011 |                              011
-               s_CLEANUP |                              100 |                              100
+                  s_IDLE |                            00001 |                              000
+          s_TX_START_BIT |                            00010 |                              001
+          s_TX_DATA_BITS |                            00100 |                              010
+           s_TX_STOP_BIT |                            01000 |                              011
+               s_CLEANUP |                            10000 |                              100
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'r_SM_Main_reg' using encoding 'sequential' in module 'uart_tx'
+INFO: [Synth 8-3354] encoded FSM with state register 'r_SM_Main_reg' using encoding 'one-hot' in module 'uart_tx'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -284,38 +374,44 @@ WARNING: [Synth 8-327] inferring latch for variable 'r_LED_Bytes_reg' [/home/gra
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'r_SM_CS_reg' using encoding 'one-hot' in module 'SPI_Master_With_Single_CS'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2880.332 ; gain = 269.562 ; free physical = 5409 ; free virtual = 9835
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 5887 ; free virtual = 11137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   64 Bit       Adders := 1     
 	   2 Input   33 Bit       Adders := 4     
 	   3 Input   33 Bit       Adders := 2     
 	   2 Input   32 Bit       Adders := 6     
-	   2 Input   24 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 2     
+	   2 Input   20 Bit       Adders := 1     
+	   2 Input   19 Bit       Adders := 1     
 	   3 Input   16 Bit       Adders := 1     
 	   2 Input   16 Bit       Adders := 1     
 	   2 Input   13 Bit       Adders := 2     
 	   2 Input   10 Bit       Adders := 2     
 	   2 Input    8 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 2     
-	   2 Input    3 Bit       Adders := 6     
+	   2 Input    4 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 5     
 	   2 Input    2 Bit       Adders := 2     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 2     
 +---Registers : 
 	             2048 Bit    Registers := 1     
-	              153 Bit    Registers := 7     
-	              128 Bit    Registers := 7     
-	               32 Bit    Registers := 28    
+	              153 Bit    Registers := 128   
+	              128 Bit    Registers := 6     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 29    
 	               27 Bit    Registers := 1     
 	               24 Bit    Registers := 3     
-	               16 Bit    Registers := 6     
+	               20 Bit    Registers := 1     
+	               19 Bit    Registers := 1     
+	               16 Bit    Registers := 7     
 	               12 Bit    Registers := 2     
-	               10 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
 	                8 Bit    Registers := 265   
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 5     
@@ -330,64 +426,70 @@ Detailed RTL Component Info :
 	  79 Input 2048 Bit        Muxes := 2     
 	   4 Input 2048 Bit        Muxes := 1     
 	   2 Input  168 Bit        Muxes := 1     
+	   2 Input  153 Bit        Muxes := 1     
+	  11 Input  153 Bit        Muxes := 1     
+	   2 Input  128 Bit        Muxes := 2     
+	  11 Input  128 Bit        Muxes := 1     
 	  79 Input  128 Bit        Muxes := 1     
-	   2 Input  128 Bit        Muxes := 3     
 	   2 Input  112 Bit        Muxes := 2     
 	   2 Input   64 Bit        Muxes := 2     
 	  79 Input   32 Bit        Muxes := 38    
 	   2 Input   32 Bit        Muxes := 97    
 	   4 Input   32 Bit        Muxes := 32    
 	   5 Input   32 Bit        Muxes := 1     
-	  79 Input   24 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 4     
+	  11 Input   24 Bit        Muxes := 1     
 	  14 Input   24 Bit        Muxes := 1     
-	   2 Input   24 Bit        Muxes := 1     
+	  79 Input   24 Bit        Muxes := 1     
 	   2 Input   16 Bit        Muxes := 22    
-	  14 Input   16 Bit        Muxes := 3     
-	  79 Input   16 Bit        Muxes := 2     
-	   5 Input   16 Bit        Muxes := 1     
-	   6 Input   16 Bit        Muxes := 1     
 	   3 Input   16 Bit        Muxes := 1     
-	   2 Input   13 Bit        Muxes := 1     
+	  14 Input   16 Bit        Muxes := 3     
+	   5 Input   16 Bit        Muxes := 1     
+	  79 Input   16 Bit        Muxes := 2     
+	   6 Input   16 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 2     
+	  79 Input   12 Bit        Muxes := 2     
 	   4 Input   12 Bit        Muxes := 1     
 	   2 Input   12 Bit        Muxes := 6     
-	  79 Input   12 Bit        Muxes := 2     
 	   3 Input   12 Bit        Muxes := 1     
-	  13 Input   11 Bit        Muxes := 1     
+	  11 Input   11 Bit        Muxes := 1     
 	   2 Input   11 Bit        Muxes := 4     
 	   2 Input   10 Bit        Muxes := 2     
 	   2 Input    9 Bit        Muxes := 4     
-	  79 Input    8 Bit        Muxes := 2     
 	   2 Input    8 Bit        Muxes := 7     
-	   5 Input    8 Bit        Muxes := 1     
 	   8 Input    8 Bit        Muxes := 1     
+	  79 Input    8 Bit        Muxes := 2     
+	   5 Input    8 Bit        Muxes := 1     
 	   6 Input    8 Bit        Muxes := 1     
 	   3 Input    8 Bit        Muxes := 2     
-	   2 Input    7 Bit        Muxes := 2     
-	   5 Input    7 Bit        Muxes := 1     
 	   3 Input    7 Bit        Muxes := 1     
-	   2 Input    5 Bit        Muxes := 2     
-	  16 Input    4 Bit        Muxes := 1     
+	   5 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 2     
+	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 7     
+	   5 Input    5 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 4     
-	  17 Input    4 Bit        Muxes := 1     
+	  16 Input    4 Bit        Muxes := 1     
 	  79 Input    4 Bit        Muxes := 1     
+	  17 Input    4 Bit        Muxes := 1     
 	   3 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 15    
 	  14 Input    3 Bit        Muxes := 2     
-	   5 Input    3 Bit        Muxes := 1     
-	   6 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 8     
 	  14 Input    2 Bit        Muxes := 4     
 	   3 Input    2 Bit        Muxes := 3     
 	   2 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 201   
-	  79 Input    1 Bit        Muxes := 38    
-	   5 Input    1 Bit        Muxes := 15    
-	  14 Input    1 Bit        Muxes := 11    
-	   4 Input    1 Bit        Muxes := 1     
-	   3 Input    1 Bit        Muxes := 14    
-	   8 Input    1 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 324   
 	   6 Input    1 Bit        Muxes := 12    
-	  13 Input    1 Bit        Muxes := 17    
-	  12 Input    1 Bit        Muxes := 1     
+	  11 Input    1 Bit        Muxes := 137   
+	 128 Input    1 Bit        Muxes := 1     
+	  10 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 1     
+	  79 Input    1 Bit        Muxes := 38    
+	  14 Input    1 Bit        Muxes := 11    
+	   5 Input    1 Bit        Muxes := 14    
+	   3 Input    1 Bit        Muxes := 14    
+	   4 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -403,10 +505,140 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-7129] Port i_load_H in module FPGA_CPU_32_bits is either unconnected or has no load
+WARNING: [Synth 8-3936] Found unconnected internal register 'cache_val_reg[127]' and it is trimmed from '153' to '128' bits. [/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/sources_1/new/mem_read_write.v:170]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ddr2_control/\app_wdf_mask_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_timeout_max_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_timeout_max_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_timeout_max_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_timeout_max_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_timeout_max_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_timeout_max_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_timeout_max_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_timeout_max_reg[7] )
+INFO: [Synth 8-5544] ROM "o_Anode_Activate" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_msg_length_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_msg_length_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_msg_length_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[34] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[35] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[37] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[38] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[39] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[40] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[41] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[42] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[43] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[44] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[45] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[46] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[47] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[48] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[49] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[50] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[51] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[52] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[53] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[54] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[55] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[56] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[57] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[58] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[59] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[60] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[61] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[62] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[64] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[65] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[66] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[67] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[68] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[69] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[70] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[71] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_mem_write_data_reg[72] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5587] ROM size for "return_hex_from_ascii" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "r_stack_reset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r_error_display_type" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r_reg_2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "o_led" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "return_hex_from_ascii" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "r_stack_reset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r_error_display_type" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r_reg_2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "o_led" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "return_ascii_from_hex" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:30 ; elapsed = 00:01:35 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5345 ; free virtual = 9800
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:01:26 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1791 ; free virtual = 7083
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -417,16 +649,15 @@ ROM: Preliminary Mapping Report
 |Module Name                      | RTL Object    | Depth x Width | Implemented As | 
 +---------------------------------+---------------+---------------+----------------+
 |Seven_seg_LED_Display_Controller | o_LED_cathode | 256x8         | LUT            | 
-|Seven_seg_LED_Display_Controller | o_LED_cathode | 256x8         | LUT            | 
 +---------------------------------+---------------+---------------+----------------+
 
 
 Block RAM: Preliminary Mapping Report (see note below)
-+-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name      | RTL Object         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|FPGA_CPU_32_bits | main_stack/RAM_reg | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
-+-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|main_stack  | RAM_reg    | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 ---------------------------------------------------------------------------------
@@ -436,24 +667,26 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:35 ; elapsed = 00:01:40 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5248 ; free virtual = 9703
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:01:32 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1659 ; free virtual = 6974
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (r_LED_Bytes_reg[7]) is unused and will be removed from module Seven_seg_LED_Display_Controller.
+info: optimization accepted worst group hill climbing move (3759.0/oG.CP 120.0ps)
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:05 ; elapsed = 00:03:11 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5054 ; free virtual = 9505
+Finished Timing Optimization : Time (s): cpu = 00:01:51 ; elapsed = 00:02:27 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1496 ; free virtual = 6811
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Final Mapping Report
-+-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name      | RTL Object         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|FPGA_CPU_32_bits | main_stack/RAM_reg | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
-+-----------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|main_stack  | RAM_reg    | 4 K x 32(READ_FIRST)   | W |   | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 8      | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -461,16 +694,16 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/main_stack/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/main_stack/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/main_stack/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/main_stack/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/main_stack/RAM_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/main_stack/RAM_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/main_stack/RAM_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/main_stack/RAM_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:09 ; elapsed = 00:03:16 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5195 ; free virtual = 9646
+Finished Technology Mapping : Time (s): cpu = 00:02:01 ; elapsed = 00:02:46 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1057 ; free virtual = 6375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -484,41 +717,49 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance main_stack/RAM_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:13 ; elapsed = 00:03:20 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5195 ; free virtual = 9647
+Finished IO Insertion : Time (s): cpu = 00:02:08 ; elapsed = 00:02:53 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1029 ; free virtual = 6396
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:13 ; elapsed = 00:03:20 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5195 ; free virtual = 9647
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:08 ; elapsed = 00:02:53 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1031 ; free virtual = 6397
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:14 ; elapsed = 00:03:20 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5195 ; free virtual = 9647
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:08 ; elapsed = 00:02:53 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1031 ; free virtual = 6397
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:14 ; elapsed = 00:03:20 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5195 ; free virtual = 9647
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:08 ; elapsed = 00:02:53 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1031 ; free virtual = 6397
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:14 ; elapsed = 00:03:21 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5195 ; free virtual = 9647
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:09 ; elapsed = 00:02:54 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1032 ; free virtual = 6399
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:14 ; elapsed = 00:03:21 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5195 ; free virtual = 9647
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:09 ; elapsed = 00:02:54 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1032 ; free virtual = 6399
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -528,9 +769,9 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |mig_7series_0 |         1|
-|2     |ila_0         |         1|
-|3     |clk_wiz_0     |         1|
+|1     |ila_0         |         1|
+|2     |clk_wiz_0     |         1|
+|3     |mig_7series_0 |         1|
 +------+--------------+----------+
 
 Report Cell Usage: 
@@ -541,48 +782,49 @@ Report Cell Usage:
 |2     |ila         |     1|
 |3     |mig_7series |     1|
 |4     |BUFG        |     1|
-|5     |CARRY4      |   192|
-|6     |LUT1        |   100|
-|7     |LUT2        |   415|
-|8     |LUT3        |   485|
-|9     |LUT4        |   219|
-|10    |LUT5        |   535|
-|11    |LUT6        |  2439|
-|12    |MUXF7       |   187|
-|13    |MUXF8       |    14|
+|5     |CARRY4      |   434|
+|6     |LUT1        |   173|
+|7     |LUT2        |   692|
+|8     |LUT3        |   237|
+|9     |LUT4        |   301|
+|10    |LUT5        |   620|
+|11    |LUT6        |  7443|
+|12    |MUXF7       |  2213|
+|13    |MUXF8       |  1033|
 |14    |RAMB36E1    |     8|
 |15    |FDCE        |    48|
 |16    |FDPE        |     6|
-|17    |FDRE        |  3143|
-|18    |FDSE        |    17|
+|17    |FDRE        | 21629|
+|18    |FDSE        |    22|
 |19    |LD          |     6|
 |20    |IBUF        |    19|
 |21    |OBUF        |    44|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:14 ; elapsed = 00:03:21 . Memory (MB): peak = 2896.340 ; gain = 285.570 ; free physical = 5195 ; free virtual = 9647
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:09 ; elapsed = 00:02:54 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 1032 ; free virtual = 6399
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:08 ; elapsed = 00:03:14 . Memory (MB): peak = 2896.340 ; gain = 16.008 ; free physical = 5245 ; free virtual = 9696
-Synthesis Optimization Complete : Time (s): cpu = 00:03:14 ; elapsed = 00:03:21 . Memory (MB): peak = 2896.348 ; gain = 285.570 ; free physical = 5245 ; free virtual = 9696
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:05 ; elapsed = 00:02:48 . Memory (MB): peak = 2987.051 ; gain = 5.938 ; free physical = 5735 ; free virtual = 11102
+Synthesis Optimization Complete : Time (s): cpu = 00:02:14 ; elapsed = 00:02:56 . Memory (MB): peak = 2987.051 ; gain = 376.281 ; free physical = 5741 ; free virtual = 11100
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2896.348 ; gain = 0.000 ; free physical = 5334 ; free virtual = 9786
-INFO: [Netlist 29-17] Analyzing 407 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2987.051 ; gain = 0.000 ; free physical = 5739 ; free virtual = 11098
+INFO: [Netlist 29-17] Analyzing 3694 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'FPGA_CPU_32_bits' is not ideal for floorplanning, since the cellview 'mem_read_write' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2912.348 ; gain = 0.000 ; free physical = 5295 ; free virtual = 9747
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3011.062 ; gain = 0.000 ; free physical = 5693 ; free virtual = 11052
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 6 instances were transformed.
   LD => LDCE: 6 instances
 
-Synth Design complete, checksum: 1e0ff56d
+Synth Design complete, checksum: 472158e5
 INFO: [Common 17-83] Releasing license: Synthesis
-66 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
+205 Infos, 115 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:24 ; elapsed = 00:03:26 . Memory (MB): peak = 2912.348 ; gain = 301.578 ; free physical = 5512 ; free virtual = 9963
+synth_design: Time (s): cpu = 00:02:22 ; elapsed = 00:03:05 . Memory (MB): peak = 3011.062 ; gain = 400.293 ; free physical = 5931 ; free virtual = 11290
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint '/home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.runs/synth_1/FPGA_CPU_32_bits.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FPGA_CPU_32_bits_utilization_synth.rpt -pb FPGA_CPU_32_bits_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jul  3 15:17:00 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Jul  4 13:54:23 2022...

@@ -51,11 +51,11 @@ module mem_read_write(
 
        );
 
-parameter cache_size=8;
+parameter cache_size=128;
 
 // DDR2
 wire sys_clk_i;
-reg [9:0] por_counter = 1023;
+reg [9:0] por_counter = 32;
 wire resetn = (por_counter == 0);
 // Power-on-reset generator circuit.
 // Asserts resetn for 1023 cycles, then deasserts
@@ -77,11 +77,10 @@ localparam WRITE = 8'd2;
 localparam WRITE_DONE = 8'd3;
 localparam READ = 8'd4;
 localparam READ_CACHE1 = 8'd5;
-localparam READ_CACHE1A = 8'd6;
 localparam READ_CACHE2 = 8'd7;
 localparam READ_DONE = 8'd8;
 localparam READ_DONE2 = 8'd9;
-localparam READ2 = 8'd10;
+//localparam READ2 = 8'd10;
 localparam PRE_READ = 8'd11;
 localparam PRE_WAIT = 8'd12;
 reg [10:0] state = WAIT;
@@ -167,7 +166,7 @@ begin
             state <= WRITE_DONE;   
             o_ddr_mem_write_data<=i_mem_write_data;
             
-          /*  // Update cache
+            // Update cache
             cache_val[r_next_cache]<={1'b1,i_mem_addr, i_mem_write_data};  // Add value to cache 
             
             if (r_next_cache<=cache_size)
@@ -177,9 +176,7 @@ begin
             else
             begin
                 r_next_cache<=0;
-            end */
-            
-                         
+            end                     
         end
 
         WRITE_DONE:
@@ -192,7 +189,7 @@ begin
             end
         end
          
-        PRE_READ:
+        PRE_READ: 
         begin
             state <= READ; 
         end 
@@ -207,58 +204,29 @@ begin
                     r_cache_value=i;
                 end
             end
-    /*        if (r_cache_hit==1 && i_cache_enable)
-            begin
-                o_mem_read_data<=cache_val[r_cache_value][127:0];
-                o_temp_cache_value<=cache_val[r_cache_value][127:0];
-                state <= READ_CACHE1;  // for testing temp value
-                 o_ddr_mem_read_DV<=1;
-                //state <= READ_DONE; 
+            if (r_cache_hit==1 && i_cache_enable)
+            begin          
+                state <= READ_CACHE1;
             end
             else
             begin
                 o_ddr_mem_read_DV<=1;
                 state <= READ_DONE;   
-            end    */      
-            state <= READ2;               
+            end         
+               
         end
         
-        READ2:
-        begin
-        if (r_cache_hit==1 && i_cache_enable)
-            begin
-                o_mem_read_data<=cache_val[r_cache_value][127:0];
-                o_temp_cache_value<=cache_val[r_cache_value][127:0];
-                state <= READ_CACHE1;  // for testing temp value
-                //state <= READ_DONE; 
-            end
-            else
-            begin
-                o_ddr_mem_read_DV<=1;
-                state <= READ_DONE;   
-            end    
-        
-        end
         
         READ_CACHE1:
-        begin
-            //o_mem_read_data<=cache_val[r_cache_value][127:0];
-           // o_mem_ready <= 1;
-            //o_temp_cache_value<=cache_val[r_cache_value][127:0]; // temp for testing
-            state <= READ_CACHE1A;
-        end
-        
-        READ_CACHE1A:
-        begin
-            //o_mem_read_data<=cache_val[r_cache_value][127:0];
-           // o_mem_ready <= 1;
-            //o_temp_cache_value<=cache_val[r_cache_value][127:0]; // temp for testing
+        begin           
             state <= READ_CACHE2;
         end
+        
         
          READ_CACHE2:
         begin
             o_mem_read_data<=cache_val[r_cache_value][127:0];
+            o_temp_cache_value<=cache_val[r_cache_value][127:0];
             o_mem_ready <= 1;
             state <= PRE_WAIT;
         end
