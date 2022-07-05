@@ -145,6 +145,8 @@ read_xdc /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nex
 set_property used_in_implementation false [get_files /home/graham/src/FPGA_CPU_32_DDR/FPGA_CPU_32_DDR.srcs/constrs_2/new/nexys_ddr.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental /home/graham/src/FPGA_CPU_32_DDR/synth_1/FPGA_CPU_32_bits.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

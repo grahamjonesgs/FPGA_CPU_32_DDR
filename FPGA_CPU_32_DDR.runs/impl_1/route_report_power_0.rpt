@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date             : Tue Jul  5 09:35:41 2022
+| Date             : Tue Jul  5 13:06:55 2022
 | Host             : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command          : report_power -file route_report_power_0.rpt -pb route_report_power_summary_0.pb -rpx route_report_power_0.rpx
 | Design           : FPGA_CPU_32_bits
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.193        |
+| Total On-Chip Power (W)  | 1.186        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.081        |
-| Device Static (W)        | 0.112        |
+| Dynamic (W)              | 1.075        |
+| Device Static (W)        | 0.111        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 79.6         |
 | Junction Temperature (C) | 30.4         |
@@ -52,24 +52,24 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.079 |       24 |       --- |             --- |
-| Slice Logic              |     0.010 |    57178 |       --- |             --- |
-|   LUT as Logic           |     0.009 |    15504 |     63400 |           24.45 |
+| Clocks                   |     0.078 |       24 |       --- |             --- |
+| Slice Logic              |     0.011 |    57196 |       --- |             --- |
+|   LUT as Logic           |     0.010 |    15556 |     63400 |           24.54 |
 |   CARRY4                 |    <0.001 |      759 |     15850 |            4.79 |
-|   Register               |    <0.001 |    31584 |    126800 |           24.91 |
+|   Register               |    <0.001 |    31579 |    126800 |           24.90 |
 |   LUT as Distributed RAM |    <0.001 |      530 |     19000 |            2.79 |
+|   F7/F8 Muxes            |    <0.001 |     3435 |     63400 |            5.42 |
 |   LUT as Shift Register  |    <0.001 |      903 |     19000 |            4.75 |
-|   F7/F8 Muxes            |    <0.001 |     3443 |     63400 |            5.43 |
 |   Others                 |     0.000 |     1154 |       --- |             --- |
-| Signals                  |     0.021 |    43070 |       --- |             --- |
-| Block RAM                |     0.056 |     66.5 |       135 |           49.26 |
+| Signals                  |     0.022 |    43203 |       --- |             --- |
+| Block RAM                |     0.055 |     66.5 |       135 |           49.26 |
 | MMCM                     |     0.222 |        2 |         6 |           33.33 |
 | PLL                      |     0.090 |        1 |         6 |           16.67 |
-| I/O                      |     0.531 |      109 |       210 |           51.90 |
+| I/O                      |     0.522 |      109 |       210 |           51.90 |
 | PHASER                   |     0.070 |       14 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
-| Static Power             |     0.112 |          |           |                 |
-| Total                    |     1.193 |          |           |                 |
+| Static Power             |     0.111 |          |           |                 |
+| Total                    |     1.186 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,11 +79,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.204 |       0.185 |      0.020 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.269 |       0.251 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.011 |       0.007 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.206 |       0.186 |      0.020 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.269 |       0.250 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18    |       1.800 |     0.236 |       0.232 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.235 |       0.231 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -169,19 +169,19 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| FPGA_CPU_32_bits         |     1.081 |
+| FPGA_CPU_32_bits         |     1.075 |
 |   dbg_hub                |     0.002 |
 |     inst                 |     0.002 |
 |       BSCANID.u_xsdbm_id |     0.002 |
 |   main_stack             |     0.021 |
-|   mem_read_write         |     1.015 |
+|   mem_read_write         |     1.013 |
 |     clk_wiz_0            |     0.107 |
 |       inst               |     0.107 |
-|     ddr2_control         |     0.803 |
-|       mig_7series_0      |     0.802 |
+|     ddr2_control         |     0.801 |
+|       mig_7series_0      |     0.801 |
 |     myila                |     0.061 |
 |       inst               |     0.061 |
-|   uart_rx1               |     0.002 |
+|   uart_rx1               |     0.001 |
 +--------------------------+-----------+
 
 

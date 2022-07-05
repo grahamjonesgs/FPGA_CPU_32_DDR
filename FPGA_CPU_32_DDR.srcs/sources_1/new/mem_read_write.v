@@ -68,17 +68,14 @@ reg [127:0]     o_ddr_mem_write_data;
 wire [127:0]    i_ddr_mem_read_data;
 wire            i_ddr_mem_ready;
 
-
-
 localparam PRE_WAIT = 8'd1;
 localparam WAIT = 8'd2;
 localparam WRITE = 8'd4;
 localparam WRITE_DONE = 8'd8;
-localparam PRE_READ = 8'd16;
-localparam READ = 8'd32;
-localparam READ_CACHE1 = 8'd64;
-localparam READ_CACHE2 = 8'd128;
-localparam READ_DONE = 8'd256;
+localparam READ = 8'd16;
+localparam READ_CACHE1 = 8'd32;
+localparam READ_CACHE2 = 8'd64;
+localparam READ_DONE = 8'd128;
 localparam READ_DONE2 = 8'd512;
 
 
@@ -112,9 +109,7 @@ ila_0  myila(.clk(i_Clk),
              .probe10(o_ddr_mem_addr),  
              .probe11(o_ddr_mem_read_DV),  
              .probe12(i_ddr_mem_ready),
-             .probe13(0)
-             
-
+             .probe13(0)         
             ); 
             
  initial
@@ -153,7 +148,7 @@ begin
             begin
                 if (i_mem_read_DV)
                 begin
-                    state <= PRE_READ;
+                    state <= READ; 
                 end // f (i_mem_write_DV)
             end // else if (i_mem_write_DV)
         end
@@ -186,11 +181,6 @@ begin
                 state <= WAIT; 
             end
         end
-         
-        PRE_READ: 
-        begin
-            state <= READ; 
-        end 
 
         READ: 
         begin
@@ -213,14 +203,12 @@ begin
             end         
                
         end
-        
-        
+              
         READ_CACHE1:
         begin           
             state <= READ_CACHE2;
         end
-        
-        
+             
          READ_CACHE2:
         begin
             o_mem_read_data<=cache_val[r_cache_value][127:0];
@@ -250,7 +238,6 @@ begin
             end
         end
         
-
         default: state <= WAIT;
    endcase  
 end
