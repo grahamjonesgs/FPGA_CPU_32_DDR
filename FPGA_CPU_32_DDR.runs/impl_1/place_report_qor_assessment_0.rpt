@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Mon Jul  4 14:04:01 2022
+| Date         : Tue Jul  5 09:30:26 2022
 | Host         : graham-Parallels-Virtual-Platform running 64-bit Ubuntu 22.04 LTS
 | Command      : report_qor_assessment -max_paths 100 -file place_report_qor_assessment_0.rpt
 | Design       : FPGA_CPU_32_bits
@@ -33,17 +33,17 @@ Table of Contents
 2. QoR Assessment Details
 -------------------------
 
-+-------------+-----------+----------+------+-----------+--------+
-| Name        | Threshold | Actual   | Used | Available | Status |
-+-------------+-----------+----------+------+-----------+--------+
-| Utilization |           |          |      |           |     OK |
-| Clocking    |           |          |      |           |        |
-|   Hold Skew |     0.350 |    2.780 |   -  |        -  | REVIEW |
-| Congestion  |           |          |      |           |     OK |
-| Timing      |           |          |      |           |        |
-|   WHS       |    -0.500 |   -2.283 |   -  |        -  | REVIEW |
-|   THS       |    -0.500 | -125.381 |   -  |        -  | REVIEW |
-+-------------+-----------+----------+------+-----------+--------+
++-------------+-----------+---------+------+-----------+--------+
+| Name        | Threshold | Actual  | Used | Available | Status |
++-------------+-----------+---------+------+-----------+--------+
+| Utilization |           |         |      |           |     OK |
+| Clocking    |           |         |      |           |        |
+|   Hold Skew |     0.350 |   2.770 |   -  |        -  | REVIEW |
+| Congestion  |           |         |      |           |     OK |
+| Timing      |           |         |      |           |        |
+|   WHS       |    -0.500 |  -2.265 |   -  |        -  | REVIEW |
+|   THS       |    -0.500 | -99.549 |   -  |        -  | REVIEW |
++-------------+-----------+---------+------+-----------+--------+
 
 
 3. Methodology Check Details

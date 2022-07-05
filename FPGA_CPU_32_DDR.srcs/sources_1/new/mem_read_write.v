@@ -45,9 +45,8 @@ module mem_read_write(
            input [127:0] i_mem_write_data,
            output reg [127:0] o_mem_read_data,
            output reg o_mem_ready,
-           input i_cache_enable,
-           output o_temp_cache_hit,
-           output reg [127:0] o_temp_cache_value
+           input i_cache_enable
+          
 
        );
 
@@ -61,7 +60,7 @@ wire resetn = (por_counter == 0);
 // Asserts resetn for 1023 cycles, then deasserts
 // `resetn` is Active low reset
 
-
+// regs to talk to DDR
 reg             o_ddr_mem_write_DV;
 reg             o_ddr_mem_read_DV;
 wire [26:0]     o_ddr_mem_addr;
@@ -71,33 +70,33 @@ wire            i_ddr_mem_ready;
 
 
 
+localparam PRE_WAIT = 8'd1;
+localparam WAIT = 8'd2;
+localparam WRITE = 8'd4;
+localparam WRITE_DONE = 8'd8;
+localparam PRE_READ = 8'd16;
+localparam READ = 8'd32;
+localparam READ_CACHE1 = 8'd64;
+localparam READ_CACHE2 = 8'd128;
+localparam READ_DONE = 8'd256;
+localparam READ_DONE2 = 8'd512;
 
-localparam WAIT = 8'd1;
-localparam WRITE = 8'd2;
-localparam WRITE_DONE = 8'd3;
-localparam READ = 8'd4;
-localparam READ_CACHE1 = 8'd5;
-localparam READ_CACHE2 = 8'd7;
-localparam READ_DONE = 8'd8;
-localparam READ_DONE2 = 8'd9;
-//localparam READ2 = 8'd10;
-localparam PRE_READ = 8'd11;
-localparam PRE_WAIT = 8'd12;
+
 reg [10:0] state = WAIT;
 
 
 // 152:0 - [152]-Clean    [151:128] cpu memory loc            [127:0] Data
 (* ram_style = "block" *) reg [152:0] cache_val [cache_size-1:0];   // Maps cache table entry to value, first bit is clean, then addr, then data
 
-
+// Internal regs
 reg [23:0] r_next_cache=0; 
 reg        r_cache_hit=0;
 reg [23:0] r_cache_value=0;
+wire       i_cache_enable;
 integer i;
 
 assign o_ddr_mem_addr = i_mem_addr<<3;
-assign o_temp_cache_hit = r_cache_hit;
-
+assign w_cache_enable = i_cache_enable;
 
 ila_0  myila(.clk(i_Clk),
              .probe0(r_cache_value),
@@ -113,7 +112,7 @@ ila_0  myila(.clk(i_Clk),
              .probe10(o_ddr_mem_addr),  
              .probe11(o_ddr_mem_read_DV),  
              .probe12(i_ddr_mem_ready),
-             .probe13(o_temp_cache_value)
+             .probe13(0)
              
 
             ); 
@@ -136,8 +135,7 @@ end
 always @ (posedge i_Clk) 
 begin
     case (state)
-    
-    
+     
         PRE_WAIT:
         begin
         state <= WAIT;
@@ -204,7 +202,7 @@ begin
                     r_cache_value=i;
                 end
             end
-            if (r_cache_hit==1 && i_cache_enable)
+            if (r_cache_hit==1 && w_cache_enable)
             begin          
                 state <= READ_CACHE1;
             end
@@ -226,7 +224,6 @@ begin
          READ_CACHE2:
         begin
             o_mem_read_data<=cache_val[r_cache_value][127:0];
-            o_temp_cache_value<=cache_val[r_cache_value][127:0];
             o_mem_ready <= 1;
             state <= PRE_WAIT;
         end
@@ -237,7 +234,8 @@ begin
             begin
                 o_mem_ready <= 1;
                 o_ddr_mem_read_DV<=0;
-                state <= READ_DONE2; 
+                //state <= READ_DONE2; 
+                state <= PRE_WAIT;
                 o_mem_read_data<=i_ddr_mem_read_data;
                 cache_val[r_next_cache]<={1'b1,i_mem_addr,i_ddr_mem_read_data};  // Add value to cache
                             
@@ -252,10 +250,6 @@ begin
             end
         end
         
-        READ_DONE2:
-        begin
-        state <= WAIT; 
-        end
 
         default: state <= WAIT;
    endcase  

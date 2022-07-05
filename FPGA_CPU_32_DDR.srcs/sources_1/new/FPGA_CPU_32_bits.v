@@ -165,12 +165,6 @@ wire w_reset_H;
 
 reg         r_boot_flash;
 
-
-// Temp for cache testing
-wire w_temp_cache_hit;
-wire [127:0] w_temp_cache_value;
-
-
 assign w_reset_H=!CPU_RESETN;
 
 
@@ -198,9 +192,7 @@ mem_read_write mem_read_write (
                    .i_mem_write_data(r_mem_write_data),
                    .o_mem_read_data(w_mem_read_data),
                    .o_mem_ready(w_mem_ready),
-                   .i_cache_enable(i_switch[0]),
-                   .o_temp_cache_hit(w_temp_cache_hit),
-                   .o_temp_cache_value(w_temp_cache_value)
+                   .i_cache_enable(i_switch[0])
                );
 
 
